@@ -1,0 +1,45 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+
+
+
+
+.container-navigation{
+
+    background-color: #23252b;
+    height: 3.75rem;
+    
+
+}
+
+
+
+
+.a-logo{
+    padding: 0 1.125rem;
+    max-width: 172px;
+}
+
+.logo-icon {
+    fill: #f47521;
+   
+    height: inherit;
+    transition: fill .2s ease;
+
+    width: 136px;
+    height: 60px;
+
+   
+
+
+}
