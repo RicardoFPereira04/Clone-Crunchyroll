@@ -11,6 +11,11 @@ body{
 }
 
 
+header{
+    position: fixed;
+    width: 100%;
+}
+
 
 
 
@@ -103,3 +108,87 @@ span{
     background-color: #141519 ;
 
 }
+
+
+
+
+.custom-dropdown {
+    
+    position: absolute;
+    width: 100%;
+    display: flex;
+   
+    
+    background-color: #141519 ;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+ 
+  }
+
+ 
+  /* Estilo para o efeito de desfoque no resto da tela */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com transparência */
+    display: none;
+    z-index: 999;
+  }
+
+ .categories{
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 42px;
+    padding: 0.75rem  1.25rem;
+    --line-height: 1.125rem;
+    font-size: .875rem;
+    align-items: center;
+    display: flex;
+ }
+
+ .categories:hover{
+    background-color: #23252b;
+ }
+
+ .categories-2{
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    height: 42px;
+    padding: 0.75rem  1.25rem;
+    --line-height: 1.125rem;
+    font-size: .875rem;
+    align-items: center;
+    display: flex;
+    color: #c9cfc1;
+
+ }
+ .categories-2:hover{
+    background-color: #23252b;
+ }
+
+li{
+    list-style: none;
+   
+   
+}
+
+.gender{
+    border-left: 0.125rem solid #23252b;
+    padding-left: 2.5rem;
+}
+
+.gender-p{
+    color: #999688;
+    font-size: .8rem;
+    padding-left: 3.0rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
