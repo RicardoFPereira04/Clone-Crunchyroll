@@ -25,6 +25,7 @@ header{
     height: 3.75rem;
     display: flex;
     flex-direction: row;
+    padding-left: 95px;
     
 
 }
@@ -68,6 +69,20 @@ header{
     justify-content: center;
 }
 
+#dropd2{
+    color: #d4d1d4;
+    font-weight: 500;
+    font-size: 16px;
+
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .dropdown{
     padding-left: 1rem ;
     padding-right: 1rem ;
@@ -89,6 +104,7 @@ header{
     text-decoration: none;
     width: 100% ;
     height: 100%;
+    
 
 }
 
@@ -98,7 +114,10 @@ span{
 }
 
 
+#drop2:hover{
+    background-color: #141519 ;
 
+}
 .dropdown-toggle:hover{
     background-color: #141519 ;
 
@@ -109,12 +128,61 @@ span{
 
 }
 
+.icon-premium:hover{
+
+    background-color:#141519 ;
+
+}
+
+.icon-premium{
+    height: 100%;
+    display: flex;
+    
+    align-items: center;
+    padding-left: 0.8125rem;
+    padding-right: 0.8125rem;
+}
+
+
+.space{
+    width: 850px;
+}
+
+.search{
+    fill: white;
+    
+   
+    height: 100%;
+   
+    
+  
+}
+
+
+.icon-search{
+    fill: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-left: 0.8125rem;
+    padding-right: 0.8125rem;
+    width: 50px;
+   
+ 
+}
+
+
+
+.search:hover{
+    background-color: #141519;
+}
 
 
 
 .custom-dropdown {
     
-    position: absolute;
+    position: fixed;
     width: 100%;
     display: flex;
    
@@ -123,7 +191,10 @@ span{
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
- 
+    justify-content: center;
+    padding-right: 200px;
+
+   
   }
 
  
@@ -149,6 +220,8 @@ span{
     font-size: .875rem;
     align-items: center;
     display: flex;
+    margin-right: 2.5rem;
+    height: 100%;
  }
 
  .categories:hover{
@@ -157,7 +230,7 @@ span{
 
  .categories-2{
     text-decoration: none;
-    color: white;
+   
     width: 200px;
     height: 42px;
     padding: 0.75rem  1.25rem;
@@ -165,7 +238,9 @@ span{
     font-size: .875rem;
     align-items: center;
     display: flex;
-    color: #c9cfc1;
+    color: #e1e2e0;
+
+    
 
  }
  .categories-2:hover{
@@ -183,6 +258,15 @@ li{
     padding-left: 2.5rem;
 }
 
+
+.gender-2{
+
+    margin-top: 46px;
+
+
+}
+
+
 .gender-p{
     color: #999688;
     font-size: .8rem;
@@ -190,5 +274,61 @@ li{
     width: 100%;
     text-transform: uppercase;
     font-weight: 500;
+    display: block;
+    padding: 0.75rem  1.25rem;
+
+    
+    
 }
+.gender-pp{
+    width: 100%;
+    z-index: 1;
+    display: block;
+    
+}
+
+
+.custom-dropdown2{
+    position: fixed;
+    
+    display: flex;
+    width: 18.75rem;
+    padding: 0.625rem 0;
+    height: 12.25rem;
+    
+    background-color: #141519 ;
+   
+   
+    z-index: 1000;
+
+    margin-left: 545px;
+    
+
+    
+
+}
+
+
+.news{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: start;
+    padding: 0.75rem  0rem;
+    --line-height: 1.125rem;
+    font-size: .9rem;
+    font-weight: 400;
+   
+   
+    width: 18.75rem;
+    padding-left: 16px;
+
+   
+    
+}
+
+.news:hover{
+    background-color: #23252b;
+}
+
 
