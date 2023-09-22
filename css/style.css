@@ -332,3 +332,36 @@ li{
 }
 
 
+/* Oculta o menu dropdown por padrão usando visibility */
+.custom-dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    /* Outros estilos do seu dropdown aqui */
+  }
+  
+  /* Quando o menu deve estar visível */
+  .custom-dropdown.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  .custom-dropdown2 {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    /* Outros estilos do seu dropdown aqui */
+  }
+  
+  /* Quando o menu deve estar visível */
+  .custom-dropdown2.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Estilo para o hover ativo de "Navegar" e "Notícias" quando o menu dropdown estiver aberto */
+.active-hover {
+    background-color: #141519;
+    color: white;
+  }
