@@ -143,42 +143,126 @@ span{
     padding-right: 0.8125rem;
 }
 
-
-.space{
-    width: 850px;
-}
-
-.search{
-    fill: white;
-    
-   
-    height: 100%;
-   
-    
+.tooltip {
+    position: absolute; /* Define a posição como absoluta para que o tooltip possa ser posicionado */
+    bottom: 100%; /* Move o tooltip para cima do elemento pai */
+    left: 50%; /* Centraliza horizontalmente em relação ao elemento pai */
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    display: none; /* Inicialmente, o tooltip deve estar oculto */
+    background-color: #f1f1f1; /* Cor de fundo do tooltip */
+    padding: 10px; /* Espaçamento interno do tooltip */
+    border: 1px solid #ccc; /* Borda do tooltip */
+    border-radius: 5px; /* Borda arredondada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra do tooltip */
+  }
   
-}
+  .icon-premium:hover .tooltip {
+    display: block; /* Quando o mouse passar sobre o elemento pai, exiba o tooltip */
+  }
 
 
-.icon-search{
-    fill: white;
+
+
+.container-account{
     display: flex;
+    justify-content: end;
     align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding-left: 0.8125rem;
-    padding-right: 0.8125rem;
-    width: 50px;
+    padding-right: 95px;
    
- 
 }
 
 
 
-.search:hover{
+.search, .list {
+    width: 34px;
+    height: 1.75rem;
+    fill: white;
+    padding-left: 5px;
+
+   
+  }
+
+
+  .icon-search, .icon-list, .icon-account {
+    padding: 0.8125rem; 
+    cursor: pointer;
+  }
+
+
+
+.icon-search:hover, .icon-list:hover, .icon-account:hover{
     background-color: #141519;
 }
 
+.drop-account{
+    visibility: hidden; /* Inicialmente, a div está oculta */
+    flex-direction: column; /* Defina a direção flex como coluna para empilhar elementos verticalmente */
+    /* Adicione outros estilos de posicionamento e aparência, se necessário */
+    background-color: #141519;
+    display: none;
+    width: 400px;
+    padding: 0.875rem 1.5rem;
+    transition: visibility 0s, opacity 0.5s;
+    
+    
+}
 
+.drop-account h5{
+    --line-height: 1.5rem;
+    font-size: 1rem;
+    color:#e2e2e2;
+    margin-top: .875rem;
+    
+    
+}
+
+.drop-account p{
+    color:#a0a0a0;
+    margin-bottom:1.5rem ;
+    
+    
+}
+  
+  .drop-account.active {
+    display: block; /* Quando ativa, a div é visível */
+    opacity: 1;
+    visibility: visible;
+   
+    
+  }
+
+    
+  
+ .nav-account{
+    text-decoration: none;
+    color: white;
+ 
+    align-items: flex-start;
+    height: 50px;
+   
+    
+   
+  }
+
+  .teste:hover{
+    background-color: #23252b;
+
+  }
+
+.nav-account:hover{
+    background-color: #23252b;
+    
+}
+.button-premium{
+    background-color: #fab818;
+    color: #141519;
+    height: 2.8rem;
+    font-weight: 700;
+    font-size: .9rem;
+    width: 100%;
+    margin-top: .625rem;
+
+}
 
 .custom-dropdown {
     
@@ -300,6 +384,7 @@ li{
    
    
     z-index: 1000;
+    
 
     margin-left: 545px;
     
@@ -365,3 +450,6 @@ li{
     background-color: #141519;
     color: white;
   }
+
+
+  

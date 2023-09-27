@@ -50,3 +50,35 @@ $(document).ready(function() {
     }
   });
 });
+
+
+
+
+$(document).ready(function() {
+  // Função para abrir e fechar o dropdown de "Navegar"
+  function toggleDropdownAccount() {
+    $(".drop-account").toggleClass("active");
+    $(".overlay").toggle();
+    if ($(".drop-account").hasClass("active")) {
+      $(".icon-account").addClass("active-hover");
+     
+    } 
+
+    if ($(".drop-account").is(":visible")) {
+      $(".icon-account").addClass("active-hover");
+    } 
+  }
+  $(".icon-account").click(function(e) {
+    e.stopPropagation(); // Evita que o evento de clique se propague para o documento
+    toggleDropdownAccount();
+  });
+
+  $(document).on("click", function(event) {
+    if (!$(event.target).closest(".drop-account").length) {
+      $(".drop-account").removeClass("active");
+      $(".overlay").hide();
+      $(".icon-account").removeClass("active-hover");
+    }
+  });
+
+});
