@@ -1,27 +1,35 @@
 $(document).ready(function() {
   // Função para abrir e fechar o dropdown de "Navegar"
   function toggleDropdownNav() {
-    $(".custom-dropdown").toggleClass("show");
+    const $navDropdown = $(".custom-dropdown");
+    const $newsDropdown = $(".custom-dropdown2");
+
+    // Fecha o dropdown de "Notícias" se estiver aberto
+    $newsDropdown.removeClass("show");
+
+    $navDropdown.toggleClass("show");
     $(".overlay").toggle();
-    if ($(".custom-dropdown").hasClass("show")) {
+
+    if ($navDropdown.hasClass("show")) {
       $("#drop").addClass("active-hover");
       $("#drop-2").removeClass("active-hover");
     } else {
       $("#drop").removeClass("active-hover");
     }
-
-    if ($(".custom-dropdown").is(":visible")) {
-      $("#drop").addClass("active-hover");
-    } else {
-      $("#drop-2").removeClass("active-hover");
-    }
   }
 
   // Função para abrir e fechar o dropdown de "Notícias"
   function toggleDropdownNews() {
-    $(".custom-dropdown2").toggleClass("show");
+    const $navDropdown = $(".custom-dropdown");
+    const $newsDropdown = $(".custom-dropdown2");
+
+    // Fecha o dropdown de "Navegar" se estiver aberto
+    $navDropdown.removeClass("show");
+
+    $newsDropdown.toggleClass("show");
     $(".overlay").toggle();
-    if ($(".custom-dropdown2").hasClass("show")) {
+
+    if ($newsDropdown.hasClass("show")) {
       $("#drop-2").addClass("active-hover");
       $("#drop").removeClass("active-hover");
     } else {
@@ -41,7 +49,7 @@ $(document).ready(function() {
     toggleDropdownNews();
   });
 
-  // Fecha o menu dropdown quando clicar em qualquer parte da tela fora do menu
+  // Fecha os menus dropdown quando clicar em qualquer parte da tela fora dos menus
   $(document).on("click", function(event) {
     if (!$(event.target).closest(".dropdown").length) {
       $(".custom-dropdown, .custom-dropdown2").removeClass("show");
@@ -57,17 +65,22 @@ $(document).ready(function() {
 $(document).ready(function() {
   // Função para abrir e fechar o dropdown de "Navegar"
   function toggleDropdownAccount() {
-    $(".drop-account").toggleClass("active");
-    $(".overlay").toggle();
-    if ($(".drop-account").hasClass("active")) {
-      $(".icon-account").addClass("active-hover");
-     
-    } 
+    const $dropAccount = $(".drop-account");
+    const $iconAccount = $(".icon-account");
 
-    if ($(".drop-account").is(":visible")) {
-      $(".icon-account").addClass("active-hover");
-    } 
+    if ($dropAccount.hasClass("active")) {
+      // Se o dropdown estiver ativo, remova a classe "active-hover" do ícone
+      $iconAccount.removeClass("active-hover");
+    } else {
+      // Se o dropdown não estiver ativo, adicione a classe "active-hover" ao ícone
+      $iconAccount.addClass("active-hover");
+    }
+
+    // Toggle do dropdown e overlay
+    $dropAccount.toggleClass("active");
+    $(".overlay").toggle();
   }
+
   $(".icon-account").click(function(e) {
     e.stopPropagation(); // Evita que o evento de clique se propague para o documento
     toggleDropdownAccount();
@@ -80,5 +93,13 @@ $(document).ready(function() {
       $(".icon-account").removeClass("active-hover");
     }
   });
+});
 
+
+// Supondo que você tenha um ícone com a classe "menu-icon"
+const menuIcon = document.querySelector(".menu-icon");
+const customDropdown = document.querySelector(".custom-dropdown");
+
+menuIcon.addEventListener("click", function() {
+  customDropdown.classList.toggle("show"); // Adicione uma classe "show" para exibir/ocultar o menu dropdown
 });

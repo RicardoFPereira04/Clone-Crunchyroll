@@ -184,8 +184,10 @@ span{
 
 
   .icon-search, .icon-list, .icon-account {
-    padding: 0.8125rem; 
+    padding: 0.9rem; 
+    padding-top: 1rem;
     cursor: pointer;
+    height: 100%;
   }
 
 
@@ -202,7 +204,10 @@ span{
     display: none;
     width: 400px;
     padding: 0.875rem 1.5rem;
-    transition: visibility 0s, opacity 0.5s;
+   
+    position: absolute;
+    right: 106px;
+
     
     
 }
@@ -225,9 +230,11 @@ span{
   
   .drop-account.active {
     display: block; /* Quando ativa, a div é visível */
-    opacity: 1;
+  
     visibility: visible;
    
+ 
+    
     
   }
 
@@ -452,4 +459,61 @@ li{
   }
 
 
+  /* Estilos para o menu dropdown fora da media query */
+.custom-dropdown.show {
+    display: flex; /* Exibe o menu dropdown quando a classe "show" está presente */
+    /* Outros estilos do menu dropdown */
+  }
+
+  .menu-icon{
+    display: none;
+   padding-top: 1rem;
+   padding: 1rem;
+    cursor: pointer;
+    
+  }
+  .ico-menu{
+    fill: white;
+    width: 34px;
+    height: 1.75rem;
+    padding-left: 5px;
+  }
+
+
+
+  @media screen and (max-width: 1115px) {
+
+   .dropdown {
+    display: none;
+
+ 
+  }
+  .menu-icon {
+    display: flex; /* Exiba o ícone */
+    /* Estilos para o ícone de hambúrguer (pode ser uma imagem ou um elemento HTML) */
+  }
+.container-account{
+    padding-right: 0.5rem;
+    
+}
+
+.container-navigation{
+    padding-left: 0.5rem;
   
+  }
+
+  #end{
+    padding: 0px;
+  }
+
+  }
+  
+  @media screen and (max-width: 767px) {
+ 
+  }
+  
+
+  
+  @media screen and (max-width: 575px) {
+ 
+  }
