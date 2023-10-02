@@ -96,10 +96,18 @@ $(document).ready(function() {
 });
 
 
-// Supondo que você tenha um ícone com a classe "menu-icon"
 const menuIcon = document.querySelector(".menu-icon");
-const customDropdown = document.querySelector(".custom-dropdown");
+const customDropdown = document.querySelector(".custom-dropdown-mobile");
 
 menuIcon.addEventListener("click", function() {
-  customDropdown.classList.toggle("show"); // Adicione uma classe "show" para exibir/ocultar o menu dropdown
+  customDropdown.classList.toggle("show"); // Adicione ou remova a classe "show" para exibir/ocultar o menu dropdown
+  menuIcon.classList.toggle("active-hover"); // Adicione ou remova a classe "active-hover" para controlar o estilo do hover
+});
+
+// Adicione um evento de clique no documento para remover a classe "active-hover" quando clicar em outra parte da tela
+document.addEventListener("click", function(event) {
+  if (!menuIcon.contains(event.target) && !customDropdown.contains(event.target)) {
+    customDropdown.classList.remove("show");
+    menuIcon.classList.remove("active-hover");
+  }
 });

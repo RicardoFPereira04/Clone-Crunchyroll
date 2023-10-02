@@ -37,6 +37,15 @@ header{
     padding: 0 1.125rem;
     max-width: 172px;
 }
+.logo-2{
+  padding: 0 1.125rem;
+display: none;
+padding: 0.9rem;
+padding-top: 1rem;
+cursor: pointer;
+height: 100%;
+
+}
 
 .logo-icon {
     fill: #f47521;
@@ -52,8 +61,23 @@ header{
 
 }
 
+.logo-icon2{
+  fill: #f47521;
+  height: inherit;
+  transition: fill .2s ease;
+  
+  width: 34px;
+  height: 100%;
+  padding-left: 5px;
+
+}
+
 .logo-icon:hover {
     fill: white; 
+}
+
+.logo-icon2:hover{
+  fill: white;
 }
 
 .dropdown-toggle{
@@ -183,7 +207,7 @@ span{
   }
 
 
-  .icon-search, .icon-list, .icon-account {
+  .icon-search, .icon-list, .icon-account{
     padding: 0.9rem; 
     padding-top: 1rem;
     cursor: pointer;
@@ -192,14 +216,23 @@ span{
 
 
 
-.icon-search:hover, .icon-list:hover, .icon-account:hover{
+.icon-search:hover, .icon-list:hover, .icon-account:hover, .premium-icon:hover{
     background-color: #141519;
 }
 
+.premium-icon {
+  display: none; 
+  padding: 0.9rem 0.7rem; 
+  padding-top: 0.875rem;
+  cursor: pointer;
+  height: 100%;
+
+}
+
 .drop-account{
-    visibility: hidden; /* Inicialmente, a div está oculta */
-    flex-direction: column; /* Defina a direção flex como coluna para empilhar elementos verticalmente */
-    /* Adicione outros estilos de posicionamento e aparência, se necessário */
+    visibility: hidden; 
+    flex-direction: column; 
+
     background-color: #141519;
     display: none;
     width: 400px;
@@ -479,6 +512,31 @@ li{
     padding-left: 5px;
   }
 
+  .custom-dropdown-mobile{
+    display: none;
+    background-color: #141519;
+    flex-direction: column;
+  }
+
+  .custom-dropdown-mobile.show{
+    display: flex;
+  }
+.categories-mobile{
+  align-items: center;
+    color: #f8f8f8;
+    cursor: pointer;
+    display: flex;
+    padding: 0.75rem 1.125rem;
+    position: relative;
+    text-decoration: none;
+}
+
+/* Estilos para o ícone quando o dropdown está aberto */
+.menu-icon.active-hover {
+  /* Adicione os estilos desejados para o hover aqui */
+  background-color:#141519
+  
+}
 
 
   @media screen and (max-width: 1115px) {
@@ -489,16 +547,16 @@ li{
  
   }
   .menu-icon {
-    display: flex; /* Exiba o ícone */
-    /* Estilos para o ícone de hambúrguer (pode ser uma imagem ou um elemento HTML) */
+    display: flex; 
+    
   }
 .container-account{
-    padding-right: 0.5rem;
+    padding-right: 0rem;
     
 }
 
 .container-navigation{
-    padding-left: 0.5rem;
+    padding-left: 0rem;
   
   }
 
@@ -508,12 +566,29 @@ li{
 
   }
   
-  @media screen and (max-width: 767px) {
- 
-  }
-  
+
 
   
   @media screen and (max-width: 575px) {
- 
+    .premium-icon {
+display: flex;
+    }
+    .icon-premium{
+      display: none;
+    }
+
+    .icon-list{
+      display: none;
+    }
+    .logo-2{
+      display: flex;
+    }
+    .a-logo{
+      display: none;
+    }
+.drop-account{
+  
+  right: 0px;
+  width: 100%;
+}
   }
