@@ -240,7 +240,7 @@ span{
    
     position: absolute;
     right: 106px;
-
+    transition: visibility 0s, opacity 0.5s;
     
     
 }
@@ -252,9 +252,10 @@ span{
     margin-top: .875rem;
     
     
+    
 }
 
-.drop-account p{
+.drop-account span{
     color:#a0a0a0;
     margin-bottom:1.5rem ;
     
@@ -263,7 +264,8 @@ span{
   
   .drop-account.active {
     display: block; /* Quando ativa, a div é visível */
-  
+    transition: visibility 0s, opacity 0.5s;
+    opacity: 1;
     visibility: visible;
    
  
@@ -284,14 +286,12 @@ span{
    
   }
 
-  .teste:hover{
-    background-color: #23252b;
-
-  }
-
-.nav-account:hover{
-    background-color: #23252b;
-    
+.li-account{
+  width: 100%;
+  padding: 0.875rem 1.5rem;
+}
+.li-account:hover{
+  background-color: #23252b;
 }
 .button-premium{
     background-color: #fab818;
@@ -590,5 +590,18 @@ display: flex;
   
   right: 0px;
   width: 100%;
+  height: 1000px;
+  padding: 0rem;
+  padding-top: 0.625rem ;
+  padding-bottom:0.625rem ;
+
 }
+.button-premium{
+ width: 540px;
+margin-left: 15px;
+
+}
+
+
+
   }
