@@ -18,6 +18,7 @@ header{
 
 
 
+/* NAVIGATION */
 
 .container-navigation{
 
@@ -80,40 +81,16 @@ height: 100%;
   fill: white;
 }
 
-.dropdown-toggle{
-    color: #d4d1d4;
-    font-weight: 500;
-    font-size: 16px;
+/* CONTAINER ACCOUNT */
 
-    padding-left: 1rem ;
-    padding-right: 1rem ;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.container-account{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 95px;
+ 
 }
 
-#dropd2{
-    color: #d4d1d4;
-    font-weight: 500;
-    font-size: 16px;
-
-    padding-left: 1rem ;
-    padding-right: 1rem ;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.dropdown{
-    padding-left: 1rem ;
-    padding-right: 1rem ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .link-nav{
     padding-left: 1rem ;
@@ -138,14 +115,7 @@ span{
 }
 
 
-#drop2:hover{
-    background-color: #141519 ;
 
-}
-.dropdown-toggle:hover{
-    background-color: #141519 ;
-
-}
 
 .link-nav:hover{
     background-color: #141519 ;
@@ -168,37 +138,32 @@ span{
 }
 
 .tooltip {
-    position: absolute; /* Define a posição como absoluta para que o tooltip possa ser posicionado */
-    bottom: 100%; /* Move o tooltip para cima do elemento pai */
-    left: 50%; /* Centraliza horizontalmente em relação ao elemento pai */
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    display: none; /* Inicialmente, o tooltip deve estar oculto */
-    background-color: #f1f1f1; /* Cor de fundo do tooltip */
-    padding: 10px; /* Espaçamento interno do tooltip */
-    border: 1px solid #ccc; /* Borda do tooltip */
-    border-radius: 5px; /* Borda arredondada */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra do tooltip */
+    position: absolute;
+    bottom: 100%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: none; 
+    background-color: #f1f1f1; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
   }
   
   .icon-premium:hover .tooltip {
-    display: block; /* Quando o mouse passar sobre o elemento pai, exiba o tooltip */
+    display: block;
   }
 
 
 
 
-.container-account{
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    padding-right: 95px;
-   
-}
+
+  
 
 
 
 .search, .list {
-    width: 34px;
+    width: 32px;
     height: 1.75rem;
     fill: white;
     padding-left: 5px;
@@ -208,8 +173,8 @@ span{
 
 
   .icon-search, .icon-list, .icon-account{
-    padding: 0.9rem; 
-    padding-top: 1rem;
+    padding: 1rem; 
+    padding-top: 1.1rem;
     cursor: pointer;
     height: 100%;
   }
@@ -229,6 +194,8 @@ span{
 
 }
 
+/* DROPDOWN ACCOUNT */
+
 .drop-account{
     visibility: hidden; 
     flex-direction: column; 
@@ -236,7 +203,8 @@ span{
     background-color: #141519;
     display: none;
     width: 400px;
-    padding: 0.875rem 1.5rem;
+    
+    padding: 0.625rem 0rem;
    
     position: absolute;
     right: 106px;
@@ -245,10 +213,16 @@ span{
     
 }
 
+.buttonprem{
+  padding:0rem 0.875rem
+}
+
+
+
 .drop-account h5{
     --line-height: 1.5rem;
     font-size: 1rem;
-    color:#e2e2e2;
+    color:#cccccc;
     margin-top: .875rem;
     
     
@@ -258,12 +232,16 @@ span{
 .drop-account span{
     color:#a0a0a0;
     margin-bottom:1.5rem ;
+    --line-height: 1.125rem;
+    font-size: .875rem;
     
+    font-weight: 500;
+
     
 }
   
   .drop-account.active {
-    display: block; /* Quando ativa, a div é visível */
+    display: block; 
     transition: visibility 0s, opacity 0.5s;
     opacity: 1;
     visibility: visible;
@@ -304,6 +282,8 @@ span{
 
 }
 
+/* DROPDOWN DESKTOP */
+
 .custom-dropdown {
     
     position: fixed;
@@ -320,16 +300,59 @@ span{
 
    
   }
+  .dropdown-toggle{
+    color: #d4d1d4;
+    font-weight: 500;
+    font-size: 16px;
+
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dropd2{
+    color: #d4d1d4;
+    font-weight: 500;
+    font-size: 16px;
+
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#drop2:hover{
+  background-color: #141519 ;
+
+}
+.dropdown-toggle:hover{
+  background-color: #141519 ;
+
+}
+
+.dropdown{
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
  
-  /* Estilo para o efeito de desfoque no resto da tela */
+
   .overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo com transparência */
+    background-color: rgba(0, 0, 0, 0.7); 
     display: none;
     z-index: 999;
   }
@@ -427,6 +450,10 @@ li{
     
 
     margin-left: 545px;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
     
 
     
@@ -457,46 +484,42 @@ li{
 }
 
 
-/* Oculta o menu dropdown por padrão usando visibility */
 .custom-dropdown {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s;
-    /* Outros estilos do seu dropdown aqui */
+  
   }
   
-  /* Quando o menu deve estar visível */
+
   .custom-dropdown.show {
     visibility: visible;
     opacity: 1;
   }
   
 
-  .custom-dropdown2 {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s;
-    /* Outros estilos do seu dropdown aqui */
-  }
+
   
-  /* Quando o menu deve estar visível */
+
   .custom-dropdown2.show {
     visibility: visible;
     opacity: 1;
   }
 
-  /* Estilo para o hover ativo de "Navegar" e "Notícias" quando o menu dropdown estiver aberto */
+
 .active-hover {
     background-color: #141519;
     color: white;
   }
 
 
-  /* Estilos para o menu dropdown fora da media query */
+  
 .custom-dropdown.show {
-    display: flex; /* Exibe o menu dropdown quando a classe "show" está presente */
-    /* Outros estilos do menu dropdown */
+    display: flex; 
+   
   }
+
+  /* DROPDOWN MOBILE */
 
   .menu-icon{
     display: none;
@@ -516,6 +539,8 @@ li{
     display: none;
     background-color: #141519;
     flex-direction: column;
+    position: relative;
+    
   }
 
   .custom-dropdown-mobile.show{
@@ -527,16 +552,56 @@ li{
     cursor: pointer;
     display: flex;
     padding: 0.75rem 1.125rem;
-    position: relative;
+  
     text-decoration: none;
+    max-height: 48px;
+    font-weight: 500;
 }
 
-/* Estilos para o ícone quando o dropdown está aberto */
+.categories-mobile:hover{
+  background-color: #23252b;
+}
+
+
 .menu-icon.active-hover {
-  /* Adicione os estilos desejados para o hover aqui */
+  
   background-color:#141519
   
 }
+
+.ico-drop{
+  max-width: 34px;
+  max-height:30px ;
+
+
+  position: absolute; 
+ 
+  right: 45px; 
+  transform: translateY(-50%) rotate(90deg); 
+  transition: transform 0.1s cubic-bezier(0, 0, 0.25, 1); 
+  fill: white;
+ margin-top: 45px;
+
+}
+
+
+
+.drop-mob{
+
+  padding: 0.625rem 0;;
+  border-bottom: 0.125rem solid #23252b;
+
+
+}
+
+.drop-mob2{
+  padding: 0.625rem 0;
+  margin-bottom: 1000px;
+}
+
+
+
+/* RESPONSIVIDADE */
 
 
   @media screen and (max-width: 1115px) {
@@ -561,10 +626,22 @@ li{
   }
 
   #end{
-    padding: 0px;
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  .drop-account{
+    right: 0px;
+  }
+
+  .icon-account{
+    padding: 1rem;
+    padding-top: 1.1rem;
   }
 
   }
+
   
 
 
@@ -596,9 +673,8 @@ display: flex;
   padding-bottom:0.625rem ;
 
 }
-.button-premium{
- width: 540px;
-margin-left: 15px;
+.buttonprem{
+padding: 0rem 0.675rem;
 
 }
 
