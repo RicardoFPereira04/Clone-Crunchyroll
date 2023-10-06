@@ -111,3 +111,38 @@ document.addEventListener("click", function(event) {
     menuIcon.classList.remove("active-hover");
   }
 });
+
+const GenerosSubMenu = document.querySelector("#sub-menu");
+const SubMenu = document.querySelector(".dropdown-menu-mob");
+
+GenerosSubMenu.addEventListener("click", function() {
+  SubMenu.classList.toggle("show");
+  customDropdown.classList.toggle("scrollable"); // Adicione ou remova a classe "show" para exibir/ocultar o menu dropdown
+  // Adicione ou remova a classe "active-hover" para controlar o estilo do hover
+});
+
+// Adicione um evento de clique no documento para remover a classe "active-hover" quando clicar em outra parte da tela
+document.addEventListener("click", function(event) {
+  if (!GenerosSubMenu.contains(event.target) && !SubMenu.contains(event.target)) {
+    SubMenu.classList.remove("show");
+   
+  }
+});
+
+const GenerosSubMenu2 = document.querySelector("#sub-menu2");
+const SubMenu2 = document.querySelector(".dropdown-menu-mob2");
+
+GenerosSubMenu2.addEventListener("click", function() {
+  SubMenu2.classList.toggle("show");
+  customDropdown.classList.remove("scrollable"); // Adicione ou remova a classe "show" para exibir/ocultar o menu dropdown
+   // Adicione ou remova a classe "active-hover" para controlar o estilo do hover
+});
+
+// Adicione um evento de clique no documento para remover a classe "active-hover" quando clicar em outra parte da tela
+document.addEventListener("click", function(event) {
+  if (!GenerosSubMenu2.contains(event.target) && !SubMenu2.contains(event.target)) {
+    SubMenu2.classList.remove("show");
+    
+  }
+});
+
