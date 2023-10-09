@@ -528,6 +528,10 @@ li{
     cursor: pointer;
     
   }
+
+  .menu-icon:hover{
+    background-color: #141519;
+  }
   .ico-menu{
     fill: white;
     width: 34px;
@@ -540,13 +544,12 @@ li{
     background-color: #141519;
     flex-direction: column;
     position: relative;
+    transition: visibility 0s, opacity 0.5s;
 
     
   }
 
-  .custom-dropdown-mobile.show{
-    display: flex;
-  }
+
 .categories-mobile{
   align-items: center;
     color: #f8f8f8;
@@ -677,9 +680,32 @@ li{
 }
 
 
+/* DROPDOWN-TABLET*/
+
+.custom-dropdown-tablet{
+  display: none;
+  
+  background-color: #141519;
+  flex-direction: column;
+  position: relative;
+  max-width: 300px;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+
+.custom-dropdown-tablet.show{
+  display: flex;
+}
+
 /* RESPONSIVIDADE */
 
 
+@media screen and (min-width: 1115px) {
+
+  .custom-dropdown-tablet.show{
+    display: none;
+  }
+}
   @media screen and (max-width: 1115px) {
 
    .dropdown {
@@ -714,6 +740,10 @@ li{
   .icon-account{
     padding: 1rem;
     padding-top: 1.1rem;
+  }
+
+  .custom-dropdown-tablet.show{
+    display: flex;
   }
 
   }
@@ -753,7 +783,13 @@ display: flex;
 padding: 0rem 0.675rem;
 
 }
+.custom-dropdown-mobile.show{
+  display: flex;
+}
 
+.custom-dropdown-tablet.show{
+  display: none;
+}
 
 
   }
