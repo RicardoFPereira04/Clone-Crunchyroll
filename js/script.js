@@ -98,30 +98,55 @@ $(document).ready(function() {
 });
 
 
-const menuIcon = document.querySelector(".menu-icon");
-const customDropdown = document.querySelector(".custom-dropdown-mobile");
+$(document).ready(function() {
+  const $menuIcon = $(".menu-icon");
+  const $customDropdownMobile = $(".custom-dropdown-mobile");
+  const Header = (".container-navigation")
 
-menuIcon.addEventListener("click", function() {
-  customDropdown.classList.toggle("show"); // Adicione ou remova a classe "show" para exibir/ocultar o menu dropdown
-  menuIcon.classList.toggle("active-hover"); // Adicione ou remova a classe "active-hover" para controlar o estilo do hover
+  // Quando o menu-icon for clicado
+  $menuIcon.click(function(e) {
+    e.stopPropagation(); // Impede que o evento de clique se propague para o documento
+    $customDropdownMobile.toggleClass("show");
+    $menuIcon.toggleClass("active-hover");
+  });
+
+  // Evitar que o hover do menu-icon saia quando clicar dentro do custom dropdown mobile
+  $customDropdownMobile.click(function(e) {
+    e.stopPropagation(); // Impede que o evento de clique se propague para o documento
+  });
+
+  $(document).on("click", function(event) {
+    if (!$customDropdownMobile.is(event.target) && $customDropdownMobile.has(event.target).length === 0) {
+      $customDropdownMobile.removeClass("show");
+    
+    }
+  });
+
+  Header.addEventListener("click" , function(){
+    $customDropdownMobile.classList.remove("show")
+  
+  })
 });
 
-// Adicione um evento de clique no documento para remover a classe "active-hover" quando clicar em outra parte da tela
-document.addEventListener("click", function(event) {
-  if (!menuIcon.contains(event.target) && !customDropdown.contains(event.target)) {
-    customDropdown.classList.remove("show");
-    menuIcon.classList.remove("active-hover");
-  }
-});
+
+
 
 const GenerosSubMenu = document.querySelector("#sub-menu");
 const SubMenu = document.querySelector(".dropdown-menu-mob");
 const customDropdownMob = document.querySelector(".custom-dropdown-mobile");
 
 GenerosSubMenu.addEventListener("click", function() {
+  if (SubMenu.classList.contains("show")) {
+    // Se o submenu estiver aberto, remova a classe "submenu-opened" do elemento pai
+    customDropdownMob.classList.remove("submenu-opened");
+  } else {
+    // Caso contrário, adicione a classe "submenu-opened" quando o submenu for aberto
+    customDropdownMob.classList.add("submenu-opened");
+  }
+  
   SubMenu.classList.toggle("show");
   customDropdownMob.classList.toggle("scrollable");
-  customDropdownMob.classList.add("submenu-opened"); // Adicione a classe quando o submenu é aberto
+  SubMenu2.classList.remove("show")
 });
 
 // Adicione um evento de clique no documento para remover a classe quando clicar em outra parte da tela
@@ -132,15 +157,23 @@ document.addEventListener("click", function(event) {
   }
 });
 
+
+
+// Repita o mesmo processo para o segundo submenu, se necessário
 const GenerosSubMenu2 = document.querySelector("#sub-menu2");
 const SubMenu2 = document.querySelector(".dropdown-menu-mob2");
 
 GenerosSubMenu2.addEventListener("click", function() {
+  if (SubMenu2.classList.contains("show")) {
+    customDropdownMob.classList.remove("submenu-opened");
+  } else {
+    customDropdownMob.classList.add("submenu-opened");
+  }
+  
   SubMenu2.classList.toggle("show");
   customDropdownMob.classList.remove("scrollable");
-  customDropdownMob.classList.add("submenu-opened"); // Adicione a classe quando o submenu é aberto
+ 
 });
-
 
 //
 
@@ -194,6 +227,11 @@ CloseAccount.addEventListener("click", function(){
   IconMenuMob.classList.remove("active-hover")
 });
 
+IconMenuMob.addEventListener("click" , function(){
+  CloseAccount.classList.remove("active-hover")
+  AccountCloseDesktop.classList.remove("active")
+})
+
 
 //
 
@@ -232,6 +270,67 @@ document.addEventListener("click", function(event) {
   }
 });
 });
+
+
+
+
+const GenerosSubMenuT = document.querySelector("#sub-menuT");
+const SubMenuT = document.querySelector(".dropdown-menu-tablet");
+const customDropdownT = document.querySelector(".custom-dropdown-tablet");
+
+GenerosSubMenuT.addEventListener("click", function() {
+  if (SubMenuT.classList.contains("show")) {
+    // Se o submenu estiver aberto, remova a classe "submenu-opened" do elemento pai
+    customDropdownT.classList.remove("submenu-opened");
+  } else {
+    // Caso contrário, adicione a classe "submenu-opened" quando o submenu for aberto
+    customDropdownT.classList.add("submenu-opened");
+  }
+  
+  SubMenuT.classList.toggle("show");
+  customDropdownT.classList.toggle("scrollable");
+  SubMenuT2.classList.remove("show")
+
+
+});
+
+// Adicione um evento de clique no documento para remover a classe quando clicar em outra parte da tela
+document.addEventListener("click", function(event) {
+  if (!GenerosSubMenuT.contains(event.target) && !SubMenuT.contains(event.target)) {
+    SubMenuT.classList.remove("show");
+    customDropdownT.classList.remove("submenu-opened"); // Remova a classe quando o submenu é fechado
+  }
+});
+
+// Repita o mesmo processo para o segundo submenu, se necessário
+const GenerosSubMenuT2 = document.querySelector("#sub-menuT2");
+const SubMenuT2 = document.querySelector(".dropdown-menu-tablet2");
+const customDropdownT2 = document.querySelector(".custom-dropdown-tablet");
+
+GenerosSubMenuT2.addEventListener("click", function() {
+  if (SubMenuT2.classList.contains("show")) {
+    customDropdownT2.classList.remove("submenu-opened");
+  } else {
+    customDropdownT2.classList.add("submenu-opened");
+  }
+  
+  SubMenuT2.classList.toggle("show");
+  customDropdownT2.classList.remove("scrollable");
+ 
+});
+
+
+const CloseAccountTablet = document.querySelector(".drop-account")
+const CloseMenuIcon = document.querySelector(".menu-icon");
+
+CloseMenuIcon.addEventListener("click", function()
+{
+  CloseAccountTablet.classList.remove("active")
+});
+
+
+
+// MAIN //
 
 
 

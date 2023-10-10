@@ -8,12 +8,16 @@ body{
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: black !important;
+    
+  
 }
 
 
 header{
     position: fixed;
     width: 100%;
+    
 }
 
 
@@ -199,6 +203,7 @@ span{
 .drop-account{
     visibility: hidden; 
     flex-direction: column; 
+    opacity: 0;
 
     background-color: #141519;
     display: none;
@@ -207,7 +212,7 @@ span{
     padding: 0.625rem 0rem;
    
     position: absolute;
-    right: 106px;
+    right: 95px;
     transition: visibility 0s, opacity 0.5s;
     
     
@@ -242,7 +247,7 @@ span{
   
   .drop-account.active {
     display: block; 
-    transition: visibility 0s, opacity 0.5s;
+
     opacity: 1;
     visibility: visible;
    
@@ -545,9 +550,15 @@ li{
     flex-direction: column;
     position: relative;
     transition: visibility 0s, opacity 0.5s;
+    visibility: hidden;
+    opacity: 0;
 
     
   }
+
+  
+
+
 
 
 .categories-mobile{
@@ -690,12 +701,126 @@ li{
   position: relative;
   max-width: 300px;
   transition: visibility 0s, opacity 0.5s;
+  visibility: hidden;
+  opacity: 0;
+
 }
 
 
 .custom-dropdown-tablet.show{
-  display: flex;
+opacity: 1;
+visibility: visible;
 }
+
+.drop-tablet{
+  
+  padding: 0.625rem 0;;
+  border-bottom: 0.125rem solid #23252b;
+
+}
+
+.drop-tablet2{
+  padding: 0.625rem 0;
+  margin-bottom: 1000px;
+}
+
+.categories-tablet{
+
+  align-items: center;
+  color: #f8f8f8;
+  cursor: pointer;
+  display: flex;
+  padding: 0.75rem 1.125rem;
+
+  text-decoration: none;
+  max-height: 48px;
+  font-weight: 500;
+
+}
+.categories-tablet:hover{
+  background-color: #23252b;
+}
+.dropdown-menu-tablet{
+  display: none;
+ 
+    position: relative;
+    color: #dadada;
+    background-color: #2f3138;
+
+}
+
+.dropdown-menu-tablet2{
+  display: none;
+ 
+    position: relative;
+    color: #dadada;
+    background-color: #2f3138;
+}
+
+.dropdown-menu-tablet.show{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.dropdown-menu-tablet2.show{
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* SCROLLBAR TABLET */
+.custom-dropdown-tablet.scrollable {
+  max-height: 1500px; 
+  overflow-y: auto;
+
+  
+
+  
+  scrollbar-width: thin; 
+  scrollbar-color:#444 #23252b; 
+}
+
+
+.custom-dropdown-tablet.scrollable::-webkit-scrollbar {
+  width: 6px; 
+
+}
+
+.custom-dropdown-tablet.scrollable::-webkit-scrollbar-thumb {
+  background-color: #444; 
+ 
+}
+
+.custom-dropdown-tablet.scrollable::-webkit-scrollbar-thumb:active {
+  background-color: #b8b8b8; 
+}
+
+.custom-dropdown-tablet.scrollable::-webkit-scrollbar-track {
+  background-color: #23252b; 
+   
+}
+
+
+
+/* MAIN */
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-main{
+  padding-top: 100px;
+}
+
+
+
+
+
+
 
 /* RESPONSIVIDADE */
 
@@ -744,6 +869,7 @@ li{
 
   .custom-dropdown-tablet.show{
     display: flex;
+
   }
 
   }
@@ -785,10 +911,13 @@ padding: 0rem 0.675rem;
 }
 .custom-dropdown-mobile.show{
   display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .custom-dropdown-tablet.show{
   display: none;
+  
 }
 
 
