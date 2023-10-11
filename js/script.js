@@ -1,13 +1,94 @@
+
+
+const $navDropdown2 = $(".custom-dropdown");
+const $newsDropdown2 = $(".custom-dropdown2");
+
+
+
+const $navDropdown = $(".custom-dropdown");
+const $newsDropdown = $(".custom-dropdown2");
+
+
+
+const $dropAccount = $(".drop-account");
+const $iconAccount = $(".icon-account");
+
+
+
+const $menuIcon = $(".menu-icon");
+const $customDropdownMobile = $(".custom-dropdown-mobile");
+const Header = (".container-navigation")
+
+
+
+const GenerosSubMenu = document.querySelector("#sub-menu");
+const SubMenu = document.querySelector(".dropdown-menu-mob");
+const customDropdownMob = document.querySelector(".custom-dropdown-mobile");
+
+
+
+const GenerosSubMenu2 = document.querySelector("#sub-menu2");
+const SubMenu2 = document.querySelector(".dropdown-menu-mob2");
+
+
+
+
+const MenuIconClose = document.querySelector(".custom-dropdown-mobile");
+const CloseAccount = document.querySelector(".icon-account");
+const IconMenuMob = document.querySelector(".menu-icon")
+const MenuNavigationClose = document.querySelector(".custom-dropdown");
+const MenuNewsClose = document.querySelector(".custom-dropdown2");
+const IcoNavigation = document.querySelector("#drop");
+const IcoNews = document.querySelector("#drop-2")
+const CategoriesMobileGener = document.querySelector(".categories-mobile-gener")
+
+
+
+const AccountCloseDesktop = document.querySelector(".drop-account")
+const CloseNews = document.querySelector("#drop")
+const CloseNavigation = document.querySelector("#drop-2")
+const IconAccountDesktop = document.querySelector(".icon-account")
+const customDropdownTablet = document.querySelector(".custom-dropdown-tablet");
+
+
+
+const menuIcon2 = document.querySelector(".menu-icon");
+
+
+
+
+
+const GenerosSubMenuT = document.querySelector("#sub-menuT");
+const SubMenuT = document.querySelector(".dropdown-menu-tablet");
+const customDropdownT = document.querySelector(".custom-dropdown-tablet");
+
+
+
+const GenerosSubMenuT2 = document.querySelector("#sub-menuT2");
+const SubMenuT2 = document.querySelector(".dropdown-menu-tablet2");
+const customDropdownT2 = document.querySelector(".custom-dropdown-tablet");
+
+const CloseAccountTablet = document.querySelector(".drop-account")
+const CloseMenuIcon = document.querySelector(".menu-icon");
+
+
+const IcoDrop = document.querySelector(".ico-drop");
+const IcoDrop2 = document.querySelector(".ico-drop2");
+const IcoDropTablet = document.querySelector(".ico-drop-tablet");
+const IcoDropTablet2 = document.querySelector(".ico-drop-tablet2");
+
+
+
+
+
 $(document).ready(function() {
-  // Função para abrir e fechar o dropdown de "Navegar"
+ 
   function toggleDropdownNav() {
-    const $navDropdown = $(".custom-dropdown");
-    const $newsDropdown = $(".custom-dropdown2");
 
-    // Fecha o dropdown de "Notícias" se estiver aberto
-    $newsDropdown.removeClass("show");
 
-    $navDropdown.toggleClass("show");
+    $newsDropdown2.removeClass("show");
+
+    $navDropdown2.toggleClass("show");
     $(".overlay").toggle();
 
     if ($navDropdown.hasClass("show")) {
@@ -18,12 +99,9 @@ $(document).ready(function() {
     }
   }
 
-  // Função para abrir e fechar o dropdown de "Notícias"
   function toggleDropdownNews() {
-    const $navDropdown = $(".custom-dropdown");
-    const $newsDropdown = $(".custom-dropdown2");
 
-    // Fecha o dropdown de "Navegar" se estiver aberto
+
     $navDropdown.removeClass("show");
 
     $newsDropdown.toggleClass("show");
@@ -37,19 +115,18 @@ $(document).ready(function() {
     }
   }
 
-  // Quando o botão de dropdown para "Navegar" for clicado
+
   $("#drop").click(function(e) {
-    e.stopPropagation(); // Evita que o evento de clique se propague para o documento
+    e.stopPropagation(); 
     toggleDropdownNav();
   });
 
-  // Quando o botão de dropdown para "Notícias" for clicado
   $("#drop-2").click(function(e) {
-    e.stopPropagation(); // Evita que o evento de clique se propague para o documento
+    e.stopPropagation(); 
     toggleDropdownNews();
   });
 
-  // Fecha os menus dropdown quando clicar em qualquer parte da tela fora dos menus
+
   $(document).on("click", function(event) {
     if (!$(event.target).closest(".dropdown").length) {
       $(".custom-dropdown, .custom-dropdown2").removeClass("show");
@@ -63,26 +140,24 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-  // Função para abrir e fechar o dropdown de "Navegar"
+
   function toggleDropdownAccount() {
-    const $dropAccount = $(".drop-account");
-    const $iconAccount = $(".icon-account");
+
 
     if ($dropAccount.hasClass("active")) {
-      // Se o dropdown estiver ativo, remova a classe "active-hover" do ícone
+
       $iconAccount.removeClass("active-hover");
     } else {
-      // Se o dropdown não estiver ativo, adicione a classe "active-hover" ao ícone
+
       $iconAccount.addClass("active-hover");
     }
 
-    // Toggle do dropdown e overlay
     $dropAccount.toggleClass("active");
     $(".overlay").toggle();
   }
 
   $(".icon-account").click(function(e) {
-    e.stopPropagation(); // Evita que o evento de clique se propague para o documento
+    e.stopPropagation(); 
     toggleDropdownAccount();
   });
 
@@ -99,20 +174,18 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
-  const $menuIcon = $(".menu-icon");
-  const $customDropdownMobile = $(".custom-dropdown-mobile");
-  const Header = (".container-navigation")
+ 
 
-  // Quando o menu-icon for clicado
+  
   $menuIcon.click(function(e) {
-    e.stopPropagation(); // Impede que o evento de clique se propague para o documento
+    e.stopPropagation(); 
     $customDropdownMobile.toggleClass("show");
     $menuIcon.toggleClass("active-hover");
   });
 
-  // Evitar que o hover do menu-icon saia quando clicar dentro do custom dropdown mobile
+
   $customDropdownMobile.click(function(e) {
-    e.stopPropagation(); // Impede que o evento de clique se propague para o documento
+    e.stopPropagation(); 
   });
 
   $(document).on("click", function(event) {
@@ -131,16 +204,14 @@ $(document).ready(function() {
 
 
 
-const GenerosSubMenu = document.querySelector("#sub-menu");
-const SubMenu = document.querySelector(".dropdown-menu-mob");
-const customDropdownMob = document.querySelector(".custom-dropdown-mobile");
+
 
 GenerosSubMenu.addEventListener("click", function() {
   if (SubMenu.classList.contains("show")) {
-    // Se o submenu estiver aberto, remova a classe "submenu-opened" do elemento pai
+
     customDropdownMob.classList.remove("submenu-opened");
   } else {
-    // Caso contrário, adicione a classe "submenu-opened" quando o submenu for aberto
+
     customDropdownMob.classList.add("submenu-opened");
   }
   
@@ -149,19 +220,17 @@ GenerosSubMenu.addEventListener("click", function() {
   SubMenu2.classList.remove("show")
 });
 
-// Adicione um evento de clique no documento para remover a classe quando clicar em outra parte da tela
 document.addEventListener("click", function(event) {
   if (!GenerosSubMenu.contains(event.target) && !SubMenu.contains(event.target)) {
     SubMenu.classList.remove("show");
-    customDropdownMob.classList.remove("submenu-opened"); // Remova a classe quando o submenu é fechado
+    customDropdownMob.classList.remove("submenu-opened"); 
   }
 });
 
 
 
-// Repita o mesmo processo para o segundo submenu, se necessário
-const GenerosSubMenu2 = document.querySelector("#sub-menu2");
-const SubMenu2 = document.querySelector(".dropdown-menu-mob2");
+
+
 
 GenerosSubMenu2.addEventListener("click", function() {
   if (SubMenu2.classList.contains("show")) {
@@ -178,14 +247,6 @@ GenerosSubMenu2.addEventListener("click", function() {
 //
 
 
-const MenuIconClose = document.querySelector(".custom-dropdown-mobile");
-const CloseAccount = document.querySelector(".icon-account");
-const IconMenuMob = document.querySelector(".menu-icon")
-const MenuNavigationClose = document.querySelector(".custom-dropdown");
-const MenuNewsClose = document.querySelector(".custom-dropdown2");
-const IcoNavigation = document.querySelector("#drop");
-const IcoNews = document.querySelector("#drop-2")
-
 
 CloseAccount.addEventListener("click" ,function(){
   MenuIconClose.classList.remove("show");
@@ -193,11 +254,7 @@ CloseAccount.addEventListener("click" ,function(){
 });
 
 
-const AccountCloseDesktop = document.querySelector(".drop-account")
-const CloseNews = document.querySelector("#drop")
-const CloseNavigation = document.querySelector("#drop-2")
-const IconAccountDesktop = document.querySelector(".icon-account")
-const customDropdownTablet = document.querySelector(".custom-dropdown-tablet");
+
 
 CloseNews.addEventListener("click", function(){
   AccountCloseDesktop.classList.remove("active")
@@ -233,36 +290,33 @@ IconMenuMob.addEventListener("click" , function(){
 })
 
 
-//
+
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  const menuIcon2 = document.querySelector(".menu-icon");
 
-  const customDropdownTablet = document.querySelector(".custom-dropdown-tablet");
 
-  // Função para fechar todos os menus
+
 
   
 
   menuIcon2.addEventListener("click", function() {
 if (window.innerWidth > 575 && window.innerWidth <= 1115) {
-      // Se a largura da tela estiver entre 575px e 1115px, abra o customDropdownTablet
+     
       
       customDropdownTablet.classList.toggle("show");
  
     }
   });
 
-  // Adicione um evento de clique no documento para fechar os menus
+
   document.addEventListener("click", function(event) {
     if (!event.target.closest(".dropdown")) {
       
     }
   });
 
-  // Adicione um evento de clique no documento para remover a classe "active-hover" quando clicar em outra parte da tela
 document.addEventListener("click", function(event) {
   if (!menuIcon2.contains(event.target) && !customDropdownTablet.contains(event.target)) {
     customDropdownTablet.classList.remove("show");
@@ -274,16 +328,13 @@ document.addEventListener("click", function(event) {
 
 
 
-const GenerosSubMenuT = document.querySelector("#sub-menuT");
-const SubMenuT = document.querySelector(".dropdown-menu-tablet");
-const customDropdownT = document.querySelector(".custom-dropdown-tablet");
 
 GenerosSubMenuT.addEventListener("click", function() {
   if (SubMenuT.classList.contains("show")) {
-    // Se o submenu estiver aberto, remova a classe "submenu-opened" do elemento pai
+
     customDropdownT.classList.remove("submenu-opened");
   } else {
-    // Caso contrário, adicione a classe "submenu-opened" quando o submenu for aberto
+
     customDropdownT.classList.add("submenu-opened");
   }
   
@@ -294,18 +345,16 @@ GenerosSubMenuT.addEventListener("click", function() {
 
 });
 
-// Adicione um evento de clique no documento para remover a classe quando clicar em outra parte da tela
+
 document.addEventListener("click", function(event) {
   if (!GenerosSubMenuT.contains(event.target) && !SubMenuT.contains(event.target)) {
     SubMenuT.classList.remove("show");
-    customDropdownT.classList.remove("submenu-opened"); // Remova a classe quando o submenu é fechado
+    customDropdownT.classList.remove("submenu-opened"); 
   }
 });
 
-// Repita o mesmo processo para o segundo submenu, se necessário
-const GenerosSubMenuT2 = document.querySelector("#sub-menuT2");
-const SubMenuT2 = document.querySelector(".dropdown-menu-tablet2");
-const customDropdownT2 = document.querySelector(".custom-dropdown-tablet");
+
+
 
 GenerosSubMenuT2.addEventListener("click", function() {
   if (SubMenuT2.classList.contains("show")) {
@@ -320,8 +369,7 @@ GenerosSubMenuT2.addEventListener("click", function() {
 });
 
 
-const CloseAccountTablet = document.querySelector(".drop-account")
-const CloseMenuIcon = document.querySelector(".menu-icon");
+
 
 CloseMenuIcon.addEventListener("click", function()
 {
@@ -330,8 +378,132 @@ CloseMenuIcon.addEventListener("click", function()
 
 
 
+
+
+GenerosSubMenu.addEventListener("click", function() {
+
+  if (IcoDrop.classList.contains("up")) {
+
+    IcoDrop.classList.remove("up");
+  } else {
+   
+    IcoDrop.classList.add("up");
+  }
+});
+
+
+GenerosSubMenu2.addEventListener("click", function() {
+
+  if (IcoDrop2.classList.contains("up")) {
+
+    IcoDrop2.classList.remove("up");
+  } else {
+   
+    IcoDrop2.classList.add("up");
+  }
+});
+
+
+GenerosSubMenuT.addEventListener("click", function() {
+
+  if (IcoDropTablet.classList.contains("up")) {
+
+    IcoDropTablet.classList.remove("up");
+  } else {
+   
+    IcoDropTablet.classList.add("up");
+  }
+});
+
+
+GenerosSubMenuT2.addEventListener("click", function() {
+
+  if (IcoDropTablet2.classList.contains("up")) {
+
+    IcoDropTablet2.classList.remove("up");
+  } else {
+   
+    IcoDropTablet2.classList.add("up");
+  }
+});
+
+
+IconMenuMob.addEventListener("click", function(){
+  if(MenuIconClose.classList.contains("show")){
+    IconMenuMob.classList.add("active-hover");
+  } else{
+    IconMenuMob.classList.remove("active-hover");
+  }
+})
+
+
+IconAccountDesktop.addEventListener("click", function(){
+  if(AccountCloseDesktop.classList.contains("active")){
+    IconAccountDesktop.classList.add("active-hover");
+  } else{
+    IconAccountDesktop.classList.remove("active-hover");
+  }
+})
+
+
 // MAIN //
 
 
 
+const carousel = document.querySelector('.carousel');
+const prevButton = document.querySelector('#prevSlide');
+const nextButton = document.querySelector('#nextSlide');
+const slides = document.querySelectorAll('.slide');
 
+const slideImages = [
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg',
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/8c566c3c-15e4-4c20-a224-174b0744eaf8.jpg',
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/47aedb23-bdbb-4b0e-bd29-35c72608feca.jpg',
+  // Adicione mais imagens conforme necessário
+];
+
+function updateBackgroundImage() {
+  const main = document.querySelector('main');
+  main.style.backgroundImage = `url(${slideImages[currentSlide]}`;
+}
+
+let currentSlide = 0;
+
+function goToSlide(slideIndex) {
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1;
+  } else if (slideIndex >= slides.length) {
+    slideIndex = 0;
+  }
+
+  // Remove a classe "active" de todos os slides
+  slides.forEach(slide => slide.classList.remove('active'));
+
+  // Adicione a classe "active" apenas ao slide atual
+  slides[slideIndex].classList.add('active');
+
+  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
+  currentSlide = slideIndex;
+
+  // Atualize a imagem de fundo
+  updateBackgroundImage();
+}
+
+prevButton.addEventListener('click', () => {
+  goToSlide(currentSlide - 1);
+});
+
+nextButton.addEventListener('click', () => {
+  goToSlide(currentSlide + 1);
+});
+
+updateBackgroundImage(); // Inicialize a imagem de fundo
+goToSlide(currentSlide); // Isso irá começar na primeira imagem
+
+// Função para avançar automaticamente
+function autoAdvance() {
+  goToSlide(currentSlide + 1);
+}
+
+// Configurar um intervalo para avançar a cada 2 segundos (2000 milissegundos)
+setInterval(autoAdvance, 5000);

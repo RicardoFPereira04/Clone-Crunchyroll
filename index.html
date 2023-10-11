@@ -224,8 +224,9 @@
             <li> <a class="categories-mobile" href="#">Calendário de Lançamentos</a></li>
             <li> <a class="categories-mobile" href="#">VídeoClipes e Shows</a></li>
           </ul>
-          <span class="categories-mobile" id="sub-menu" href="#" aria-expanded="false">Gêneros <svg class="ico-drop"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
+          <span class="categories-mobile-gener" id="sub-menu" href="#" aria-expanded="false">Gêneros <svg class="ico-drop"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
           <ul class="dropdown-menu-mob p-0" aria-labelledby="gener2">
+            
             <li class="sub-li"><a class="sub-menu-item" href="#">Ação</a></li>
             <li class="sub-li"><a class="sub-menu-item" href="#">Aventura</a></li>
             <li class="sub-li"><a class="sub-menu-item" href="#">Comédia</a></li>
@@ -251,7 +252,7 @@
 
       
 
-   <span class="categories-mobile" id="sub-menu2" href="#" aria-expanded="false">Notícias <svg class="ico-drop"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
+   <span class="categories-mobile" id="sub-menu2" href="#" aria-expanded="false">Notícias <svg class="ico-drop2"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
        
         <ul class="dropdown-menu-mob2 p-0" aria-labelledby="gener2">
           <li class="sub-li"><a class="sub-menu-item" href="#">Todas as Notícias</a></li>
@@ -285,8 +286,13 @@
       <li> <a class="categories-tablet" href="#">Calendário de Lançamentos</a></li>
       <li> <a class="categories-tablet" href="#">VídeoClipes e Shows</a></li>
     </ul>
-    <span class="categories-tablet" id="sub-menuT" href="#" aria-expanded="false">Gêneros <svg class="ico-drop"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
-    <ul class="dropdown-menu-tablet p-0" aria-labelledby="gener2">
+    <span class="categories-tablet" id="sub-menuT" href="#" aria-expanded="false">
+      Gêneros
+      <svg class="ico-drop-tablet"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg>
+  </span>
+  <ul class="dropdown-menu-tablet p-0" aria-labelledby="gener2">
+  
+  
       <li class="sub-li"><a class="sub-menu-item" href="#">Ação</a></li>
       <li class="sub-li"><a class="sub-menu-item" href="#">Aventura</a></li>
       <li class="sub-li"><a class="sub-menu-item" href="#">Comédia</a></li>
@@ -312,7 +318,7 @@
 
 
 
-<span class="categories-tablet" id="sub-menuT2" href="#" aria-expanded="false">Notícias <svg class="ico-drop"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
+<span class="categories-tablet" id="sub-menuT2" href="#" aria-expanded="false">Notícias <svg class="ico-drop-tablet2"><path d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span>
  
   <ul class="dropdown-menu-tablet2 p-0" aria-labelledby="gener2">
     <li class="sub-li"><a class="sub-menu-item" href="#">Todas as Notícias</a></li>
@@ -338,15 +344,45 @@
  
 
     <main>
-
+      <div class="shadowed-gradient"> </div>
       <div class="container-main">
-
-
+        <div class="carousel-container">
+          <div class="controls">
+            
+          <span id="prevSlide"><svg class="svg-slide"><path transform="scale(2)" d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span></div>
+          <div class="carousel">
+     
+            <!-- Aqui você pode incluir várias divs para cada slide -->
+            <div class="slide" style="background-image: url('imagem1.jpg');">
+             <img width="200px" src="https://static.crunchyroll.com/fms/logo/5ed9821e-57f8-4572-a30e-df45a0194384.png">
+              <div class="description">Quando o lendário herói e o deus necromante se enfrentam num confronto épico, o desfecho não é bem o esperado. Ao notar sua desvantagem, o necromante arrisca uma tática totalmente inesperada...</div>
+            </div>
+            <div class="slide" style="background-image: url('imagem2.jpg');">
+              <img width="200px" src="https://static.crunchyroll.com/fms/logo/c1465630-cbe5-45ac-8bcd-62d17d54073e.png">
+              <div class="description">Sofrimento, arrependimento, vergonha: os sentimentos negativos dos humanos tornam-se Maldições, causando terríveis acidentes que podem levar até mesmo à morte. E pra piorar, Maldições só...</div>
+            </div>
+            <div class="slide" style="background-image: url('imagem3.jpg');">
+              <img width="200px" src="https://static.crunchyroll.com/fms/logo/0e388442-8f3d-4df5-8bfa-a90d4c29a16c.png">
+              <div class="description">Chise Hatori, 15 anos. Abandonada, sem esperança e sem família, ela é comprada por dinheiro - não por outra pessoa, mas por um feiticeiro inumano chamado Elias. Apesar de insegura, ela recomeça sua...</div>
+            </div>
+            <!-- Adicione mais slides conforme necessário -->
+          </div>
+          <div class="controls">
+            <span id="nextSlide"><svg class="svg-slide2"><path transform="scale(2)" d="M8.6 7.4L10 6l6 6-6 6-1.4-1.4 4.6-4.6z"></path></svg></span></div>
+            <div class="carousel">
+        
+          <div class="indicators">
+            <!-- Indicadores de qual slide está ativo -->
+          </div>
+        </div>
     </div>
+ 
 
-
-
+   
+    
     </main>
+
+
 
 
 

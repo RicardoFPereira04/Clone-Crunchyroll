@@ -17,6 +17,7 @@ body{
 header{
     position: fixed;
     width: 100%;
+    z-index: 100;
     
 }
 
@@ -556,9 +557,22 @@ li{
     
   }
 
+
+  .categories-mobile-gener{
+    align-items: center;
+      color: #f8f8f8;
+      cursor: pointer;
+      display: flex;
+      padding: 0.75rem 1.125rem;
+    
+      text-decoration: none;
+      max-height: 48px;
+      font-weight: 500;
+  }
   
-
-
+  .categories-mobile-gener:hover{
+    background-color: #23252b;
+  }
 
 
 .categories-mobile{
@@ -592,13 +606,36 @@ li{
   position: absolute; 
  
   right: 45px; 
-  transform: translateY(-50%) rotate(90deg); 
-  transition: transform 0.1s cubic-bezier(0, 0, 0.25, 1); 
+  transform: translateY(-60%) rotate(90deg); 
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1); 
   fill: white;
  margin-top: 45px;
 
 }
 
+.ico-drop2{
+  max-width: 34px;
+  max-height:30px ;
+
+
+  position: absolute; 
+ 
+  right: 45px; 
+  transform: translateY(-60%) rotate(90deg); 
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1); 
+  fill: white;
+ margin-top: 45px;
+
+}
+
+.ico-drop.up{
+  transform: translateY(-90%) rotate(270deg); 
+}
+
+
+.ico-drop2.up{
+  transform: translateY(-90%) rotate(270deg); 
+}
 
 
 .drop-mob{
@@ -802,21 +839,135 @@ visibility: visible;
 }
 
 
+.ico-drop-tablet{
+  max-width: 34px;
+  max-height:30px ;
+
+
+  position: absolute; 
+ 
+  right: 45px; 
+  transform: translateY(-60%) rotate(90deg); 
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1); 
+  fill: white;
+ margin-top: 45px;
+
+}
+
+.ico-drop-tablet2{
+  max-width: 34px;
+  max-height:30px ;
+
+
+  position: absolute; 
+ 
+  right: 45px; 
+  transform: translateY(-60%) rotate(90deg); 
+  transition: transform 0.3s cubic-bezier(0, 0, 0.25, 1); 
+  fill: white;
+ margin-top: 45px;
+
+}
+
+.ico-drop-tablet.up{
+  transform: translateY(-90%) rotate(270deg); 
+}
+
+
+.ico-drop-tablet2.up{
+  transform: translateY(-90%) rotate(270deg); 
+}
+
 
 /* MAIN */
 
 main {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg'); /* Defina a imagem de fundo inicial */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5), 10px 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.container-main{
-  padding-top: 100px;
+.svg-slide{
+  width: 40px;
+  height: 40px;
+  transform: rotate(180deg);
+  fill: white;
+  cursor: pointer;
+  
+}
+
+.svg-slide:hover{
+  fill: #dadada;
+}
+
+.svg-slide2{
+  width: 40px;
+  height: 40px;
+  transform: rotate(0deg);
+  fill: white;
+  cursor: pointer;
+}
+
+.svg-slide2:hover{
+  fill: #dadada;
+}
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 1.2s ease, opacity 1.5s;
+}
+
+.slide {
+  flex: 0 0 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  transition: opacity 1.5s;
 }
 
 
+/* Adicione a classe "active" apenas ao slide atual */
+.slide.active {
+  background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg');
+  opacity: 1; /* Defina a opacidade desejada */
+}
+
+
+.description {
+  color: #dadada;
+  padding: 10px;
+  max-width: 200px;
+}
+
+.controls button {
+  /* Estilize os botões de controle como você desejar */
+}
+
+.indicators {
+  /* Estilize os indicadores conforme necessário */
+}
+
+
+.shadowed-gradient {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%; /* Ajuste a largura conforme necessário */
+}
 
 
 
