@@ -463,12 +463,11 @@ const slideImages = [
 ];
 
 function updateBackgroundImage() {
-  const main = document.querySelector('main');
-  main.style.backgroundImage = `url(${slideImages[currentSlide]}`;
+  const container = document.querySelector('.container-main-desktop');
+  container.style.backgroundImage = `url(${slideImages[currentSlide]}`;
 }
 
 let currentSlide = 0;
-
 function goToSlide(slideIndex) {
   if (slideIndex < 0) {
     slideIndex = slides.length - 1;
@@ -476,26 +475,31 @@ function goToSlide(slideIndex) {
     slideIndex = 0;
   }
 
-  // Remove a classe "active" de todos os slides
-  slides.forEach(slide => slide.classList.remove('active'));
+  // Exiba apenas o slide atual e oculte os outros slides
+  slides.forEach((slide, index) => {
+    if (index === slideIndex) {
+      slide.style.display = 'block';
+    } else {
+      slide.style.display = 'none';
+    }
+  });
 
-  // Adicione a classe "active" apenas ao slide atual
-  slides[slideIndex].classList.add('active');
-
-  carousel.style.transform = `translateX(-${slideIndex * 100}%)`;
   currentSlide = slideIndex;
 
   // Atualize a imagem de fundo
   updateBackgroundImage();
 }
 
+
 prevButton.addEventListener('click', () => {
-  goToSlide(currentSlide - 1);
+  currentSlide = (currentSlide - 1) % slides.length;
+  goToSlide(currentSlide);
+});
+nextButton.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  goToSlide(currentSlide);
 });
 
-nextButton.addEventListener('click', () => {
-  goToSlide(currentSlide + 1);
-});
 
 updateBackgroundImage(); // Inicialize a imagem de fundo
 goToSlide(currentSlide); // Isso irá começar na primeira imagem
@@ -507,3 +511,5 @@ function autoAdvance() {
 
 // Configurar um intervalo para avançar a cada 2 segundos (2000 milissegundos)
 setInterval(autoAdvance, 5000);
+
+

@@ -879,18 +879,30 @@ visibility: visible;
 }
 
 
-/* MAIN */
+/* MAIN DESKTOP*/
 
 main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+width: 100%;
+padding: 0;
+margin: 0;
+display: flex;
+
+position: relative;
+padding-top: 60px;
+}
+
+.container-main-desktop{
+height: 100vh;
+width: 100%;
+
+
+
   background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg'); /* Defina a imagem de fundo inicial */
   background-size: cover;
   background-position: center;
   transition: background-image 0.5s;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5), 10px 0 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .svg-slide{
@@ -899,6 +911,8 @@ main {
   transform: rotate(180deg);
   fill: white;
   cursor: pointer;
+  margin: auto;
+
   
 }
 
@@ -912,20 +926,32 @@ main {
   transform: rotate(0deg);
   fill: white;
   cursor: pointer;
+
 }
 
 .svg-slide2:hover{
   fill: #dadada;
 }
+
+
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Define três colunas, duas para espaços vazios */
+  grid-template-areas: ". prevSlide nextSlide ."; /* Define áreas para os elementos */
+  align-items: center;
   position: relative;
+  grid-area: content; /* Coloca o conteúdo no centro */
+
+  /* Outros estilos para o .carousel-container */
 }
 
 .carousel {
   display: flex;
   transition: transform 1.2s ease, opacity 1.5s;
+  position: relative;
+  width: 400px;
+ 
+
 }
 
 .slide {
@@ -935,6 +961,11 @@ main {
   background-position: center;
   color: white;
   transition: opacity 1.5s;
+
+
+ 
+
+  
 }
 
 
@@ -947,12 +978,16 @@ main {
 
 .description {
   color: #dadada;
-  padding: 10px;
-  max-width: 200px;
+
+  width: 433px;
+  white-space: unset;
 }
 
-.controls button {
-  /* Estilize os botões de controle como você desejar */
+.controls{
+display: flex;
+flex-direction: row;
+width: 40px;
+
 }
 
 .indicators {
@@ -969,8 +1004,55 @@ main {
   width: 50%; /* Ajuste a largura conforme necessário */
 }
 
+#prevSlide {
+  cursor: pointer;
+  grid-area: prevSlide; /* Associa o elemento à área prevSlide */
+  /* Estilos adicionais para #prevSlide */
+}
+
+#nextSlide {
+  cursor: pointer;
+  grid-area: nextSlide; /* Associa o elemento à área nextSlide */
+  /* Estilos adicionais para #nextSlide */
+}
 
 
+.container-main-desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Define três colunas para os cantos e o conteúdo no centro */
+  grid-template-rows: 1fr 1fr 1fr; /* Define três linhas para os cantos e o conteúdo no centro */
+  grid-template-areas: 
+    "top-left . top-right"
+    ". content ."
+    "bottom-left . bottom-right"; /* Define as áreas para os elementos */
+
+  /* Estilos adicionais do container se necessário */
+  padding-top: 60px;
+}
+
+#prevSlide, #nextSlide {
+  cursor: pointer;
+  /* Estilos para as setas, você pode personalizar de acordo com suas necessidades */
+}
+
+#prevSlide {
+  grid-row: 3; /* Posiciona na terceira coluna */
+  justify-self: start; /* Alinha à direita */
+}
+
+#nextSlide {
+  grid-row: 3; /* Posiciona na terceira coluna */
+  justify-self: end; /* Alinha à direita */
+  padding-left: 45px;
+}
+
+.carousel-container {
+  grid-area: content; /* Coloca o conteúdo no centro */
+  display: grid;
+  /* Estilos para o conteúdo do carrossel */
+}
+
+/* Estilos para os cantos (bottom-left e bottom-right), se necessário */
 
 
 /* RESPONSIVIDADE */
@@ -1069,6 +1151,10 @@ padding: 0rem 0.675rem;
 .custom-dropdown-tablet.show{
   display: none;
   
+}
+
+.container-main-desktop{
+  display: none;
 }
 
 
