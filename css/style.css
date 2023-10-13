@@ -32,7 +32,7 @@ header{
     display: flex;
     flex-direction: row;
     padding-left: 95px;
-    
+  
 
 }
 
@@ -885,7 +885,7 @@ main {
 width: 100%;
 padding: 0;
 margin: 0;
-display: flex;
+
 
 position: relative;
 padding-top: 60px;
@@ -894,7 +894,7 @@ padding-top: 60px;
 .container-main-desktop{
 height: 100vh;
 width: 100%;
-
+display: grid;
 
 
   background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg'); /* Defina a imagem de fundo inicial */
@@ -936,63 +936,79 @@ width: 100%;
 
 .carousel-container {
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* Define três colunas, duas para espaços vazios */
-  grid-template-areas: ". prevSlide nextSlide ."; /* Define áreas para os elementos */
+
+
   align-items: center;
   position: relative;
-  grid-area: content; /* Coloca o conteúdo no centro */
-
-  /* Outros estilos para o .carousel-container */
-}
-
-.carousel {
-  display: flex;
-  transition: transform 1.2s ease, opacity 1.5s;
-  position: relative;
-  width: 400px;
+  grid-template-columns: repeat(12,1fr) ;
+  grid-template-rows: 1fr auto; 
+  padding-top: 2.5rem;
+  padding-left: 60px;
+  padding-right: 60px;
+  column-gap: 1.875rem;
+ 
+  justify-self: start; 
+  align-self: start; 
  
 
+
+  width: 100%;
+  
+
 }
 
+
 .slide {
-  flex: 0 0 100%;
-  height: 400px;
+
+  height: auto; 
   background-size: cover;
   background-position: center;
   color: white;
   transition: opacity 1.5s;
+  display: grid;
+  grid-column: 1/span 4;
 
+  max-width: 100%;
 
- 
+  justify-self: start; 
+  align-self: end; 
 
   
 }
 
-
-/* Adicione a classe "active" apenas ao slide atual */
 .slide.active {
   background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg');
-  opacity: 1; /* Defina a opacidade desejada */
+  opacity: 1; 
 }
 
 
 .description {
   color: #dadada;
+  
 
-  width: 433px;
+  width: 450px;
   white-space: unset;
+
+  --line-height: 1.5rem;
+  font-size: 1rem;
+
+  font-weight: 500;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  
+
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .controls{
-display: flex;
-flex-direction: row;
+
 width: 40px;
 
 }
 
-.indicators {
-  /* Estilize os indicadores conforme necessário */
-}
 
 
 .shadowed-gradient {
@@ -1001,60 +1017,94 @@ width: 40px;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 50%; /* Ajuste a largura conforme necessário */
+  width: 50%; 
 }
 
 #prevSlide {
   cursor: pointer;
-  grid-area: prevSlide; /* Associa o elemento à área prevSlide */
-  /* Estilos adicionais para #prevSlide */
+
 }
 
 #nextSlide {
   cursor: pointer;
-  grid-area: nextSlide; /* Associa o elemento à área nextSlide */
-  /* Estilos adicionais para #nextSlide */
+  
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+}
+
+.button-watching{
+  background-color: #f47521;
+    color: #141519;
+    font-weight: 700;
+    max-width: 250px;
+font-size: 14px;
+
+border: 0;
+min-width: 7.5rem;
+padding: 0 1rem;
+text-transform: uppercase;
+height: 2.5rem;
+
+align-items: center;
+
+margin-right: 10px;
+margin-top: 2rem;
+
+
+}
+
+.svg-play{
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
 }
 
 
-.container-main-desktop {
+.button-fav{
+
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #f47521 ;
+  margin-top: 2rem;
+}
+
+.svg-fav{
+  width: 24px;
+  height: 24px;
+  fill: #f47521;
+}
+
+
+.svg-yearsold{
+  width: 24px;
+  height: 24px;
+  
+  
+}
+
+.text-dub{
+  --line-height: 1.125rem;
+  font-size: .875rem;
+  color: #a0a0a0;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+
+.description-watching{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Define três colunas para os cantos e o conteúdo no centro */
-  grid-template-rows: 1fr 1fr 1fr; /* Define três linhas para os cantos e o conteúdo no centro */
-  grid-template-areas: 
-    "top-left . top-right"
-    ". content ."
-    "bottom-left . bottom-right"; /* Define as áreas para os elementos */
+  grid-column: 1/span 4;
 
-  /* Estilos adicionais do container se necessário */
-  padding-top: 60px;
+  max-width: 100%;
+
+  justify-self: start; 
+  align-self: end; 
 }
-
-#prevSlide, #nextSlide {
-  cursor: pointer;
-  /* Estilos para as setas, você pode personalizar de acordo com suas necessidades */
-}
-
-#prevSlide {
-  grid-row: 3; /* Posiciona na terceira coluna */
-  justify-self: start; /* Alinha à direita */
-}
-
-#nextSlide {
-  grid-row: 3; /* Posiciona na terceira coluna */
-  justify-self: end; /* Alinha à direita */
-  padding-left: 45px;
-}
-
-.carousel-container {
-  grid-area: content; /* Coloca o conteúdo no centro */
-  display: grid;
-  /* Estilos para o conteúdo do carrossel */
-}
-
-/* Estilos para os cantos (bottom-left e bottom-right), se necessário */
-
-
 /* RESPONSIVIDADE */
 
 

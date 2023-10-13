@@ -456,7 +456,7 @@ const nextButton = document.querySelector('#nextSlide');
 const slides = document.querySelectorAll('.slide');
 
 const slideImages = [
-  'https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg',
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/a8a778d8-573a-4ae3-a49c-ea06a1fe540e.jpg',
   'https://static.crunchyroll.com/fms/landscape_large/94/png/8c566c3c-15e4-4c20-a224-174b0744eaf8.jpg',
   'https://static.crunchyroll.com/fms/landscape_large/94/png/47aedb23-bdbb-4b0e-bd29-35c72608feca.jpg',
   // Adicione mais imagens conforme necessário
@@ -478,7 +478,7 @@ function goToSlide(slideIndex) {
   // Exiba apenas o slide atual e oculte os outros slides
   slides.forEach((slide, index) => {
     if (index === slideIndex) {
-      slide.style.display = 'block';
+      slide.style.display = 'grid';
     } else {
       slide.style.display = 'none';
     }
