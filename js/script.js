@@ -454,20 +454,24 @@ const carousel = document.querySelector('.carousel');
 const prevButton = document.querySelector('#prevSlide');
 const nextButton = document.querySelector('#nextSlide');
 const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll(".indicator-item");
+const container = document.querySelector('.container-main-desktop');
 
 const slideImages = [
   'https://static.crunchyroll.com/fms/landscape_large/94/png/a8a778d8-573a-4ae3-a49c-ea06a1fe540e.jpg',
   'https://static.crunchyroll.com/fms/landscape_large/94/png/8c566c3c-15e4-4c20-a224-174b0744eaf8.jpg',
   'https://static.crunchyroll.com/fms/landscape_large/94/png/47aedb23-bdbb-4b0e-bd29-35c72608feca.jpg',
-  // Adicione mais imagens conforme necessário
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/ee76ff8f-c77b-4868-85e7-afef6da6c804.jpg',
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/a5bac8ac-8bf6-4a78-9674-4730fac66ab6.jpg',
+  'https://static.crunchyroll.com/fms/landscape_large/94/png/fd4ae1b8-099c-401b-9e31-05cc09383078.jpg',
 ];
 
 function updateBackgroundImage() {
-  const container = document.querySelector('.container-main-desktop');
-  container.style.backgroundImage = `url(${slideImages[currentSlide]}`;
+  container.style.backgroundImage = `url(${slideImages[currentSlide]})`;
 }
 
 let currentSlide = 0;
+
 function goToSlide(slideIndex) {
   if (slideIndex < 0) {
     slideIndex = slides.length - 1;
@@ -475,7 +479,6 @@ function goToSlide(slideIndex) {
     slideIndex = 0;
   }
 
-  // Exiba apenas o slide atual e oculte os outros slides
   slides.forEach((slide, index) => {
     if (index === slideIndex) {
       slide.style.display = 'grid';
@@ -486,30 +489,56 @@ function goToSlide(slideIndex) {
 
   currentSlide = slideIndex;
 
-  // Atualize a imagem de fundo
   updateBackgroundImage();
 }
 
+function updateIndicators(currentIndex) {
+  currentSlide = currentIndex;
+  slides.forEach((slide, index) => {
+    if (index === currentIndex) {
+      slide.style.display = 'grid';
+      indicators[index].style.backgroundColor = "#F58220";
+      indicators[index].style.width = '54px';
+    } else {
+      slide.style.display = 'none';
+      indicators[index].style.backgroundColor = "#A9A9A9";
+      indicators[index].style.width = '24px';
+    }
+  });
+
+  updateBackgroundImage(); // Atualiza o fundo do container principal com o novo slide
+}
+
+function setInitialIndicator() {
+  updateIndicators(0); // Define o indicador inicial para o primeiro slide
+}
+
+indicators.forEach((indicator, index) => {
+  indicator.addEventListener("click", () => {
+    updateIndicators(index);
+  });
+});
 
 prevButton.addEventListener('click', () => {
-  currentSlide = (currentSlide - 1) % slides.length;
+  currentSlide = currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
   goToSlide(currentSlide);
+  updateIndicators(currentSlide);
 });
+
 nextButton.addEventListener('click', () => {
   currentSlide = (currentSlide + 1) % slides.length;
   goToSlide(currentSlide);
+  updateIndicators(currentSlide);
 });
 
+updateBackgroundImage();
+goToSlide(currentSlide);
+setInitialIndicator(); // Define o indicador inicial
 
-updateBackgroundImage(); // Inicialize a imagem de fundo
-goToSlide(currentSlide); // Isso irá começar na primeira imagem
-
-// Função para avançar automaticamente
 function autoAdvance() {
-  goToSlide(currentSlide + 1);
+  currentSlide = (currentSlide + 1) % slides.length;
+  goToSlide(currentSlide);
+  updateIndicators(currentSlide);
 }
 
-// Configurar um intervalo para avançar a cada 2 segundos (2000 milissegundos)
-setInterval(autoAdvance, 5000);
-
-
+setInterval(autoAdvance, 10000);
