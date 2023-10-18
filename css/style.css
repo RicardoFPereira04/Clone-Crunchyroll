@@ -17,7 +17,7 @@ body{
 header{
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
     
 }
 
@@ -1136,7 +1136,7 @@ margin-top: 2rem;
 }
 
 #spy{
-  margin-top: 205px;
+  margin-top: 204px;
 }
 
 .carousel-indicator {
@@ -1195,13 +1195,16 @@ margin-top: 2rem;
 
 
 .container-imagens-anime{
-  z-index: 100;
+  z-index: 10;
   position: relative;
 
   display: flex;
   flex-direction: row;
   padding-left: 85px;
- 
+  overflow-x: hidden;
+  transition: transform 0.5s;
+
+  width: 100%;
   
  
 }
@@ -1210,9 +1213,407 @@ margin-top: 2rem;
   max-width: 290px;
   height: auto;
   padding: 0px 15px;
+
+  flex: 0 0 16.66%; 
+
+ 
+}
+
+.svg-slide-anime{
+  width: 40px;
+  height: 40px;
+  transform: rotate(180deg);
+  fill: white;
+  cursor: pointer;
+ position: absolute;
+ left: 1670px;
+  z-index: 100;
+
+  top: 40%;
+ 
+
+}
+
+.svg-slide-anime2{
+  width: 40px;
+  height: 40px;
+  transform: rotate(0deg);
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  z-index: 100;
+
+
+  top: 40%;
+
+}
+
+.svg-slide-anime:hover{
+  fill: #dadada;
+}
+
+.svg-slide-anime2:hover{
+  fill: #dadada;
+}
+
+.hidden-button-slide {
+  display: none;
 }
 
 
+.vinland-saga-shadow {
+  box-shadow: 5000px 5000px 5000px rgba(0, 0, 0, 1); /* Adiciona sombra quando a classe é aplicada */
+}
+
+
+.container-anime{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.titulo-anime{
+  padding: 0px 15px;
+  color: white;
+  font-size: 14px;
+
+  padding-top: 9px;
+
+  font-weight: 500;
+}
+
+.LegDub{
+  padding: 5px 15px;
+  color: #999688;
+  font-size: 13px;
+}
+
+
+
+/* SECTION 2 */
+
+.container-dead-mount{
+  display: flex;
+  justify-content: center;
+ padding: 70px 0px;
+
+
+
+}
+
+.container-dead-mount img{
+  cursor: pointer;
+}
+
+
+/* SECTION 3 */
+
+
+.container-calendar-novos{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container-calendar{
+  display: flex;
+  max-width: 350px;
+
+position: absolute;
+right: 100px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.container-novos{
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+
+}
+
+.svg-novos-lancamentos{
+  height: 40px;
+  width: 40px;
+  fill: white;
+
+  margin: 4px 4px 0px 0px;
+
+}
+
+.svg-calendar{
+  fill: #999688;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 3px;
+  
+}
+
+.text-calendar{
+  color: #999688;
+  font-weight: 700;
+  font-size: 14px;
+  
+  
+}
+
+.text-novos-lancamentos{
+  color: white;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+
+.container-animes{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding: 0px 100px;
+}
+
+.container-animes-father{
+  display: flex;
+  flex-direction: row;
+
+  padding-top: 10px;
+}
+
+
+.container-hoje-animes1{
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+
+  
+}
+.container-hoje-animes1 img{
+  max-height: 82px;
+  width: auto;
+  padding-right: 10px;
+}
+
+.container-hoje-animes2{
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+
+  margin-left: 60px;
+
+  
+}
+.container-hoje-animes2 img{
+  max-height: 82px;
+  width: auto;
+  padding-right: 10px;
+}
+
+.container-hoje-animes3{
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+  margin-left: 60px;
+
+  
+}
+.container-hoje-animes3 img{
+  max-height: 82px;
+  width: auto;
+  padding-right: 10px;
+}
+.text-hoje{
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  border-bottom: #606063 solid 2px;
+  padding-bottom: 0.5rem;
+  width: 100%;
+  display: inline-block;
+  
+}
+
+.father-div-ep{
+  display: flex;
+  flex-direction: row;
+
+  cursor: pointer;
+
+  padding-bottom: 10px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.father-itens-ep{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.father-itens-ep2{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  max-height: 82px;
+
+
+}
+
+
+
+.svg-king{
+  max-width: 24px;
+  max-height: 24px;
+  fill: #fab818;
+}
+
+.titulo-anime2{
+padding: 0;
+max-height: 50px;
+min-width: 256px;
+max-width: 256px;
+font-weight: 500;
+
+
+color: white;
+font-size: 14px;
+
+padding-top: 9px;
+
+font-weight: 500;
+}
+
+.n-episodio{
+color: #999688;
+font-size: 13px;
+font-weight: 400;
+max-height: 20px;
+}
+
+.legdub-ep{
+  color: #999688;
+  font-size: 14px;
+  font-weight: 400;
+  max-height: 18px;
+  
+}
+
+.horario-ep{
+  color: #2abdbb;
+  font-size: 14px;
+  font-weight: 500;
+
+  text-align: end;
+  max-width: 40px;
+  min-height: 100%;
+  padding-left: 100px;
+  padding-top: 65px;
+  
+
+}
+
+.button-ver-mais{
+background-color: #213944;
+color: #fff;
+width: auto;
+margin: 50px 10px;
+min-height: 40px;
+font-size: 14px;
+font-weight: 700;
+
+border: none;
+}
+
+
+
+
+/* SECTION MAIS POPULARES */
+
+.text-mais-populares{
+  padding-left: 100px;
+
+  color: white;
+  font-size: 29px;
+  font-weight: 500;
+
+}
+
+.container-imagens-anime2{
+  z-index: 10;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  padding-left: 85px;
+  overflow-x: hidden;
+  transition: transform 0.5s;
+  
+
+  width: 100%;
+  
+ padding-top: 15px;
+}
+
+.container-anime{
+  cursor: pointer;
+}
+
+.container-imagens-anime2 img{
+  max-width: 290px;
+  height: auto;
+  padding: 0px 15px;
+
+  flex: 0 0 16.66%; 
+
+ 
+}
+
+
+
+
+/*SECTION AINDA ESTÁ PROCURANDO ALGO PARA ASSISTIR?*/
+
+.container-assistir{
+  display: flex;
+  flex-direction: column;
+align-items: center;
+  padding-top: 50px;
+  justify-content: center;
+
+}
+
+
+.text-algo-assistir{
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+
+  text-align: center;
+  
+}
+
+
+.button-ver-tudo{
+  background-color: transparent;
+  border: #f47521 solid 2px;
+  color: #f47521;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 7px 20px;
+
+  margin-top: 24px;
+}
 /* RESPONSIVIDADE */
 
 
@@ -1314,6 +1715,8 @@ padding: 0rem 0.675rem;
 .container-main-desktop{
   display: none;
 }
+
+
 
 
   }

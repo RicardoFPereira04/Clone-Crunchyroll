@@ -457,6 +457,17 @@ const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll(".indicator-item");
 const container = document.querySelector('.container-main-desktop');
 
+const container2 = document.querySelector('.container-imagens-anime');
+    const prevButton2 = document.getElementById('prevButton2');
+    const nextButton2 = document.getElementById('nextButton2');
+    const vinlandSagaImage = document.querySelector(".vinland-saga-image");
+
+    const container3 = document.querySelector('.container-imagens-anime2');
+    const prevButton3 = document.getElementById('prevButton3');
+    const nextButton3 = document.getElementById('nextButton3');
+
+
+
 const slideImages = [
   'https://static.crunchyroll.com/fms/landscape_large/94/png/a8a778d8-573a-4ae3-a49c-ea06a1fe540e.jpg',
   'https://static.crunchyroll.com/fms/landscape_large/94/png/8c566c3c-15e4-4c20-a224-174b0744eaf8.jpg',
@@ -542,3 +553,71 @@ function autoAdvance() {
 }
 
 setInterval(autoAdvance, 10000);
+
+
+
+
+
+let scrollAmount = 0;
+const scrollStep = container2.offsetWidth * 6; // Avançar 6 imagens
+
+prevButton2.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
+
+nextButton2.addEventListener('click', () => {
+  container2.scrollTo({
+    top: 0,
+    left: (scrollAmount += scrollStep),
+    behavior: 'smooth'
+  });
+  prevButton2.classList.remove('hidden-button-slide'); // Mostrar o botão "Anterior" quando o botão "Próximo" for clicado
+  nextButton2.classList.add('hidden-button-slide'); // Esconder o botão "Próximo" quando ele for clicado
+});
+
+prevButton2.addEventListener('click', () => {
+  container2.scrollTo({
+    top: 0,
+    left: (scrollAmount -= scrollStep),
+    behavior: 'smooth'
+  });
+  nextButton2.classList.remove('hidden-button-slide'); // Mostrar o botão "Próximo" quando o botão "Anterior" for clicado
+  prevButton2.classList.add('hidden-button-slide'); // Esconder o botão "Anterior" quando ele for clicado
+});
+
+
+
+nextButton2.addEventListener("click", () => {
+  vinlandSagaImage.classList.add("vinland-saga-shadow");
+
+});
+
+let scrollAmount2 = 0;
+const scrollStep2 = container3.offsetWidth * 6; // Avançar 6 imagens
+
+prevButton3.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
+
+nextButton3.addEventListener('click', () => {
+  container3.scrollTo({
+    top: 0,
+    left: (scrollAmount += scrollStep2),
+    behavior: 'smooth'
+  });
+  prevButton3.classList.remove('hidden-button-slide'); // Mostrar o botão "Anterior" quando o botão "Próximo" for clicado
+  nextButton3.classList.add('hidden-button-slide'); // Esconder o botão "Próximo" quando ele for clicado
+});
+
+prevButton3.addEventListener('click', () => {
+  container3.scrollTo({
+    top: 0,
+    left: (scrollAmount -= scrollStep2),
+    behavior: 'smooth'
+  });
+  nextButton3.classList.remove('hidden-button-slide'); // Mostrar o botão "Próximo" quando o botão "Anterior" for clicado
+  prevButton3.classList.add('hidden-button-slide'); // Esconder o botão "Anterior" quando ele for clicado
+});
+
+
+
+nextButton2.addEventListener("click", () => {
+  vinlandSagaImage.classList.add("vinland-saga-shadow");
+
+});
