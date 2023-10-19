@@ -1526,11 +1526,13 @@ max-height: 20px;
 .button-ver-mais{
 background-color: #213944;
 color: #fff;
-width: auto;
-margin: 50px 10px;
+width: 50%;
+margin: 50px auto;
 min-height: 40px;
 font-size: 14px;
 font-weight: 700;
+
+
 
 border: none;
 }
@@ -1613,7 +1615,214 @@ align-items: center;
   padding: 7px 20px;
 
   margin-top: 24px;
+
+
+  margin-bottom: 3.75rem;
 }
+
+.button-ver-tudo:hover{
+
+  border: #ff8a3c solid 2px;
+  color: #ff8a3c;
+
+}
+
+
+
+/* FOOTER */
+
+
+
+.container-footer{
+  display: flex;
+
+  flex-direction: column;
+
+  background: #000 linear-gradient(180deg,#0000,#213944);
+
+
+ 
+
+  padding: 0px 100px;
+
+ 
+}
+
+
+.container-footer img{
+
+max-width: 158px;
+  max-height: 12px;
+
+  margin: 0px 0.5rem;
+
+}
+.ul-itens-rede{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: start;
+text-align: start;
+
+border-bottom: solid #63636e 2px;
+}
+
+
+.container-sony{
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  padding-bottom: 2rem;
+  padding-top: 1.5rem;
+}
+
+.container-translate{
+  align-items: center;
+  color: #a0a0a0;
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+ 
+  transition: background-color .2s ease,color .2s ease;
+  width: 100%;
+
+  justify-content: end;
+
+}
+
+.container-sony p{
+  color:#a0a0a0 ;
+  border-left: solid #a0a0a0 1px;
+min-width: 150px;
+  padding-left: 0.5rem;
+}
+
+
+
+.svg-drop-translate{
+  max-width: 24px;
+  max-height: 24px;
+  fill: white;
+
+  margin-right: 8px;
+}
+
+.text-translate{
+  color: #a0a0a0 !important;
+  font-size: 14px;
+
+  align-self: flex-end;
+    max-width: 100%;
+    width: auto;
+height: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.75rem;
+padding: 10px;
+    justify-content: end;
+
+
+}
+
+.text-translate:hover{
+  background-color: #23252b;
+}
+
+
+.container-footer a{
+  text-decoration: none;
+  color:#a0a0a0;
+
+  --line-height: 1.125rem;
+  font-size: .84rem;
+  font-weight: 500;
+}
+
+.container-footer a:hover{
+  text-decoration: underline;
+  color: white;
+}
+
+
+.container-footer li{
+
+
+  margin-bottom: 0.625rem;
+}
+
+
+
+.container-footer span{
+  color: white;
+
+  font-weight: 500;
+
+
+}
+
+#teste-gratuito a:hover svg path {
+  fill: white;
+
+
+}
+
+
+.container-footer ul{
+  padding: 0px 15px;
+
+  min-width: 280px;
+
+ 
+}
+
+
+.svg-king2{
+  max-width: 24px;
+  max-height: 24px;
+  fill: #fab818;
+}
+
+
+
+
+
+#teste-gratuito{
+  color: #fab818;
+
+  max-height: 18px;
+}
+
+#teste-gratuito:hover{
+  color: white;
+  font-weight: 500;
+ 
+
+}
+
+.span{
+  margin-bottom: 0.75rem;
+}
+
+
+.svg-rede{
+  max-width: 24px;
+  max-height: 18px;
+  fill: #a0a0a0;
+}
+
+
+.svg-rede path:hover {
+  fill: white;
+}
+
+.svg-rede a:hover svg path{
+  fill: white;
+}
+
+
+
+
 /* RESPONSIVIDADE */
 
 
