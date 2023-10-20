@@ -251,6 +251,7 @@ GenerosSubMenu2.addEventListener("click", function() {
 CloseAccount.addEventListener("click" ,function(){
   MenuIconClose.classList.remove("show");
   IconMenuMob.classList.remove("active-hover");
+  Droptranslate.classList.remove("show")
 });
 
 
@@ -259,12 +260,14 @@ CloseAccount.addEventListener("click" ,function(){
 CloseNews.addEventListener("click", function(){
   AccountCloseDesktop.classList.remove("active")
   IconAccountDesktop.classList.remove("active-hover")
+  Droptranslate.classList.remove("show")
 });
 
 
 CloseNavigation.addEventListener("click", function(){
   AccountCloseDesktop.classList.remove("active")
   IconAccountDesktop.classList.remove("active-hover")
+  Droptranslate.classList.remove("show")
 });
 
 
@@ -287,6 +290,7 @@ CloseAccount.addEventListener("click", function(){
 IconMenuMob.addEventListener("click" , function(){
   CloseAccount.classList.remove("active-hover")
   AccountCloseDesktop.classList.remove("active")
+  Droptranslate.classList.remove("show")
 })
 
 
@@ -621,3 +625,41 @@ nextButton2.addEventListener("click", () => {
   vinlandSagaImage.classList.add("vinland-saga-shadow");
 
 });
+
+
+
+// FOOTER //
+
+const translate = document.querySelector(".text-translate");
+const Droptranslate = document.querySelector(".drop-translate");
+
+translate.addEventListener("click", function(){
+  if (Droptranslate.classList.contains("show")) {
+    Droptranslate.classList.remove("show");
+    translate.classList.remove("active-hover");
+    Droptranslate.classList.remove("scrollable");
+  } else {
+    Droptranslate.classList.add("show");
+    translate.classList.add("active-hover");
+    Droptranslate.classList.add("scrollable");
+  }
+});
+
+
+document.addEventListener("click", function(event) {
+  if (!Droptranslate.contains(event.target) && !translate.contains(event.target)) {
+    Droptranslate.classList.remove("show");
+    translate.classList.remove("active-hover");
+    Droptranslate.classList.remove("scrollable");
+  }
+});
+
+if (Droptranslate.classList.contains("show")){
+  $navDropdown.removeClass("show")
+  $newsDropdown2.removeClass("show")
+  $navDropdown.removeClass("show")
+  $newsDropdown.removeClass("show")
+  $dropAccount.removeClass("active")
+  $customDropdownMobile.removeClass("show")
+  customDropdownTablet.classList.remove("show")
+}

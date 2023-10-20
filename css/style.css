@@ -1164,6 +1164,26 @@ margin-top: 2rem;
 
 
 
+/* MAIN MOBILE*/
+
+.container-main-mobile{
+  display: none;
+  max-width: 575px;
+
+  height: 100%;
+width: 100%;
+display: grid;
+
+
+  background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg'); /* Defina a imagem de fundo inicial */
+  background-size: cover;
+  background-position: center;
+  transition: background-image 0.5s;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5), 10px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
 
 
 /* SECTION */
@@ -1664,7 +1684,9 @@ justify-content: center;
 align-items: start;
 text-align: start;
 
-border-bottom: solid #63636e 2px;
+
+
+
 }
 
 
@@ -1673,6 +1695,10 @@ border-bottom: solid #63636e 2px;
   flex-direction: row;
 
   align-items: center;
+
+  border-top: solid #63636e 2px;;
+
+  margin: 0px 280px;
 
   padding-bottom: 2rem;
   padding-top: 1.5rem;
@@ -1691,6 +1717,7 @@ border-bottom: solid #63636e 2px;
   justify-content: end;
 
 }
+
 
 .container-sony p{
   color:#a0a0a0 ;
@@ -1730,7 +1757,7 @@ padding: 10px;
 }
 
 
-.container-footer a{
+.a-footer {
   text-decoration: none;
   color:#a0a0a0;
 
@@ -1739,7 +1766,7 @@ padding: 10px;
   font-weight: 500;
 }
 
-.container-footer a:hover{
+.a-footer:hover{
   text-decoration: underline;
   color: white;
 }
@@ -1791,11 +1818,14 @@ padding: 10px;
   color: #fab818;
 
   max-height: 18px;
+
+  text-decoration: none;
 }
 
 #teste-gratuito:hover{
   color: white;
   font-weight: 500;
+  text-decoration: underline;
  
 
 }
@@ -1821,8 +1851,90 @@ padding: 10px;
 }
 
 
+.drop-translate{
+  display: none;
 
 
+
+  background-color: #23252b;
+}
+
+
+
+.drop-translate.show{
+  display: flex;
+  position: absolute;
+  right: 370px;
+top: 4455px;
+  background-color: #23252b;
+  flex-direction: column;
+  align-items: start;
+
+  max-width: 200px;
+  max-height: 460px;
+
+
+
+
+}
+
+
+.drop-translate a{
+  color: #a0a0a0;
+}
+
+
+.li-translate{
+  padding: 0.875rem 2.375rem;
+  cursor: pointer;
+
+  width: 100%;
+}
+.li-translate:hover{
+
+ background-color: #141519;
+  
+}
+
+.li-translate:hover a{
+  color: white;
+}
+
+.text-translate.active-hover:hover{
+  background-color:#23252b;
+}
+
+
+.drop-translate.scrollable {
+  max-height: 460px; 
+  overflow-y: auto;
+
+  
+
+  
+  scrollbar-width: thin; 
+  scrollbar-color:#444 #23252b; 
+}
+
+
+.drop-translate.scrollable::-webkit-scrollbar {
+  width: 6px; 
+
+}
+
+.drop-translate.scrollable::-webkit-scrollbar-thumb {
+  background-color: #444; 
+ 
+}
+
+.drop-translate.scrollable::-webkit-scrollbar-thumb:active {
+  background-color: #b8b8b8; 
+}
+
+.drop-translate.scrollable::-webkit-scrollbar-track {
+  background-color: #23252b; 
+   
+}
 /* RESPONSIVIDADE */
 
 
@@ -1926,6 +2038,37 @@ padding: 0rem 0.675rem;
 }
 
 
+.container-main-mobile{
+  display: grid;
+}
 
 
+
+.container-main-mobile{
+  max-width: 575px;
+}
+.container-imagens-anime{
+  max-width: 575px;
+}
+
+.container-dead-mount{
+  max-width: 575px;
+}
+
+.container-animes{
+  max-width: 575px;
+}
+
+.container-imagens-anime2{
+  max-width: 575px;
+}
+
+
+.container-assistir{
+  max-width: 575px;
+}
+
+.container-footer{
+  max-width: 575px;
+}
   }
