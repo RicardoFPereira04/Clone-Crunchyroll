@@ -663,3 +663,124 @@ if (Droptranslate.classList.contains("show")){
   $customDropdownMobile.removeClass("show")
   customDropdownTablet.classList.remove("show")
 }
+
+
+// MAIN MOBILE //
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slidesMob = document.querySelectorAll(".slide-mobile");
+  const indicatorsMob = document.querySelectorAll(".indicator-item-mob");
+  const containerMob = document.querySelector(".container-main-mobile");
+
+  const slideImagesmob = [
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/0f64543f-c57d-4271-9750-8e84ddc3aa9d.jpg",
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/2b063787-9006-4f0a-a072-451c9f3e402b.jpg",
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/41f85a50-9c9f-4bb2-b6ac-86f027be3019.jpg",
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/b6e07b80-e5a7-48c6-8919-0aa7c3e70abb.jpg",
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/c8358380-c402-4c83-b3db-019dd04bf69e.jpg",
+    "https://static.crunchyroll.com/fms/landscape_large/94/png/fd4ae1b8-099c-401b-9e31-05cc09383078.jpg",
+  ];
+
+
+  let currentSlideMob = 0;
+
+  function updateBackgroundImage() {
+    if (currentSlideMob >= 0 && currentSlideMob < slideImagesmob.length) {
+      containerMob.style.backgroundImage = `url(${slideImagesmob[currentSlideMob]})`;
+    }
+  }
+  
+
+  function goToSlide(slideIndex) {
+    if (slideIndex < 0) {
+      slideIndex = slidesMob.length - 1;
+    } else if (slideIndex >= slidesMob.length) {
+      slideIndex = 0;
+    }
+
+    slidesMob.forEach((slide, index) => {
+      if (index === slideIndex) {
+        slide.style.display = "flex";
+      } else {
+        slide.style.display = "none";
+      }
+    });
+
+    currentSlideMob = slideIndex;
+
+    updateBackgroundImage();
+  }
+
+// ...
+
+function updateIndicators(currentIndex) {
+  slidesMob.forEach((slide, index) => {
+    if (index === currentIndex) {
+      slide.style.display = "flex";
+      indicatorsMob[index].style.backgroundColor = "#F58220";
+      indicatorsMob[index].style.width = "54px";
+    } else {
+      slide.style.display = "none";
+      indicatorsMob[index].style.backgroundColor = "#A9A9A9";
+      indicatorsMob[index].style.width = "24px";
+    }
+  });
+
+  updateBackgroundImage();
+}
+
+function setInitialIndicator() {
+  updateIndicators(0);
+}
+
+indicatorsMob.forEach((indicator, index) => {
+  indicator.addEventListener("click", () => {
+    currentSlideMob = index; // Atualiza o valor do slide atual
+    updateIndicators(index);
+    goToSlide(index); // Altera para o slide correspondente ao indicador clicado
+  });
+});
+
+// ...
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  containerMob.addEventListener("touchstart", function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  containerMob.addEventListener("touchend", function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+  });
+
+  function handleGesture() {
+    if (touchEndX < touchStartX) {
+      currentSlideMob++;
+      goToSlide(currentSlideMob);
+      updateIndicators(currentSlideMob);
+    }
+
+    if (touchEndX > touchStartX) {
+      currentSlideMob--;
+      goToSlide(currentSlideMob);
+      updateIndicators(currentSlideMob);
+    }
+  }
+
+  updateBackgroundImage();
+  goToSlide(currentSlideMob);
+  setInitialIndicator();
+
+  function autoAdvance() {
+    currentSlideMob = (currentSlideMob + 1) % slidesMob.length;
+    goToSlide(currentSlideMob);
+    updateIndicators(currentSlideMob);
+  }
+
+  setInterval(autoAdvance, 10000);
+});
+
+
