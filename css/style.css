@@ -2589,3 +2589,21 @@ margin: 0;
 }
 
 }
+
+
+@media screen and (max-width: 500px) {
+
+
+
+  .container-dead-mount img{
+    cursor: pointer;
+  max-width: 500px;
+   min-height: 250px;
+  
+    padding-top: 50px;
+    padding: 0px 30px;
+  }
+  
+
+
+}
