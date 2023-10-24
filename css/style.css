@@ -1439,11 +1439,11 @@ margin-top: 1rem;
 
 
 .assista-mob{
-  display: flex;
+  display: none;
   flex-direction: column;
   
 margin-left: 20px;
-  padding-top: 1rem;
+
 
 }
 
@@ -1465,6 +1465,75 @@ margin-left: 20px;
   padding-bottom: 10px;
 }
 
+
+.container-imagens-anime-mob{
+  z-index: 10;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  overflow-x: hidden;
+  transition: transform 0.5s;
+
+  width: 100%;
+  
+ 
+}
+
+.container-imagens-anime-mob img{
+  max-width: 175px;
+  height: auto;
+  padding: 0px 5px;
+
+  flex: 0 0 16.66%; 
+
+ 
+}
+
+
+.shadow-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px; /* ou o valor desejado */
+  height: 100%; /* ou o valor desejado */
+  background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
+}
+
+#nextButton-mob2{
+  display: none;
+}
+
+.svg-slide-anime-mob{
+  width: 20px;
+  height: 40px;
+  transform: rotate(180deg);
+  fill: white;
+  cursor: pointer;
+ position: absolute;
+ left: 1670px;
+  z-index: 100;
+
+  top: 40%;
+ 
+
+}
+
+.svg-slide-anime-mob2{
+  width: 20px;
+  height: 40px;
+  transform: rotate(0deg);
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  z-index: 100;
+
+
+  top: 40%;
+
+}
 
 
 
@@ -1759,6 +1828,58 @@ border: none;
 
 
 
+/* SECTION MAIS POPULARES MOBILE*/
+
+.container-imagens-anime-mob2 img{
+  max-width: 175px;
+  height: auto;
+  padding: 0px 5px;
+
+  flex: 0 0 16.66%; 
+
+ 
+}
+
+.container-imagens-anime-mob2{
+  z-index: 10;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  padding-left: 15px;
+  overflow-x: hidden;
+  transition: transform 0.5s;
+  
+
+  width: 100%;
+  
+ padding-top: 15px;
+}
+
+
+.container-anime2{
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.shadow-container2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px; /* ou o valor desejado */
+  height: 100%; /* ou o valor desejado */
+  background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
+}
+
+
+
+#nextButton-mob3{
+  display: none;
+
+}
 
 /*SECTION AINDA ESTÁ PROCURANDO ALGO PARA ASSISTIR?*/
 
@@ -1805,6 +1926,7 @@ align-items: center;
 
 
 
+
 /* FOOTER */
 
 
@@ -1842,7 +1964,10 @@ text-align: start;
 
 
 
+}
 
+.container-navegacao{
+  display: none;
 }
 
 
@@ -2144,7 +2269,19 @@ top: 4455px;
   }
 
   
+  @media screen and (min-width: 575px) {
 
+    .container-imagens-anime-mob{
+      display: none;
+
+      
+
+    }
+
+    .container-footer-mobile{
+      display: none;
+    }
+  }
 
   
   @media screen and (max-width: 575px) {
@@ -2199,9 +2336,251 @@ padding: 0rem 0.675rem;
 }
 
 
+.assista-mob{
+  display: flex;
+}
+
+
+.container-imagens-anime{
+  display: none;
+}
+
+
+
+.container-dead-mount{
+  display: flex;
+  justify-content: center;
+padding: 60px;
 
 
 
 
 
-  }
+}
+
+.container-dead-mount img{
+  cursor: pointer;
+max-width: 575px;
+ min-height: 250px;
+
+  padding-top: 50px;
+  padding: 0px 30px;
+}
+
+
+.container-footer{
+  display: none;
+}
+
+.ul-itens-rede{
+  flex-direction: column;
+
+
+ 
+}
+
+.container-navegacao{
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+}
+
+
+
+
+.ul-itens-rede ul{
+  padding: 0;
+width: 100%;
+ 
+}
+
+
+
+
+.container-sony{
+  flex-direction: column;
+
+
+  justify-content: center;
+}
+
+
+
+.container-footer-mobile{
+  display: flex;
+}
+
+
+.container-footer-mobile{
+  display: flex;
+
+  flex-direction: column;
+
+  background: #000 linear-gradient(180deg,#0000,#213944);
+
+
+ 
+
+  padding: 0px 20px;
+
+ 
+}
+
+
+.container-footer-mobile img{
+
+max-width: 158px;
+  max-height: 12px;
+
+  margin: 0px 0.5rem;
+
+}
+
+.container-footer-mobile ul{
+  padding:0;
+
+  min-width: 280px;
+
+ 
+}
+
+
+.container-footer-mobile li{
+
+
+  margin-bottom: 0.625rem;
+}
+
+
+
+.container-footer-mobile span{
+  color: white;
+
+  font-weight: 500;
+
+
+}
+
+.container-navegacao{
+  display: flex;
+  flex-direction: row;
+
+  border-bottom: #63636e solid 1px;
+}
+
+.span{
+  min-width: 220px;
+}
+
+
+.container-sony p{
+  border: none;
+}
+
+
+#footer-logo{
+  margin-bottom: 0.625rem;
+}
+
+
+
+.button-ver-tudo{
+  width: 100%;
+
+ 
+}
+
+.container-assistir{
+  padding: 50px 20px;
+}
+
+.container-translate-mob{
+min-width: 250px;
+
+margin-top: 1.25rem;
+}
+
+.text-translate-mob:hover{
+  background-color: #23252b;
+
+ 
+}
+
+.text-translate-mob{
+color:#a0a0a0 !important;
+padding: 0.625rem;
+
+cursor: pointer;
+
+}
+
+
+.container-imagens-anime2{
+  display: none;
+
+}
+
+.text-mais-populares{
+  padding: 0px 20px;
+  z-index: 100;
+  font-weight: 500;
+  color: white;
+  font-size: 22px;
+
+
+}
+
+.container-imagens-anime-mob2{
+  padding-top: 10px;
+}
+
+.button-ver-mais{
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+
+.container-animes{
+  padding: 0 20px;
+
+
+}
+
+.container-animes-father{
+  flex-direction: column;
+}
+
+
+.container-hoje-animes2{
+margin: 0;
+}
+
+.container-hoje-animes3{
+margin: 0;
+}
+
+.horario-ep{
+  padding: 20px 0px;
+}
+
+.container-calendar-novos{
+  flex-direction: column;
+  align-items: start;
+
+}
+
+.container-novos{
+  padding-left: 20px;
+}
+
+.text-calendar{
+  display: none;
+}
+
+.text-novos-lancamentos{
+  font-size: 22px;
+
+}
+
+}

@@ -784,3 +784,109 @@ indicatorsMob.forEach((indicator, index) => {
 });
 
 
+// SECTION 1 MOBILE //
+
+
+let timer;
+const slidesMob2 = document.querySelectorAll(".container-anime");
+const nextButtonmob2 = document.getElementById("nextButton-mob2");
+const prevButtonmob2 = document.getElementById("prevButton-mob2");
+const shadowContainer = document.getElementById("shadowContainer");
+
+
+function showNextButton() {
+    nextButtonmob2.style.display = "block";
+    shadowContainer.style.display = "block";
+    if (timer) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function () {
+        nextButtonmob2.style.display = "none";
+        shadowContainer.style.display = "none";
+    }, 30000); // 3 segundos
+}
+
+function hideNextButton() {
+    if (timer) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function () {
+        nextButtonmob2.style.display = "none";
+        shadowContainer.style.display = "none";
+    }, 0); // 1 segundo
+}
+
+function moveNext() {
+  if (currentIndex2 < slidesMob2.length - 3) {
+      currentIndex2 += 3; // Muda 3 posições para a direita
+      showHideArrows2(); // Atualiza a visibilidade dos botões de navegação
+  }
+}
+
+function showHideArrows2() {
+  if (currentIndex2 === 0) {
+      prevButtonmob2.style.display = "none";
+  } else {
+      prevButtonmob2.style.display = "block";
+  }
+
+  if (currentIndex2 >= slidesMob2.length - 3) {
+      nextButtonmob2.style.display = "none";
+  } else {
+      nextButtonmob2.style.display = "block";
+  }
+}
+
+
+
+// SECTION MAIS POPULARES MOBILE //
+
+
+const slidesMob3 = document.querySelectorAll(".container-anime2");
+const nextButtonmob3 = document.getElementById("nextButton-mob3");
+const prevButtonmob3 = document.getElementById("prevButton-mob3");
+const shadowContainer2 = document.getElementById("shadowContainer2");
+
+
+function showNextButton2() {
+  nextButtonmob3.style.display = "block";
+  shadowContainer2.style.display = "block";
+  if (timer) {
+      clearTimeout(timer);
+  }
+  timer = setTimeout(function () {
+      nextButtonmob3.style.display = "none";
+      shadowContainer2.style.display = "none";
+  }, 30000); // 3 segundos
+}
+
+function hideNextButton2() {
+  if (timer) {
+      clearTimeout(timer);
+  }
+  timer = setTimeout(function () {
+      nextButtonmob3.style.display = "none";
+      shadowContainer2.style.display = "none";
+  }, 0); // 1 segundo
+}
+
+function moveNext() {
+if (currentIndex3 < slidesMob3.length - 3) {
+    currentIndex3 += 3; // Muda 3 posições para a direita
+    showHideArrows3(); // Atualiza a visibilidade dos botões de navegação
+}
+}
+
+function showHideArrows3() {
+if (currentIndex3 === 0) {
+    prevButtonmob3.style.display = "none";
+} else {
+    prevButtonmob3.style.display = "block";
+}
+
+if (currentIndex2 >= slidesMob3.length - 3) {
+    nextButtonmob3.style.display = "none";
+} else {
+    nextButtonmob3.style.display = "block";
+}
+}
