@@ -2591,13 +2591,13 @@ margin: 0;
 }
 
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 560px) {
 
 
 
   .container-dead-mount img{
     cursor: pointer;
-  max-width: 500px;
+  max-width: 400px;
    min-height: 250px;
   
     padding-top: 50px;
