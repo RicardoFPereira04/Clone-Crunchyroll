@@ -293,7 +293,15 @@ IconMenuMob.addEventListener("click" , function(){
   Droptranslate.classList.remove("show")
 })
 
-
+document.addEventListener('touchstart', function(e) {
+  // Verificar se o toque não é dentro do elemento do menu
+  if (!IconMenuMob.contains(e.target) && !CloseAccount.contains(e.target) && !AccountCloseDesktop.contains(e.target) && !Droptranslate.contains(e.target)) {
+      // Lógica para fechar o menu aqui
+      CloseAccount.classList.remove("active-hover");
+      AccountCloseDesktop.classList.remove("active");
+      Droptranslate.classList.remove("show");
+  }
+});
 
 
 
@@ -786,9 +794,9 @@ indicatorsMob.forEach((indicator, index) => {
 
 // SECTION 1 MOBILE //
 
-
+let currentIndex2 = 0; 
 let timer;
-const slidesMob2 = document.querySelectorAll(".container-anime");
+const slidesMob2 = document.querySelectorAll(".container-anime-mob");
 const nextButtonmob2 = document.getElementById("nextButton-mob2");
 const prevButtonmob2 = document.getElementById("prevButton-mob2");
 const shadowContainer = document.getElementById("shadowContainer");
@@ -817,12 +825,13 @@ function hideNextButton() {
 }
 
 function moveNext() {
+
+
   if (currentIndex2 < slidesMob2.length - 3) {
       currentIndex2 += 3; // Muda 3 posições para a direita
       showHideArrows2(); // Atualiza a visibilidade dos botões de navegação
   }
 }
-
 function showHideArrows2() {
   if (currentIndex2 === 0) {
       prevButtonmob2.style.display = "none";
@@ -889,4 +898,87 @@ if (currentIndex2 >= slidesMob3.length - 3) {
 } else {
     nextButtonmob3.style.display = "block";
 }
+}
+
+
+// SECTION NOVOS LANÇAMENTOS MOBILE //
+
+
+const novosLancamentosSection = document.getElementById("novosLancamentosSection");
+const buttonVerMais = novosLancamentosSection.querySelector(".button-ver-mais");
+const containerAnimes = novosLancamentosSection.querySelector(".container-animes");
+
+let isExpanded = false;
+
+function toggleItems() {
+    const itens = containerAnimes.querySelectorAll(".father-div-ep");
+    for (let i = 4; i < itens.length; i++) {
+        if (!isExpanded) {
+            itens[i].style.display = "none";
+        } else {
+            itens[i].style.display = "flex";
+        }
+    }
+}
+
+buttonVerMais.addEventListener("click", function () {
+    isExpanded = !isExpanded;
+    toggleItems();
+    if (isExpanded) {
+        buttonVerMais.innerText = "VER MENOS";
+    } else {
+        buttonVerMais.innerText = "VER MAIS";
+    }
+});
+
+// Adicionar um listener de redimensionamento para ajustar o número de itens exibidos em telas menores
+window.addEventListener("resize", function () {
+    if (window.innerWidth <= 575) {
+        toggleItems();
+    } else {
+        const itens = containerAnimes.querySelectorAll(".father-div-ep");
+        for (let i = 0; i < itens.length; i++) {
+            itens[i].style.display = "flex";
+        }
+    }
+});
+
+
+// FOOTER MOBILE //
+
+const translateMob = document.querySelector(".text-translate-mob");
+const DroptranslateMob = document.querySelector(".drop-translate-mob");
+const SvgFechar = document.querySelector(".svg-fechar");
+
+SvgFechar.addEventListener("click", function(){
+  DroptranslateMob.classList.remove("show");
+  translateMob.classList.remove("active-hover");
+})
+
+translateMob.addEventListener("click", function(){
+  if (DroptranslateMob.classList.contains("show")) {
+    DroptranslateMob.classList.remove("show");
+    translateMob.classList.remove("active-hover");
+  } else {
+    DroptranslateMob.classList.add("show");
+    translateMob.classList.add("active-hover");
+  }
+});
+
+document.addEventListener("click", function(event) {
+  if (!DroptranslateMob.contains(event.target) && !translateMob.contains(event.target)) {
+    DroptranslateMob.classList.remove("show");
+    translateMob.classList.remove("active-hover");
+  }
+});
+
+
+if (DroptranslateMob.classList.contains("show")){
+  $navDropdown.removeClass("show")
+  $newsDropdown2.removeClass("show")
+  $navDropdown.removeClass("show")
+  $newsDropdown.removeClass("show")
+  $dropAccount.removeClass("active")
+  $customDropdownMobile.removeClass("show")
+  customDropdownTablet.classList.remove("show")
 }

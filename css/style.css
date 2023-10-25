@@ -1482,7 +1482,7 @@ margin-left: 20px;
 }
 
 .container-imagens-anime-mob img{
-  max-width: 175px;
+  max-width: 130px;
   height: auto;
   padding: 0px 5px;
 
@@ -1503,6 +1503,13 @@ margin-left: 20px;
 
 #nextButton-mob2{
   display: none;
+
+}
+
+.container-anime-mob{
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .svg-slide-anime-mob{
@@ -1572,6 +1579,10 @@ right: 100px;
   cursor: pointer;
 }
 
+#novosLancamentosSection{
+  display: none;
+}
+
 .container-novos{
   display: flex;
   align-items: center;
@@ -1616,6 +1627,9 @@ right: 100px;
   flex-direction: column;
   padding-top: 1rem;
   padding: 0px 100px;
+
+  width: auto;
+height: auto;
 }
 
 .container-animes-father{
@@ -1831,7 +1845,7 @@ border: none;
 /* SECTION MAIS POPULARES MOBILE*/
 
 .container-imagens-anime-mob2 img{
-  max-width: 175px;
+  max-width: 130px;
   height: auto;
   padding: 0px 5px;
 
@@ -2216,6 +2230,77 @@ top: 4455px;
   background-color: #23252b; 
    
 }
+
+
+
+/* FOOTER MOBILE */
+
+
+.drop-translate-mob{
+  display: none;
+
+
+
+  background-color: #23252b;
+}
+
+
+
+.drop-translate-mob.show{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+z-index: 1000;
+  background-color: #23252b;
+  flex-direction: column;
+  align-items: start;
+
+
+
+
+}
+
+.sub-menu-item{
+  color: #a0a0a0;
+}
+.drop-translate a{
+  color: #a0a0a0;
+}
+
+
+.container-idioma{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #141519;
+
+  width: 100%;
+
+  margin-bottom: 10px;
+
+  padding: 1.125rem
+ 1.125rem 1.125rem 1.25rem;
+}
+
+
+.svg-fechar{
+  max-width: 24px;
+  max-height: 24px;
+cursor: pointer;
+  fill: white;
+
+}
+
+.container-fechar{
+  align-items: flex-end;
+ 
+
+}
+
+
 /* RESPONSIVIDADE */
 
 
@@ -2281,6 +2366,12 @@ top: 4455px;
     .container-footer-mobile{
       display: none;
     }
+
+
+.container-imagens-anime-mob2{
+  display: none;
+}
+
   }
 
   
@@ -2365,8 +2456,8 @@ padding: 60px 20px;
 
 .container-dead-mount img{
   cursor: pointer;
-max-width: 550px;
- min-height: 250px;
+max-width: 450px;
+height: auto;
 
   padding-top: 50px;
   padding: 0px 30px;
@@ -2451,11 +2542,6 @@ max-width: 158px;
 }
 
 
-.container-footer-mobile li{
-
-
-  margin-bottom: 0.625rem;
-}
 
 
 
@@ -2475,7 +2561,7 @@ max-width: 158px;
 }
 
 .span{
-  min-width: 220px;
+  min-width: 130px;
 }
 
 
@@ -2552,6 +2638,10 @@ cursor: pointer;
 
 }
 
+#novoslancamentos-desktop{
+  display: none;
+}
+
 .container-animes-father{
   flex-direction: column;
 }
@@ -2566,7 +2656,12 @@ margin: 0;
 }
 
 .horario-ep{
-  padding: 20px 0px;
+  padding: 0px 0px;
+  padding-top: 50px;
+}
+
+.father-div-ep:nth-child(n+2) {
+  display: none;
 }
 
 .container-calendar-novos{
@@ -2588,22 +2683,39 @@ margin: 0;
 
 }
 
+.father-div-ep img{
+  max-width: 120px;
+}
+
+.titulo-anime2{
+  min-width: 256px;
+
+  font-size: 13px;
+}
+
+#novosLancamentosSection{
+  display: flex;
+
+  flex-direction: column;
+}
+
+.container-sony{
+  margin: 0;
+}
+
+.svg-slide-anime-mob2{
+  top: 30%;
+}
+
+.svg-slide-anime-mob{
+  top: 30%;
 }
 
 
-@media screen and (max-width: 560px) {
-
-
-
-  .container-dead-mount img{
-    cursor: pointer;
-  max-width: 400px;
-   min-height: 250px;
-  
-    padding-top: 50px;
-    padding: 0px 30px;
-  }
-  
-
+.li-translate{
+  padding: 0.75rem 1.25rem
+}
 
 }
+
+
