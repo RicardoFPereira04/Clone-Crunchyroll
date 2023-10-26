@@ -2318,6 +2318,11 @@ cursor: pointer;
 }
 
 
+.no-scroll {
+  overflow: hidden;
+}
+
+
 /* RESPONSIVIDADE */
 
 
@@ -2473,9 +2478,9 @@ padding: 60px 20px;
 
 .container-dead-mount img{
   cursor: pointer;
-max-width: 400px;
+max-width: 350px;
 height: auto;
-min-height: 270px;
+min-height: 250px;
 
   padding-top: 50px;
  

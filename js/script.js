@@ -997,23 +997,27 @@ window.addEventListener("resize", function () {
 
 
 // FOOTER MOBILE //
-
 const translateMob = document.querySelector(".text-translate-mob");
 const DroptranslateMob = document.querySelector(".drop-translate-mob");
 const SvgFechar = document.querySelector(".svg-fechar");
 
+const body = document.querySelector('body');
+
 SvgFechar.addEventListener("click", function(){
   DroptranslateMob.classList.remove("show");
   translateMob.classList.remove("active-hover");
-})
+  body.classList.remove("no-scroll");
+});
 
 translateMob.addEventListener("click", function(){
   if (DroptranslateMob.classList.contains("show")) {
     DroptranslateMob.classList.remove("show");
     translateMob.classList.remove("active-hover");
+    body.classList.remove("no-scroll");
   } else {
     DroptranslateMob.classList.add("show");
     translateMob.classList.add("active-hover");
+    body.classList.add("no-scroll");
   }
 });
 
@@ -1021,11 +1025,12 @@ document.addEventListener("click", function(event) {
   if (!DroptranslateMob.contains(event.target) && !translateMob.contains(event.target)) {
     DroptranslateMob.classList.remove("show");
     translateMob.classList.remove("active-hover");
+    body.classList.remove("no-scroll");
   }
 });
 
-
 if (DroptranslateMob.classList.contains("show")){
+  body.classList.add("no-scroll");
   $navDropdown.removeClass("show")
   $newsDropdown2.removeClass("show")
   $navDropdown.removeClass("show")
