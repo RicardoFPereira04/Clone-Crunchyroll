@@ -1482,7 +1482,7 @@ margin-left: 20px;
 }
 
 .container-imagens-anime-mob img{
-  max-width: 130px;
+  max-width: 128px;
   height: auto;
   padding: 0px 5px;
 
@@ -1496,7 +1496,7 @@ margin-left: 20px;
   position: absolute;
   top: 0;
   right: 0;
-  width: 20px; /* ou o valor desejado */
+  width: 22px; /* ou o valor desejado */
   height: 100%; /* ou o valor desejado */
   background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
 }
@@ -1534,13 +1534,15 @@ margin-left: 20px;
   fill: white;
   cursor: pointer;
   position: absolute;
-  right: 5px;
+  right: 0px;
   z-index: 100;
 
 
   top: 40%;
 
 }
+
+
 
 
 
@@ -1845,13 +1847,28 @@ border: none;
 /* SECTION MAIS POPULARES MOBILE*/
 
 .container-imagens-anime-mob2 img{
-  max-width: 130px;
+  max-width: 128px;
   height: auto;
   padding: 0px 5px;
 
   flex: 0 0 16.66%; 
 
  
+}
+
+.svg-slide-anime-mob3{
+  width: 20px;
+  height: 40px;
+  transform: rotate(0deg);
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  z-index: 100;
+
+
+  top: 40%;
+
 }
 
 .container-imagens-anime-mob2{
@@ -1883,7 +1900,7 @@ border: none;
   position: absolute;
   top: 0;
   right: 0;
-  width: 20px; /* ou o valor desejado */
+  width: 22px; /* ou o valor desejado */
   height: 100%; /* ou o valor desejado */
   background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
 }
@@ -2456,11 +2473,12 @@ padding: 60px 20px;
 
 .container-dead-mount img{
   cursor: pointer;
-max-width: 450px;
+max-width: 400px;
 height: auto;
+min-height: 270px;
 
   padding-top: 50px;
-  padding: 0px 30px;
+ 
 }
 
 
@@ -2561,7 +2579,7 @@ max-width: 158px;
 }
 
 .span{
-  min-width: 130px;
+  min-width: 105px;
 }
 
 
@@ -2688,7 +2706,7 @@ margin: 0;
 }
 
 .titulo-anime2{
-  min-width: 256px;
+  min-width: 180px;
 
   font-size: 13px;
 }
@@ -2707,6 +2725,10 @@ margin: 0;
   top: 30%;
 }
 
+.svg-slide-anime-mob3{
+  top: 30%;
+}
+
 .svg-slide-anime-mob{
   top: 30%;
 }
@@ -2714,6 +2736,15 @@ margin: 0;
 
 .li-translate{
   padding: 0.75rem 1.25rem
+}
+
+
+.titulo-anime{
+  min-height: 72px;
+}
+
+.titulo-anime2{
+  min-height: 72px;
 }
 
 }

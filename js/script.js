@@ -796,10 +796,49 @@ indicatorsMob.forEach((indicator, index) => {
 
 let currentIndex2 = 0; 
 let timer;
+
+const containerMob2 = document.querySelector(".container-imagens-anime-mob");
 const slidesMob2 = document.querySelectorAll(".container-anime-mob");
 const nextButtonmob2 = document.getElementById("nextButton-mob2");
 const prevButtonmob2 = document.getElementById("prevButton-mob2");
 const shadowContainer = document.getElementById("shadowContainer");
+const SvgSlideMob = document.querySelector(".svg-slide-anime-mob2")
+
+
+
+
+
+let scrollAmountMob = 0;
+const scrollStepMob = containerMob2.offsetWidth * 0.9; // Avançar 6 imagens
+
+
+
+
+nextButtonmob2.addEventListener('click', () => {
+
+  let currentLeft = parseInt(shadowContainer.style.left) || 0;
+  shadowContainer.style.left = currentLeft + 1035 + 'px';
+
+
+  let currentLeftSvg = parseInt(SvgSlideMob.style.left) || 0;
+  SvgSlideMob.style.left = currentLeftSvg + 1033 + 'px';
+
+
+
+  containerMob2.scrollTo({
+    top: 0,
+    left: (scrollAmountMob += scrollStepMob),
+    behavior: 'smooth'
+
+
+    
+  });});
+
+
+  
+  
+
+
 
 
 function showNextButton() {
@@ -824,14 +863,6 @@ function hideNextButton() {
     }, 0); // 1 segundo
 }
 
-function moveNext() {
-
-
-  if (currentIndex2 < slidesMob2.length - 3) {
-      currentIndex2 += 3; // Muda 3 posições para a direita
-      showHideArrows2(); // Atualiza a visibilidade dos botões de navegação
-  }
-}
 function showHideArrows2() {
   if (currentIndex2 === 0) {
       prevButtonmob2.style.display = "none";
@@ -855,6 +886,32 @@ const slidesMob3 = document.querySelectorAll(".container-anime2");
 const nextButtonmob3 = document.getElementById("nextButton-mob3");
 const prevButtonmob3 = document.getElementById("prevButton-mob3");
 const shadowContainer2 = document.getElementById("shadowContainer2");
+const containerMob3 = document.querySelector(".container-imagens-anime-mob2");
+const SvgSlideMob2 = document.querySelector(".svg-slide-anime-mob3")
+
+
+let scrollAmountMob2 = 0;
+const scrollStepMob2 = containerMob3.offsetWidth * 0.9; // Avançar 6 imagens
+
+prevButtonmob3.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
+
+nextButtonmob3.addEventListener('click', () => {
+
+  let currentLeft2 = parseInt(shadowContainer2.style.left) || 0;
+  shadowContainer2.style.left = currentLeft2 + 1035 + 'px';
+
+  let currentLeftSvg2 = parseInt(SvgSlideMob2.style.left) || 0;
+  SvgSlideMob2.style.left = currentLeftSvg2 + 1033 + 'px';
+
+  containerMob3.scrollTo({
+    top: 0,
+    left: (scrollAmountMob2 += scrollStepMob2),
+    behavior: 'smooth'
+
+  });});
+
+
+
 
 
 function showNextButton2() {
@@ -879,12 +936,7 @@ function hideNextButton2() {
   }, 0); // 1 segundo
 }
 
-function moveNext() {
-if (currentIndex3 < slidesMob3.length - 3) {
-    currentIndex3 += 3; // Muda 3 posições para a direita
-    showHideArrows3(); // Atualiza a visibilidade dos botões de navegação
-}
-}
+
 
 function showHideArrows3() {
 if (currentIndex3 === 0) {
