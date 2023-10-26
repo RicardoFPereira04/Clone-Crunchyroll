@@ -2401,6 +2401,10 @@ cursor: pointer;
 
 
 
+body{
+  max-width: 575px;
+}
+
 
 
     .premium-icon {
