@@ -802,72 +802,99 @@ const slidesMob2 = document.querySelectorAll(".container-anime-mob");
 const nextButtonmob2 = document.getElementById("nextButton-mob2");
 const prevButtonmob2 = document.getElementById("prevButton-mob2");
 const shadowContainer = document.getElementById("shadowContainer");
-const SvgSlideMob = document.querySelector(".svg-slide-anime-mob2")
+const shadowContainerPrev = document.querySelector(".shadow-container-prev");
+const SvgSlideMob = document.querySelector(".svg-slide-anime-mob2");
+const SvgSlideMobPrev = document.querySelector(".svg-slide-anime-mob");
 
-
-
-
-
-let scrollAmountMob = 0;
-const scrollStepMob = containerMob2.offsetWidth * 0.9; // Avançar 6 imagens
-
-
-
+let currentImageIndex = 0;
 
 nextButtonmob2.addEventListener('click', () => {
+  if (currentImageIndex === 0) {
+    const newImageUrls = [
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe" 
+    ];
 
-  let currentLeft = parseInt(shadowContainer.style.left) || 0;
-  shadowContainer.style.left = currentLeft + 1035 + 'px';
-
-
-  let currentLeftSvg = parseInt(SvgSlideMob.style.left) || 0;
-  SvgSlideMob.style.left = currentLeftSvg + 1033 + 'px';
-
-
-
-  containerMob2.scrollTo({
-    top: 0,
-    left: (scrollAmountMob += scrollStepMob),
-    behavior: 'smooth'
-
-
-    
-  });});
-
-
-  
-  
-
-
-
-
-function showNextButton() {
-    nextButtonmob2.style.display = "block";
-    shadowContainer.style.display = "block";
-    if (timer) {
-        clearTimeout(timer);
+    for (let i = 0; i < 5; i++) {
+      let currentImage = slidesMob2[currentImageIndex + i].querySelector('.img-anime');
+      currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
     }
-    timer = setTimeout(function () {
-        nextButtonmob2.style.display = "none";
-        shadowContainer.style.display = "none";
-    }, 30000); // 3 segundos
-}
+    currentImageIndex += 3; // Incrementa o índice da próxima imagem
+  }
 
-function hideNextButton() {
-    if (timer) {
-        clearTimeout(timer);
+  // Restante do código
+});
+
+prevButtonmob2.addEventListener('click', () => {
+  if (currentImageIndex > 0) {
+    const prevImageUrls = [
+
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe",
+      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe"
+
+
+
+
+    ];
+
+    for (let i = 0; i < 5; i++) {
+      let currentImage = slidesMob2[currentImageIndex - 5 + i].querySelector('.img-anime');
+      currentImage.src =  prevImageUrls[i]; // Substitui a URL da imagem anterior
     }
-    timer = setTimeout(function () {
-        nextButtonmob2.style.display = "none";
-        shadowContainer.style.display = "none";
-    }, 0); // 1 segundo
-}
+    currentImageIndex -= 5; // Reduz o índice da imagem anterior
+  }
+
+  // Restante do código
+});
+
+
+
+containerMob2.addEventListener('mouseover', () => {
+  if (currentIndex2 > 0) {
+    prevButtonmob2.style.display = "block";
+    shadowContainerPrev.style.display = "block";
+  }
+});
+
+containerMob2.addEventListener('mouseout', () => {
+  prevButtonmob2.style.display = "none";
+  shadowContainerPrev.style.display = "none";
+});
+
+nextButtonmob2.addEventListener('click', () => {
+  if (currentIndex2 === 0) {
+   ; // Ajuste a posição conforme necessário
+    SvgSlideMobPrev.style.display = 'block';
+   // Ajuste a posição conforme necessário
+    shadowContainerPrev.style.display = 'block';
+  }
+
+
+
+
+  currentIndex2 += 3; // Incrementar o índice pelo número de imagens avançadas
+  showHideArrows2();
+});
+
+// ...
+
+
+// ...
+
 
 function showHideArrows2() {
   if (currentIndex2 === 0) {
       prevButtonmob2.style.display = "none";
+      shadowContainerPrev.style.display = "none";
   } else {
       prevButtonmob2.style.display = "block";
+      shadowContainerPrev.style.display = "block";
   }
 
   if (currentIndex2 >= slidesMob2.length - 3) {
@@ -877,7 +904,27 @@ function showHideArrows2() {
   }
 }
 
+function showNextButton() {
+  nextButtonmob2.style.display = "block";
+  shadowContainer.style.display = "block";
+  if (timer) {
+      clearTimeout(timer);
+  }
+  timer = setTimeout(function () {
+      nextButtonmob2.style.display = "none";
+      shadowContainer.style.display = "none";
+  }, 30000); // 3 segundos
+}
 
+function hideNextButton() {
+  if (timer) {
+      clearTimeout(timer);
+  }
+  timer = setTimeout(function () {
+      nextButtonmob2.style.display = "none";
+      shadowContainer.style.display = "none";
+  }, 0); // 1 segundo
+}
 
 // SECTION MAIS POPULARES MOBILE //
 
