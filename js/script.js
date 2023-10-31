@@ -805,6 +805,9 @@ const shadowContainer = document.getElementById("shadowContainer");
 const shadowContainerPrev = document.querySelector(".shadow-container-prev");
 const SvgSlideMob = document.querySelector(".svg-slide-anime-mob2");
 const SvgSlideMobPrev = document.querySelector(".svg-slide-anime-mob");
+// Suponha que você tenha elementos HTML com as classes "title" e "subtitle" correspondentes aos títulos e subtítulos
+const titleElements = document.querySelectorAll('.titulo-anime');
+const subtitleElements = document.querySelectorAll('.LegDub');
 
 
 
@@ -833,6 +836,7 @@ const imageSets = [
   // Continue adicionando conjuntos de imagens conforme necessário
 ];
 
+
 nextButtonmob2.addEventListener('click', () => {
   const setIndex = Math.floor(currentImageIndex / numImagesToChange);
   const nextSetIndex = (setIndex + 1) % imageSets.length;
@@ -842,36 +846,73 @@ nextButtonmob2.addEventListener('click', () => {
     for (let i = 0; i < numImagesToChange; i++) {
       let currentImage = slidesMob2[currentImageIndex + i].querySelector('.img-anime');
       currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
+      // Mapeie os títulos e os subtítulos com base nos links das imagens
+      if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe") {
+        titleElements[i].innerText = "One Piece";
+        subtitleElements[i].innerText = "Leg | Dub";
+      } else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe") {
+        titleElements[i].innerText = "Vinland Saga";
+        subtitleElements[i].innerText = "Leg | Dub";
+      }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe") {
+        titleElements[i].innerText = "Blue Lock";
+        subtitleElements[i].innerText = "Leg | Dub";
+      }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe") {
+        titleElements[i].innerText = "Tokyo Ghoul";
+        subtitleElements[i].innerText = "Leg | Dub";
+      }
+      // Adicione mais condições conforme necessário para outros links de imagens
     }
     currentImageIndex += numImagesToChange; // Incrementa o índice da próxima imagem
   } else {
-    for (let i = 0; i < numImagesToChange; i++) {
-      let currentImage = slidesMob2[i].querySelector('.img-anime');
-      currentImage.src = imageSets[0][i]; // Retorna ao primeiro conjunto de imagens
-    }
-    currentImageIndex = 0; // Reseta o índice de imagens para o início
+    // Restante do seu código
   }
+
+  // Restante do seu código
+});
+
+  if (currentImageIndex === 0) {
+    prevButtonmob2.style.display = "none"; // Oculta o botão "prev" quando o índice das imagens é 0
+    shadowContainerPrev.style.display = "none"; // Oculta o shadow container quando o índice das imagens é 0
+  } else {
+    prevButtonmob2.style.display = "block"; // Caso contrário, exibe o botão "prev"
+    shadowContainerPrev.style.display = "block"; // Caso contrário, exibe o shadow container
+  }
+
+  // Restante do código
 
 
   prevButtonmob2.addEventListener('click', () => {
-  const setIndex = Math.floor(currentImageIndex / numImagesToChange);
-  const prevSetIndex = (setIndex - 1 + imageSets.length) % imageSets.length;
-  const newImageUrls = imageSets[prevSetIndex]; // Obter o conjunto anterior de imagens
+    const setIndex = Math.floor(currentImageIndex / numImagesToChange);
+    const prevSetIndex = (setIndex - 1 + imageSets.length) % imageSets.length;
+    const newImageUrls = imageSets[prevSetIndex]; // Obter o conjunto anterior de imagens
+  
+    if (currentImageIndex - numImagesToChange >= 0) {
+      for (let i = 0; i < numImagesToChange; i++) {
+        let currentImage = slidesMob2[currentImageIndex - numImagesToChange + i].querySelector('.img-anime');
+        currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
+        // Mapeie os títulos e os subtítulos com base nos links das imagens
+        if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe") {
+          titleElements[i].innerText = "Chainsaw Man";
+          subtitleElements[i].innerText = "Leg | Dub";
+        } else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe") {
+          titleElements[i].innerText = "JUJUTSU KAISEN";
+          subtitleElements[i].innerText = "Leg | Dub";
+        }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe") {
+          titleElements[i].innerText = "Bungo Stray Dogs";
+          subtitleElements[i].innerText = "Leg | Dub";
+        }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe") {
+          titleElements[i].innerText = "Ranking of Kings";
+          subtitleElements[i].innerText = "Leg | Dub";
+        }
+        // Adicione mais condições conforme necessário para outros links de imagens
+      }
+      currentImageIndex -= numImagesToChange; // Decrementa o índice da imagem anterior
+    } else {
+      // Restante do seu código
+    }
+  
+    // Restante do código
 
-  if (currentImageIndex - numImagesToChange >= 0) {
-    for (let i = 0; i < numImagesToChange; i++) {
-      let currentImage = slidesMob2[currentImageIndex - numImagesToChange + i].querySelector('.img-anime');
-      currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
-    }
-    currentImageIndex -= numImagesToChange; // Decrementa o índice da imagem anterior
-  } else {
-    const startIndex = slidesMob2.length - numImagesToChange;
-    for (let i = 0; i < numImagesToChange; i++) {
-      let currentImage = slidesMob2[startIndex + i].querySelector('.img-anime');
-      currentImage.src = imageSets[imageSets.length - 1][i]; // Retorna ao último conjunto de imagens
-    }
-    currentImageIndex = startIndex; // Define o índice de imagens para a posição inicial do último conjunto
-  }
 
   if (currentImageIndex === 0) {
     prevButtonmob2.style.display = "none"; // Oculta o botão "prev" quando o índice das imagens é 0
@@ -884,13 +925,8 @@ nextButtonmob2.addEventListener('click', () => {
   // Restante do código
 });
 
-
-  // Restante do código
-});
-
-
-
 // Restante do código
+
 
 
 
