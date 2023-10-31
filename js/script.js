@@ -806,52 +806,91 @@ const shadowContainerPrev = document.querySelector(".shadow-container-prev");
 const SvgSlideMob = document.querySelector(".svg-slide-anime-mob2");
 const SvgSlideMobPrev = document.querySelector(".svg-slide-anime-mob");
 
+
+
 let currentImageIndex = 0;
+let numImagesToChange = 4; // Altere isso dependendo do tamanho da tela
+
+const imageSets = [
+  [
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe",
+  ],
+  [
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe" ,
+  ],
+  [
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/fdfd2e0910d6f141626a7d6f8f76ab72.jpe" ,
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/efb29ad752e647212b3e199da7748e9e.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1b083a97efcac96d6f3f6c3880321f93.jpe" 
+  ],
+  // Continue adicionando conjuntos de imagens conforme necessário
+];
 
 nextButtonmob2.addEventListener('click', () => {
-  if (currentImageIndex === 0) {
-    const newImageUrls = [
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe" 
-    ];
+  const setIndex = Math.floor(currentImageIndex / numImagesToChange);
+  const nextSetIndex = (setIndex + 1) % imageSets.length;
+  const newImageUrls = imageSets[nextSetIndex]; // Obter o próximo conjunto de imagens
 
-    for (let i = 0; i < 5; i++) {
+  if (currentImageIndex + numImagesToChange < slidesMob2.length) {
+    for (let i = 0; i < numImagesToChange; i++) {
       let currentImage = slidesMob2[currentImageIndex + i].querySelector('.img-anime');
       currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
     }
-    currentImageIndex += 3; // Incrementa o índice da próxima imagem
-  }
-
-  // Restante do código
-});
-
-prevButtonmob2.addEventListener('click', () => {
-  if (currentImageIndex > 0) {
-    const prevImageUrls = [
-
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe",
-      "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe"
-
-
-
-
-    ];
-
-    for (let i = 0; i < 5; i++) {
-      let currentImage = slidesMob2[currentImageIndex - 5 + i].querySelector('.img-anime');
-      currentImage.src =  prevImageUrls[i]; // Substitui a URL da imagem anterior
+    currentImageIndex += numImagesToChange; // Incrementa o índice da próxima imagem
+  } else {
+    for (let i = 0; i < numImagesToChange; i++) {
+      let currentImage = slidesMob2[i].querySelector('.img-anime');
+      currentImage.src = imageSets[0][i]; // Retorna ao primeiro conjunto de imagens
     }
-    currentImageIndex -= 5; // Reduz o índice da imagem anterior
+    currentImageIndex = 0; // Reseta o índice de imagens para o início
+  }
+
+
+  prevButtonmob2.addEventListener('click', () => {
+  const setIndex = Math.floor(currentImageIndex / numImagesToChange);
+  const prevSetIndex = (setIndex - 1 + imageSets.length) % imageSets.length;
+  const newImageUrls = imageSets[prevSetIndex]; // Obter o conjunto anterior de imagens
+
+  if (currentImageIndex - numImagesToChange >= 0) {
+    for (let i = 0; i < numImagesToChange; i++) {
+      let currentImage = slidesMob2[currentImageIndex - numImagesToChange + i].querySelector('.img-anime');
+      currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
+    }
+    currentImageIndex -= numImagesToChange; // Decrementa o índice da imagem anterior
+  } else {
+    const startIndex = slidesMob2.length - numImagesToChange;
+    for (let i = 0; i < numImagesToChange; i++) {
+      let currentImage = slidesMob2[startIndex + i].querySelector('.img-anime');
+      currentImage.src = imageSets[imageSets.length - 1][i]; // Retorna ao último conjunto de imagens
+    }
+    currentImageIndex = startIndex; // Define o índice de imagens para a posição inicial do último conjunto
+  }
+
+  if (currentImageIndex === 0) {
+    prevButtonmob2.style.display = "none"; // Oculta o botão "prev" quando o índice das imagens é 0
+    shadowContainerPrev.style.display = "none"; // Oculta o shadow container quando o índice das imagens é 0
+  } else {
+    prevButtonmob2.style.display = "block"; // Caso contrário, exibe o botão "prev"
+    shadowContainerPrev.style.display = "block"; // Caso contrário, exibe o shadow container
   }
 
   // Restante do código
 });
+
+
+  // Restante do código
+});
+
+
+
+// Restante do código
 
 
 
@@ -859,6 +898,13 @@ containerMob2.addEventListener('mouseover', () => {
   if (currentIndex2 > 0) {
     prevButtonmob2.style.display = "block";
     shadowContainerPrev.style.display = "block";
+  }
+});
+
+containerMob2.addEventListener('mouseover', () => {
+  if (currentImageIndex === 0) {
+    prevButtonmob2.style.display = "none";
+    shadowContainerPrev.style.display = "none";
   }
 });
 
