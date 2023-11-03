@@ -812,7 +812,10 @@ const subtitleElements = document.querySelectorAll('.LegDub');
 
 
 let currentImageIndex = 0;
-let numImagesToChange = 4; // Altere isso dependendo do tamanho da tela
+let numImagesToChange = 5; // Altere isso dependendo do tamanho da tela
+
+
+
 
 const imageSets = [
   [
@@ -820,12 +823,14 @@ const imageSets = [
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe",
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe",
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe"
   ],
   [
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe",
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe" ,
+    "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe",
   ],
   [
     "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe",
@@ -836,7 +841,6 @@ const imageSets = [
   // Continue adicionando conjuntos de imagens conforme necessário
 ];
 
-
 nextButtonmob2.addEventListener('click', () => {
   const setIndex = Math.floor(currentImageIndex / numImagesToChange);
   const nextSetIndex = (setIndex + 1) % imageSets.length;
@@ -846,30 +850,67 @@ nextButtonmob2.addEventListener('click', () => {
     for (let i = 0; i < numImagesToChange; i++) {
       let currentImage = slidesMob2[currentImageIndex + i].querySelector('.img-anime');
       currentImage.src = newImageUrls[i]; // Substitui a URL da imagem atual
+
       // Mapeie os títulos e os subtítulos com base nos links das imagens
       if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe") {
-        titleElements[i].innerText = "One Piece";
-        subtitleElements[i].innerText = "Leg | Dub";
+        titleElements[currentImageIndex + i].innerText = "One Piece";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
       } else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe") {
-        titleElements[i].innerText = "Vinland Saga";
-        subtitleElements[i].innerText = "Leg | Dub";
-      }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe") {
-        titleElements[i].innerText = "Blue Lock";
-        subtitleElements[i].innerText = "Leg | Dub";
-      }else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe") {
-        titleElements[i].innerText = "Tokyo Ghoul";
-        subtitleElements[i].innerText = "Leg | Dub";
+        titleElements[currentImageIndex + i].innerText = "Vinland Saga";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      } else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe") {
+        titleElements[currentImageIndex + i].innerText = "Blue Lock";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      } else if (newImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe") {
+        titleElements[currentImageIndex + i].innerText = "Tokyo Ghoul";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
       }
-      // Adicione mais condições conforme necessário para outros links de imagens
     }
     currentImageIndex += numImagesToChange; // Incrementa o índice da próxima imagem
   } else {
-    // Restante do seu código
+    for (let i = 0; i < numImagesToChange; i++) {
+      let currentImage = slidesMob2[i].querySelector('.img-anime');
+      currentImage.src = imageSets[nextSetIndex][i]; // Altera para o próximo conjunto de imagens
+    }
+
+    currentImageIndex = numImagesToChange * nextSetIndex; // Atualiza o índice de imagem atual para o próximo conjunto
+    const initialImageUrls = imageSets[0]; // Obtenha o primeiro conjunto de imagens
+    for (let i = 0; i < numImagesToChange; i++) {
+      if (initialImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe") {
+        titleElements[i].innerText = "Chainsaw Man";
+        subtitleElements[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe") {
+        titleElements[i].innerText = "JUJUTSU KAISEN";
+        subtitleElements[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe") {
+        titleElements[i].innerText = "Bungo Stray Dogs";
+        subtitleElements[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe") {
+        titleElements[i].innerText = "Ranking of Kings";
+        subtitleElements[i].innerText = "Leg | Dub";
+      }}
+
+      // Adi
+    // Definir os títulos e subtítulos do conjunto atual
+    const currentImageUrls = imageSets[nextSetIndex]; // Obtenha o conjunto de imagens atual
+    for (let i = 0; i < numImagesToChange; i++) {
+      if (currentImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe") {
+        titleElements[currentImageIndex + i].innerText = "Horimiya";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/fdfd2e0910d6f141626a7d6f8f76ab72.jpe") {
+        titleElements[currentImageIndex + i].innerText = "My Dress Up Darling";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/efb29ad752e647212b3e199da7748e9e.jpe") {
+        titleElements[currentImageIndex + i].innerText = "Code Geass";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1b083a97efcac96d6f3f6c3880321f93.jpe") {
+        titleElements[currentImageIndex + i].innerText = "Soul Eater";
+        subtitleElements[currentImageIndex + i].innerText = "Leg | Dub";
+      }
+      // Adicione mais condições conforme necessário para outros links de imagens atuais
+    }
   }
-
-  // Restante do seu código
-});
-
+  // Verifique se o botão "prev" e o shadow container devem ser exibidos
   if (currentImageIndex === 0) {
     prevButtonmob2.style.display = "none"; // Oculta o botão "prev" quando o índice das imagens é 0
     shadowContainerPrev.style.display = "none"; // Oculta o shadow container quando o índice das imagens é 0
@@ -877,8 +918,12 @@ nextButtonmob2.addEventListener('click', () => {
     prevButtonmob2.style.display = "block"; // Caso contrário, exibe o botão "prev"
     shadowContainerPrev.style.display = "block"; // Caso contrário, exibe o shadow container
   }
+});
 
-  // Restante do código
+
+
+
+
 
 
   prevButtonmob2.addEventListener('click', () => {
@@ -1008,6 +1053,37 @@ function hideNextButton() {
   }, 0); // 1 segundo
 }
 
+
+
+
+let touchstartX = 0;
+let touchendX = 0;
+
+slidesMob2[0].addEventListener('touchstart', (event) => {
+  touchstartX = event.changedTouches[0].screenX;
+}, false);
+
+slidesMob2[0].addEventListener('touchend', (event) => {
+  touchendX = event.changedTouches[0].screenX;
+  handleGesture();
+}, false);
+
+function handleGesture() {
+  if (touchendX < touchstartX) {
+    // Deslize para a esquerda
+    // Coloque o código para avançar as imagens ou executar a lógica para avançar
+    console.log("Deslize para a esquerda");
+  }
+
+  if (touchendX > touchstartX) {
+    // Deslize para a direita
+    // Coloque o código para retroceder as imagens ou executar a lógica para retroceder
+    console.log("Deslize para a direita");
+  }
+}
+
+
+
 // SECTION MAIS POPULARES MOBILE //
 
 
@@ -1017,69 +1093,212 @@ const prevButtonmob3 = document.getElementById("prevButton-mob3");
 const shadowContainer2 = document.getElementById("shadowContainer2");
 const containerMob3 = document.querySelector(".container-imagens-anime-mob2");
 const SvgSlideMob2 = document.querySelector(".svg-slide-anime-mob3")
+const titleElements2 = document.querySelectorAll('.titulo-anime-mob2');
+const subtitleElements2 = document.querySelectorAll('.LegDub2');
+const shadowContainerPrev2 = document.querySelector(".shadow-container-prev2");
 
 
-let scrollAmountMob2 = 0;
-const scrollStepMob2 = containerMob3.offsetWidth * 0.9; // Avançar 6 imagens
+let numImagesToChange2 = 5; 
+let currentImageIndex2 = 0;
 
-prevButtonmob3.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
+let showPrevButton = false;
 
 nextButtonmob3.addEventListener('click', () => {
+  const setIndex2 = Math.floor(currentImageIndex2 / numImagesToChange2);
+  const nextSetIndex2 = (setIndex2 + 1) % imageSets.length;
+  const newImageUrls2 = imageSets[nextSetIndex2]; // Obter o próximo conjunto de imagens
 
-  let currentLeft2 = parseInt(shadowContainer2.style.left) || 0;
-  shadowContainer2.style.left = currentLeft2 + 1035 + 'px';
+  if (currentImageIndex2 + numImagesToChange2 < slidesMob3.length) {
+    for (let i = 0; i < numImagesToChange2; i++) {
+      let currentImage2 = slidesMob3[currentImageIndex2 + i].querySelector('.img-anime2');
+      currentImage2.src = newImageUrls2[i]; // Substitui a URL da imagem atual
 
-  let currentLeftSvg2 = parseInt(SvgSlideMob2.style.left) || 0;
-  SvgSlideMob2.style.left = currentLeftSvg2 + 1033 + 'px';
+      // Mapeie os títulos e os subtítulos com base nos links das imagens
+      if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "One Piece";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Vinland Saga";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Blue Lock";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Tokyo Ghoul";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      }
+    }
+    currentImageIndex2 += numImagesToChange2; // Incrementa o índice da próxima imagem
+  } else {
+    for (let i = 0; i < numImagesToChange2; i++) {
+      let currentImage2 = slidesMob3[i].querySelector('.img-anime2');
+      currentImage2.src = imageSets[nextSetIndex2][i]; // Altera para o próximo conjunto de imagens
+    }
 
-  containerMob3.scrollTo({
-    top: 0,
-    left: (scrollAmountMob2 += scrollStepMob2),
-    behavior: 'smooth'
+    currentImageIndex2 = numImagesToChange2 * nextSetIndex2; // Atualiza o índice de imagem atual para o próximo conjunto
+    const initialImageUrls2 = imageSets[0]; // Obtenha o primeiro conjunto de imagens
+    for (let i = 0; i < numImagesToChange2; i++) {
+      if (initialImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe") {
+        titleElements2[i].innerText = "Chainsaw Man";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe") {
+        titleElements2[i].innerText = "JUJUTSU KAISEN";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe") {
+        titleElements2[i].innerText = "Bungo Stray Dogs";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      } else if (initialImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe") {
+        titleElements2[i].innerText = "Ranking of Kings";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      }}
 
-  });});
+      // Adi
+    // Definir os títulos e subtítulos do conjunto atual
+    const currentImageUrls2 = imageSets[nextSetIndex2]; // Obtenha o conjunto de imagens atual
+    for (let i = 0; i < numImagesToChange2; i++) {
+      if (currentImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Horimiya";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/fdfd2e0910d6f141626a7d6f8f76ab72.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "My Dress Up Darling";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/efb29ad752e647212b3e199da7748e9e.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Code Geass";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      } else if (currentImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1b083a97efcac96d6f3f6c3880321f93.jpe") {
+        titleElements2[currentImageIndex2 + i].innerText = "Soul Eater";
+        subtitleElements2[currentImageIndex2 + i].innerText = "Leg | Dub";
+      }
+      // Adicione mais condições conforme necessário para outros links de imagens atuais
+    }
+  }
 
+  showHideArrows3(); // Mostra ou esconde os botões com base no índice atual
+});
 
+prevButtonmob3.addEventListener('click', () => {
+  const setIndex2 = Math.floor(currentImageIndex2 / numImagesToChange2);
+  const prevSetIndex2 = (setIndex2 - 1 + imageSets2.length) % imageSets.length;
+  const newImageUrls2 = imageSets[prevSetIndex2]; // Obter o conjunto anterior de imagens
 
+  if (currentImageIndex2 - numImagesToChange2 >= 0) {
+    for (let i = 0; i < numImagesToChange2; i++) {
+      let currentImage2 = slidesMob3[currentImageIndex2 - numImagesToChange2 + i].querySelector('.img-anime2');
+      currentImage2.src = newImageUrls2[i]; // Substitui a URL da imagem atual
 
+      // Mapeie os títulos e os subtítulos com base nos links das imagens
+      if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/eceac71dbf61b38c7b94fc14e590c7b2.jpe") {
+        titleElements2[i].innerText = "É Sério Que Eu Sou O Mais Forte?";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      } else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe") {
+        titleElements2[i].innerText = "JUJUTSU KAISEN";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      }else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe") {
+        titleElements2[i].innerText = "Bungo Stray Dogs";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      }else if (newImageUrls2[i] === "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/61eff1385c6b64a1110708ca3e0f4fb3.jpe") {
+        titleElements2[i].innerText = "Minha Crush Esqueceu Os Óculos";
+        subtitleElements2[i].innerText = "Leg | Dub";
+      }
+      // Adicione mais condições conforme necessário para outros links de imagens
+    }
+    currentImageIndex2 -= numImagesToChange2; // Decrementa o índice da imagem anterior
+  } else {
+    // Restante do seu código
+  }
+
+  function showHideArrows3() {
+    if (currentImageIndex2 === 0) {
+        prevButtonmob3.style.display = "none";
+        shadowContainerPrev2.style.display = "none";
+    } else {
+        prevButtonmob3.style.display = "block";
+        shadowContainerPrev2.style.display = "block";
+    }
+  
+    if (currentImageIndex2 >= slidesMob3.length - 3) {
+        nextButtonmob3.style.display = "none";
+    } else {
+        nextButtonmob3.style.display = "block";
+    }
+  }
+
+  showHideArrows3(); // Mostra ou esconde os botões com base no índice atual
+});
+
+containerMob3.addEventListener('mouseover', () => {
+  if (currentImageIndex2 > 0) {
+    prevButtonmob3.style.display = "block";
+    shadowContainer2.style.display = "block";
+  }
+});
+
+containerMob3.addEventListener('mouseover', () => {
+  if (currentImageIndex2 === 0) {
+    prevButtonmob3.style.display = "none";
+    shadowContainer2.style.display = "none";
+  }
+});
+
+containerMob3.addEventListener('mouseout', () => {
+  prevButtonmob3.style.display = "none";
+  shadowContainer2.style.display = "none";
+});
+
+nextButtonmob3.addEventListener('click', () => {
+  if (currentImageIndex2 === 0) {
+    // Ajuste a posição conforme necessário
+    SvgSlideMob2.style.display = 'block';
+    // Ajuste a posição conforme necessário
+    shadowContainer2.style.display = 'block';
+  }
+
+  currentImageIndex2 += 3; // Incrementar o índice pelo número de imagens avançadas
+  showHideArrows3();
+});
+
+// Função para mostrar ou esconder os botões com base no índice atual
+function showHideArrows3() {
+  if (currentImageIndex2 === 0) {
+    prevButtonmob3.style.display = "none";
+    shadowContainer2.style.display = "none";
+  } else {
+    prevButtonmob3.style.display = "block";
+    shadowContainer2.style.display = "block";
+  }
+
+  if (currentImageIndex2 >= slidesMob3.length - 3) {
+    nextButtonmob3.style.display = "none";
+  } else {
+    nextButtonmob3.style.display = "block";
+  }
+}
+
+// Função showNextButton e hideNextButton para controlar o temporizador
+let timer2;
 
 function showNextButton2() {
   nextButtonmob3.style.display = "block";
   shadowContainer2.style.display = "block";
-  if (timer) {
-      clearTimeout(timer);
+  if (timer2) {
+    clearTimeout(timer2);
   }
-  timer = setTimeout(function () {
-      nextButtonmob3.style.display = "none";
-      shadowContainer2.style.display = "none";
-  }, 30000); // 3 segundos
+  timer2 = setTimeout(function () {
+    nextButtonmob3.style.display = "none";
+    shadowContainer2.style.display = "none";
+  }, 30000); // 30 segundos
 }
 
 function hideNextButton2() {
-  if (timer) {
-      clearTimeout(timer);
+  if (timer2) {
+    clearTimeout(timer2);
   }
-  timer = setTimeout(function () {
-      nextButtonmob3.style.display = "none";
-      shadowContainer2.style.display = "none";
-  }, 0); // 1 segundo
-}
-
-
-
-function showHideArrows3() {
-if (currentIndex3 === 0) {
-    prevButtonmob3.style.display = "none";
-} else {
-    prevButtonmob3.style.display = "block";
-}
-
-if (currentIndex2 >= slidesMob3.length - 3) {
+  timer2 = setTimeout(function () {
     nextButtonmob3.style.display = "none";
-} else {
-    nextButtonmob3.style.display = "block";
+    shadowContainer2.style.display = "none";
+  }, 1000); // 1 segundo
 }
-}
+
 
 
 // SECTION NOVOS LANÇAMENTOS MOBILE //
