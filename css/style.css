@@ -1500,14 +1500,7 @@ margin-left: 20px;
   height: 100%; /* ou o valor desejado */
   background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
 }
-.shadow-container-prev{
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 22px; /* ou o valor desejado */
-  height: 100%; /* ou o valor desejado */
-  background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
-}
+
 
 #nextButton-mob2{
   display: none;
@@ -1895,6 +1888,21 @@ border: none;
 
 }
 
+
+.svg-slide-anime-mob4{
+  width: 20px;
+  height: 40px;
+  transform: rotate(180deg);
+  fill: white;
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  z-index: 100;
+ display: none;
+
+  top: 23%;
+}
+
 .container-imagens-anime-mob2{
   z-index: 10;
   position: relative;
@@ -1929,14 +1937,7 @@ border: none;
   background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
 }
 
-.shadow-container-prev2{
-  position: absolute;
-  top: 0;
-  left: 0px;
-  width: 22px; /* ou o valor desejado */
-  height: 100%; /* ou o valor desejado */
-  background-color: rgba(0, 0, 0, 0.9); /* Ajuste a cor e a opacidade conforme necessário */
-}
+
 
 #nextButton-mob3{
   display: none;
