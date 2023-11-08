@@ -2514,7 +2514,7 @@ padding: 60px 20px;
 
 .container-dead-mount img{
   cursor: pointer;
-max-width: 350px;
+max-width: 350px !important;
 height: auto;
 min-height: 250px;
 
@@ -2522,7 +2522,9 @@ min-height: 250px;
  
 }
 
-
+.container-sony{
+  border-top: none;
+}
 .container-footer{
   display: none;
 }
@@ -2792,4 +2794,388 @@ margin: 0;
 
 }
 
+@media screen and (max-width: 1670px) {
+
+  .container-imagens-anime img{
+    max-width: 220px;
+  }
+.container-imagens-anime2 img{
+  max-width: 220px;
+}
+  .container-dead-mount{
+    padding: 30px 0px;
+
+  }
+  .container-dead-mount img{
+    max-width: 1100px;
+  }
+
+  .container-hoje-animes3{
+    display: none;
+  }
+
+  .container-sony{
+    margin: 0px 150px;
+  }
+
+  .container-footer ul{
+    min-width: 200px;
+  }
+
+  .drop-translate.show{
+    top: 3773px;
+    right: 249px;
+  }
+}
+@media screen and (max-width: 1582px) {
+  .container-footer ul{
+    padding: 0;
+  }
+}
+@media screen and (max-width: 1521px) {
+.ul-itens-rede{
+  justify-content: start;
+  padding-left: 100px;
+}
+
+.container-sony{
+  margin-left: 70px;
+}
+}
+@media screen and (max-width: 1300px){
+  .container-footer ul{
+    min-width: 190px;
+  }
+
+}
+
+@media screen and (max-width: 1405px){
+.ul-itens-rede{
+  padding-left:50px;
+}
+
+.container-dead-mount img {
+  max-width: 800px;}
+
+.container-sony{
+  margin-left: 30px;
+}
+}
+
+@media screen and (max-width: 1365px){
+ .horario-ep{
+  padding-left: 0px;
+ }
+
+}
+
+
+@media screen and (max-width: 1350px){
+
+  .ul-itens-rede{
+    padding-left:20px;
+  }
+  
+  .container-sony{
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 1260px){
+
+
+}
+
+@media screen and (max-width: 1259px){
+  .container-footer{
+    padding: 0px 30px;
+  }
+.container-sony{
+  margin-right: 10px;
+}
+
+
+.drop-translate.show{
+  top: 3773px;
+  right: 38px;
+}
+
+}
+
+@media screen and (max-width: 1245px){
+  .container-animes-father{
+    flex-direction: column;
+  }
+
+  .container-hoje-animes2{
+margin-left: 0;
+  }
+
+  .container-hoje-animes3{
+    margin-left: 0;
+    display: flex;
+  }
+  .drop-translate.show{
+    top: 4157px;
+    right: 38px;
+  }
+}
+
+@media screen and (max-width: 1176px){
+
+  .slide {
+max-width: 400px;
+  }
+
+  
+  .slide img {
+    max-width: 370px;
+      }
+}
+
+@media screen and (max-width: 1130px){
+
+  .slide {
+max-width: 350px;
+  }
+
+  
+  .slide img {
+    max-width: 300px;
+    margin-top: 20px;
+      }
+
+      #spy{
+        margin-top: 90px;
+      }
+}
+
+@media screen and (max-width: 1075px){
+
+  .slide {
+max-width: 300px;
+  }
+
+  
+  .slide img {
+    max-width: 250px;
+    margin-top: 10px;
+      }
+}
+@media screen and (max-width: 1035px){
+
+
+  .slide {
+    max-width: 250px;
+      }
+    
+      
+      .slide img {
+        max-width: 220px;
+        margin-top: 10px;
+          }
+
+.description{
+  display: none;
+}
+
+.button-watching{
+  margin-top: 2rem;
+ min-width: 250px;
+}
+.button-fav{
+  margin-top: 2rem;
+}
+.text-dub{
+  margin-top: 2rem;
+}
+
+.carousel-indicator{
+  padding-top: 2rem;
+}
+}
+
+
+
+@media screen and (max-width: 980px){
+.ul-itens-rede{
+  justify-content: start;
+  width: 100%;
+}
+.slide {
+  max-width: 200px;
+    }
+  
+    
+    .slide img {
+      max-width: 180px;
+      margin-top: 10px;
+        }
+
+}
+
+@media screen and (max-width: 943px){
+  .drop-translate.show{
+    top: 4156px;
+    right: 38px;
+  }
+  .container-dead-mount img {
+    max-width: 600px;}
+
+    .slide {
+      max-width: 160px;
+        }
+      
+        
+        
+
+}
+
+
+@media screen and (max-width: 923px){
+  .drop-translate.show{
+    top: 4180px;
+    right: 38px;
+  }
+#teste-gratuito{
+font-size: 14px;
+}
+}
+
+
+@media screen and (max-width: 890px){
+  .slide{
+    max-width: 60px;
+  }
+}
+
+@media screen and (max-width: 800px){
+
+  .container-animes{
+    padding: 0px 30px;
+  }
+.container-novos{
+  padding-left: 30px;
+}
+ 
+}
+
+@media screen and (max-width: 850px){
+  #last-ul{
+    display: none;
+  }
+
+  .drop-translate.show{
+    top: 4157px;
+    right: 38px;
+  }
+
+  .text-calendar{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 773px){
+
+
+  .drop-translate.show{
+    top: 4158px;
+    right: 38px;
+  }
+}
+
+@media screen and (max-width: 733px){
+  .drop-translate.show{
+    top: 4180px;
+    right: 38px;
+  }
+
+  .container-dead-mount img {
+    max-width: 500px;}
+
+}
+
+@media screen and (max-width: 688px){
+
+ #teste-gratuito{
+  font-size: 13px;
+ }
+}
+
+@media screen and (max-width: 680px){
+
+  .container-footer ul{
+    padding: 0px 2px;
+    
+  }
+}
+@media screen and (max-width: 652px){
+  .container-footer{
+    padding: 0px 20px;
+  }
+
+  
+  .drop-translate.show{
+    top: 4180px;
+    right: 28px;
+  }
+}
+@media screen and (max-width: 650px){
+
+.horario-ep{
+  padding-left: 0px;
+}
+#teste-gratuito{
+  font-size: 13px;
+}
+
+.container-footer li{
+  max-width: 150px;
+}
+
+#teste-gratuito{
+  font-size: 11px;
+}
+.container-footer ul{
+  padding: 0px 0px;
+  
+}
+
+.svg-king2{
+  width: 18px;
+  height: 18px;
+}
+
+.drop-translate.show{
+  top: 4228px;
+  right: 28px;
+}
+
+}
+
+@media screen and (max-width: 614px){
+.container-sony p{
+  font-size: 14px;
+  min-width: 130px ;
+}
+
+}
+
+@media screen and (max-width: 593px){
+
+  .container-footer img{
+    max-width: 140px;
+  }
+}
+
+@media screen and (max-width: 579px){
+  .container-footer{
+    padding: 0px 10px;
+  }
+
+  .drop-translate.show{
+    top: 4228px;
+    right: 20px;
+  }
+}
 
