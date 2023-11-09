@@ -469,6 +469,9 @@ const slides = document.querySelectorAll('.slide');
 const indicators = document.querySelectorAll(".indicator-item");
 const container = document.querySelector('.container-main-desktop');
 
+const SvgPrev = document.querySelector('.svg-slide-anime');
+const SvgNext = document.querySelector('.svg-slide-anime2');
+
 const container2 = document.querySelector('.container-imagens-anime');
     const prevButton2 = document.getElementById('prevButton2');
     const nextButton2 = document.getElementById('nextButton2');
@@ -477,7 +480,6 @@ const container2 = document.querySelector('.container-imagens-anime');
     const container3 = document.querySelector('.container-imagens-anime2');
     const prevButton3 = document.getElementById('prevButton3');
     const nextButton3 = document.getElementById('nextButton3');
-
 
 
 const slideImages = [
@@ -568,71 +570,231 @@ setInterval(autoAdvance, 10000);
 
 
 
+// SECTION 1 //
+
+const imageUrls = [
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/77fb4ad8d5c781685695bc574eb34b0a.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1500ddfac4a1ffbc767603fcac1b9b2a.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
+  
+  
 
 
-let scrollAmount = 0;
-const scrollStep = container2.offsetWidth * 6; // Avançar 6 imagens
+  // Adicione mais URLs de imagem conforme necessário
+];
 
-prevButton2.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
+const imageUrls2 = [
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe" ,
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/fdfd2e0910d6f141626a7d6f8f76ab72.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/efb29ad752e647212b3e199da7748e9e.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/1b083a97efcac96d6f3f6c3880321f93.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
 
-nextButton2.addEventListener('click', () => {
-  container2.scrollTo({
-    top: 0,
-    left: (scrollAmount += scrollStep),
-    behavior: 'smooth'
-  });
-  prevButton2.classList.remove('hidden-button-slide'); // Mostrar o botão "Anterior" quando o botão "Próximo" for clicado
-  nextButton2.classList.add('hidden-button-slide'); // Esconder o botão "Próximo" quando ele for clicado
+
+  // Adicione mais URLs de imagem conforme necessário
+];
+
+
+const titles = [
+  "Chainsaw Man",
+  "JUJUTSU KAISEN",
+  "Bungo Stray Dogs",
+  "Ranking of Kings",
+  "One Piece",
+  "VINLAND SAGA",
+  "BLUELOCK",
+
+
+  // Adicione mais títulos conforme necessário
+];
+
+const titles2 = [
+  "BLUELOCK",
+  "Tokyo Ghoul",
+  "Horimiya",
+  "My Dress Up Darling",
+  "Code Geass",
+  "Soul Eater",
+
+
+
+  // Adicione mais títulos conforme necessário
+];
+
+let currentImageIndexImg = 0; // Índice da imagem atual
+let currentListIndex = 0; // Índice da lista atual
+
+// ...
+
+// ...
+
+/// Esconda o botão prevButton2 inicialmente
+
+
+// ...
+
+// Atualize a função do botão nextButton2
+SvgNext.addEventListener('click', () => {
+  currentImageIndexImg = (currentImageIndexImg + 6) % imageUrls.length;
+  if (currentImageIndexImg === 0) {
+    currentListIndex = (currentListIndex + 1) % 2;
+    SvgPrev.style.display = 'flex';
+    SvgNext.style.display = 'none';
+  }
+  updateImagesAndTitles();
+
 });
 
-prevButton2.addEventListener('click', () => {
-  container2.scrollTo({
-    top: 0,
-    left: (scrollAmount -= scrollStep),
-    behavior: 'smooth'
-  });
-  nextButton2.classList.remove('hidden-button-slide'); // Mostrar o botão "Próximo" quando o botão "Anterior" for clicado
-  prevButton2.classList.add('hidden-button-slide'); // Esconder o botão "Anterior" quando ele for clicado
-});
-
-
-
-nextButton2.addEventListener("click", () => {
-  vinlandSagaImage.classList.add("vinland-saga-shadow");
+// Atualize a função do botão prevButton2
+SvgPrev.addEventListener('click', () => {
+  currentImageIndexImg = (currentImageIndexImg - 6 + imageUrls.length) % imageUrls.length;
+  if (currentImageIndexImg === imageUrls.length - 6) {
+    currentListIndex = (currentListIndex - 1 + 2) % 2;
+    SvgNext.style.display = 'flex';
+    SvgPrev.style.display = 'none';
+    
+  }
+  updateImagesAndTitles();
 
 });
+// ...
 
-let scrollAmount2 = 0;
-const scrollStep2 = container3.offsetWidth * 6; // Avançar 6 imagens
 
-prevButton3.classList.add('hidden-button-slide'); // Esconder o botão de "Anterior" inicialmente
 
-nextButton3.addEventListener('click', () => {
-  container3.scrollTo({
-    top: 0,
-    left: (scrollAmount += scrollStep2),
-    behavior: 'smooth'
-  });
-  prevButton3.classList.remove('hidden-button-slide'); // Mostrar o botão "Anterior" quando o botão "Próximo" for clicado
-  nextButton3.classList.add('hidden-button-slide'); // Esconder o botão "Próximo" quando ele for clicado
+function updateImagesAndTitles() {
+  let currentUrls = currentListIndex === 0 ? imageUrls : imageUrls2;
+  let currentTitles = currentListIndex === 0 ? titles : titles2;
+
+  const containerAnimeElements = document.querySelectorAll('.container-anime');
+  for (let i = 0; i < containerAnimeElements.length; i++) {
+    const currentImageElement = containerAnimeElements[i].querySelector('.img-section1');
+    const currentTitleElement = containerAnimeElements[i].querySelector('.titulo-anime');
+
+    currentImageElement.src = currentUrls[(currentImageIndexImg + i) % currentUrls.length];
+    currentTitleElement.innerText = currentTitles[(currentImageIndexImg + i) % currentTitles.length];
+  }
+}
+
+
+// SECTION MAIS POPULARES //
+
+
+const SvgPrevPopulares = document.querySelector('#svg-populares');
+const SvgNextPopulares = document.querySelector('#svg-populares2')
+
+const imageUrlsPopulares = [
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/eceac71dbf61b38c7b94fc14e590c7b2.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/ebcd65fa9fb83580062e7052fa6ee5a5.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/48f5e5d1b485eb5c9a33c517accd1fec.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/61eff1385c6b64a1110708ca3e0f4fb3.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/f154230aab3191aba977f337d392f812.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/b333f764127c1e06d49aa7ca7c262ff8.jpe",
+  
+  
+
+
+  // Adicione mais URLs de imagem conforme necessário
+];
+
+const imageUrlsPopulares2 = [
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/585041e91bb7168df89a98eb5318d88c.jpe" ,
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c496691df13a15aaf9be63caa7fc429.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/6c985c5f2bf94a05437fff8ecdd806f6.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/fdfd2e0910d6f141626a7d6f8f76ab72.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/efb29ad752e647212b3e199da7748e9e.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/dd37db90df46fca8d702266385a1193c.jpe",
+  "https://www.crunchyroll.com/imgsrv/display/thumbnail/480x720/catalog/crunchyroll/922742d9acaeba7d887ed11b6caab0e4.jpe",
+
+
+  // Adicione mais URLs de imagem conforme necessário
+];
+
+
+const titlesPopulares = [
+  "É Sério Que Eu Sou O Mais Forte?",
+  "JUJUTSU KAISEN",
+  "Bungo Stray Dogs",
+  "Minha Crush Esqueceu Os Óculos",
+  "One Piece",
+  "VINLAND SAGA",
+  "BLUELOCK",
+
+
+  // Adicione mais títulos conforme necessário
+];
+
+const titlesPopulares2 = [
+  "BLUELOCK",
+  "Tokyo Ghoul",
+  "Horimiya",
+  "My Dress Up Darling",
+  "100 Coisas Para Fazer Antes De Virar Zumbi",
+  "Soul Eater",
+
+
+
+  // Adicione mais títulos conforme necessário
+];
+
+let currentImageIndexImgPopulares = 0; // Índice da imagem atual
+let currentListIndexPopulares = 0; // Índice da lista atual
+
+// ...
+
+// ...
+
+/// Esconda o botão prevButton2 inicialmente
+
+
+// ...
+
+// Atualize a função do botão nextButton2
+SvgNextPopulares.addEventListener('click', () => {
+  currentImageIndexImgPopulares = (currentImageIndexImgPopulares + 6) % imageUrlsPopulares.length;
+  if (currentImageIndexImgPopulares === 0) {
+    currentListIndexPopulares = (currentListIndexPopulares + 1) % 2;
+    SvgPrevPopulares.style.display = 'flex';
+    SvgNextPopulares.style.display = 'none';
+  }
+  updateImagesAndTitles2();
+
 });
 
-prevButton3.addEventListener('click', () => {
-  container3.scrollTo({
-    top: 0,
-    left: (scrollAmount -= scrollStep2),
-    behavior: 'smooth'
-  });
-  nextButton3.classList.remove('hidden-button-slide'); // Mostrar o botão "Próximo" quando o botão "Anterior" for clicado
-  prevButton3.classList.add('hidden-button-slide'); // Esconder o botão "Anterior" quando ele for clicado
-});
-
-
-
-nextButton2.addEventListener("click", () => {
-  vinlandSagaImage.classList.add("vinland-saga-shadow");
+// Atualize a função do botão prevButton2
+SvgPrevPopulares.addEventListener('click', () => {
+  currentImageIndexImgPopulares = (currentImageIndexImgPopulares - 6 + imageUrlsPopulares.length) % imageUrlsPopulares.length;
+  if (currentImageIndexImgPopulares === imageUrlsPopulares.length - 6) {
+    currentListIndexPopulares = (currentListIndexPopulares - 1 + 2) % 2;
+    SvgNextPopulares.style.display = 'flex';
+    SvgPrevPopulares.style.display = 'none';
+    
+  }
+  updateImagesAndTitles2();
 
 });
+// ...
+
+
+
+function updateImagesAndTitles2() {
+  let currentUrls2 = currentListIndexPopulares === 0 ? imageUrlsPopulares : imageUrlsPopulares2;
+  let currentTitles2 = currentListIndexPopulares === 0 ? titlesPopulares : titlesPopulares2;
+
+  const containerAnimeElements = document.querySelectorAll('.container-anime-populares');
+  for (let i = 0; i < containerAnimeElements.length; i++) {
+    const currentImageElement = containerAnimeElements[i].querySelector('.img-section2');
+    const currentTitleElement = containerAnimeElements[i].querySelector('.titulo-anime-populares');
+
+    currentImageElement.src = currentUrls2[(currentImageIndexImgPopulares + i) % currentUrls2.length];
+    currentTitleElement.innerText = currentTitles2[(currentImageIndexImgPopulares + i) % currentTitles2.length];
+  }
+}
+
 
 
 

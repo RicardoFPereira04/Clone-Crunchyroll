@@ -1354,7 +1354,7 @@ margin-top: 1rem;
 }
 
 .container-imagens-anime img{
-  max-width: 290px;
+  max-width: 305px;
   height: auto;
   padding: 0px 15px;
 
@@ -1370,8 +1370,9 @@ margin-top: 1rem;
   fill: white;
   cursor: pointer;
  position: absolute;
- left: 1670px;
+ left: 25px;
   z-index: 100;
+  display: none;
 
   top: 40%;
  
@@ -1427,6 +1428,9 @@ margin-top: 1rem;
 
   font-weight: 500;
 }
+
+
+
 
 .LegDub{
   padding: 5px 15px;
@@ -1542,6 +1546,7 @@ margin-left: 20px;
   top: 40%;
 
 }
+
 
 
 
@@ -1834,7 +1839,7 @@ border: none;
 }
 
 .container-imagens-anime2 img{
-  max-width: 290px;
+  max-width: 305px;
   height: auto;
   padding: 0px 15px;
 
@@ -1842,6 +1847,25 @@ border: none;
 
  
 }
+
+.container-anime-populares{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.titulo-anime-populares{
+  padding: 0px 15px;
+  color: white;
+  font-size: 14px;
+
+  padding-top: 9px;
+
+  font-weight: 500;
+}
+
+
 .titulo-anime-mob2{
   padding: 0px 15px;
   color: white;
@@ -2931,6 +2955,10 @@ max-width: 400px;
   .slide img {
     max-width: 370px;
       }
+
+      #spy{
+        margin-top: 186px;
+      }
 }
 
 @media screen and (max-width: 1130px){
@@ -2960,6 +2988,10 @@ max-width: 300px;
   .slide img {
     max-width: 250px;
     margin-top: 10px;
+      }
+
+      #spy{
+        margin-top: 68px;
       }
 }
 @media screen and (max-width: 1035px){
@@ -2993,6 +3025,10 @@ max-width: 300px;
 .carousel-indicator{
   padding-top: 2rem;
 }
+
+#spy{
+  margin-top: 61px;
+}
 }
 
 
@@ -3012,6 +3048,10 @@ max-width: 300px;
       margin-top: 10px;
         }
 
+
+        #spy{
+          margin-top: 52px;
+        }
 }
 
 @media screen and (max-width: 943px){
