@@ -2462,6 +2462,10 @@ body{
 }
 
 
+.button-watching-mob{
+  width: 100% !important;
+}
+
 
     .premium-icon {
 display: flex;
@@ -2821,10 +2825,10 @@ margin: 0;
 @media screen and (max-width: 1670px) {
 
   .container-imagens-anime img{
-    max-width: 220px;
+    max-width: 260px;
   }
 .container-imagens-anime2 img{
-  max-width: 220px;
+  max-width: 260px;
 }
   .container-dead-mount{
     padding: 30px 0px;
@@ -2850,7 +2854,48 @@ margin: 0;
     top: 3773px;
     right: 249px;
   }
+
+  .svg-slide-anime{
+    top: 35%;
+  }
+
+  .svg-slide-anime2{
+    top: 35%;
+  }
 }
+
+@media screen and (max-width: 1620px) {
+
+  .container-imagens-anime img{
+    max-width: 250px;
+  }
+.container-imagens-anime2 img{
+  max-width: 250px;
+}
+}
+
+
+
+@media screen and (max-width: 1560px) {
+
+  .container-imagens-anime img{
+    max-width: 240px;
+  }
+.container-imagens-anime2 img{
+  max-width: 240px;
+}
+}
+
+@media screen and (max-width: 1500px) {
+
+  .container-imagens-anime img{
+    max-width: 230px;
+  }
+.container-imagens-anime2 img{
+  max-width: 230px;
+}
+}
+
 @media screen and (max-width: 1582px) {
   .container-footer ul{
     padding: 0;
@@ -2873,6 +2918,27 @@ margin: 0;
 
 }
 
+@media screen and (max-width: 1450px) {
+
+  .container-imagens-anime img{
+    max-width: 225px;
+  }
+.container-imagens-anime2 img{
+  max-width: 225px;
+}
+}
+
+
+@media screen and (max-width: 1420px) {
+
+  .container-imagens-anime img{
+    max-width: 220px;
+  }
+.container-imagens-anime2 img{
+  max-width: 220px;
+}
+}
+
 @media screen and (max-width: 1405px){
 .ul-itens-rede{
   padding-left:50px;
@@ -2883,6 +2949,27 @@ margin: 0;
 
 .container-sony{
   margin-left: 30px;
+}
+}
+
+@media screen and (max-width: 1420px) {
+
+  .container-imagens-anime img{
+    max-width: 217px;
+  }
+.container-imagens-anime2 img{
+  max-width: 217px;
+}
+}
+
+
+@media screen and (max-width: 1391px) {
+
+  .container-imagens-anime img{
+    max-width: 213px;
+  }
+.container-imagens-anime2 img{
+  max-width: 213px;
 }
 }
 
@@ -2903,12 +2990,48 @@ margin: 0;
   .container-sony{
     margin-left: 10px;
   }
+
+  .container-imagens-anime img{
+    max-width: 210px;
+  }
+.container-imagens-anime2 img{
+  max-width: 210px;
+}
 }
 
-@media screen and (max-width: 1260px){
+@media screen and (max-width: 1326px) {
 
-
+  .container-imagens-anime img{
+    max-width: 207px;
+  }
+.container-imagens-anime2 img{
+  max-width: 207px;
 }
+}
+
+@media screen and (max-width: 1300px) {
+
+  .container-imagens-anime img{
+    max-width: 200px;
+  }
+.container-imagens-anime2 img{
+  max-width: 200px;
+}
+}
+
+
+@media screen and (max-width: 1270px) {
+
+  .container-imagens-anime img{
+    max-width: 192px;
+  }
+.container-imagens-anime2 img{
+  max-width: 192px;
+}
+}
+
+
+
 
 @media screen and (max-width: 1259px){
   .container-footer{
@@ -2943,7 +3066,44 @@ margin-left: 0;
     top: 4157px;
     right: 38px;
   }
+
+
 }
+
+@media screen and (max-width: 1245px) {
+
+  .container-imagens-anime img{
+    max-width: 188px;
+  }
+.container-imagens-anime2 img{
+  max-width: 188px;
+}
+}
+
+
+
+
+@media screen and (max-width: 1217px) {
+
+  .container-imagens-anime img{
+    max-width: 183px;
+  }
+.container-imagens-anime2 img{
+  max-width: 183px;
+}
+}
+
+
+@media screen and (max-width: 1190px) {
+
+  .container-imagens-anime img{
+    max-width: 180px;
+  }
+.container-imagens-anime2 img{
+  max-width: 180px;
+}
+}
+
 
 @media screen and (max-width: 1176px){
 
@@ -2961,6 +3121,48 @@ max-width: 400px;
       }
 }
 
+@media screen and (max-width: 1173px) {
+
+  .container-imagens-anime img{
+    max-width: 176px;
+  }
+.container-imagens-anime2 img{
+  max-width: 176px;
+}
+
+
+.svg-slide-anime{
+  top: 30%;
+}
+
+.svg-slide-anime2{
+  top: 30%;
+}
+}
+
+
+@media screen and (max-width: 1147px) {
+
+  .container-imagens-anime img{
+    max-width: 173px;
+  }
+.container-imagens-anime2 img{
+  max-width: 173px;
+}
+}
+
+
+@media screen and (max-width: 1134px) {
+
+  .container-imagens-anime img{
+    max-width: 171px;
+  }
+.container-imagens-anime2 img{
+  max-width: 171px;
+}
+}
+
+
 @media screen and (max-width: 1130px){
 
   .slide {
@@ -2976,7 +3178,48 @@ max-width: 350px;
       #spy{
         margin-top: 90px;
       }
+
+      .svg-slide-anime{
+        top: 33%;
+      }
+    
+      .svg-slide-anime2{
+        top: 33%;
+      }
 }
+
+@media screen and (max-width: 1123px) {
+
+  .container-imagens-anime img{
+    max-width: 168px;
+  }
+.container-imagens-anime2 img{
+  max-width: 168px;
+}
+}
+
+
+
+@media screen and (max-width: 1106px) {
+
+  .container-imagens-anime img{
+    max-width: 165px;
+  }
+.container-imagens-anime2 img{
+  max-width: 165px;
+}
+}
+
+@media screen and (max-width: 1092px) {
+
+  .container-imagens-anime img{
+    max-width: 163px;
+  }
+.container-imagens-anime2 img{
+  max-width: 163px;
+}
+}
+
 
 @media screen and (max-width: 1075px){
 
@@ -2994,6 +3237,50 @@ max-width: 300px;
         margin-top: 68px;
       }
 }
+
+
+
+@media screen and (max-width: 1075px) {
+
+  .container-imagens-anime img{
+    max-width: 160px;
+  }
+.container-imagens-anime2 img{
+  max-width: 160px;
+}
+
+.svg-slide-anime{
+  top: 28%;
+}
+
+.svg-slide-anime2{
+  top: 28%;
+}
+}
+
+@media screen and (max-width: 1063px) {
+
+  .container-imagens-anime img{
+    max-width: 157.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 157.5px;
+}
+}
+
+
+@media screen and (max-width: 1048px) {
+
+  .container-imagens-anime img{
+    max-width: 155px;
+  }
+.container-imagens-anime2 img{
+  max-width: 155px;
+}
+}
+
+
+
 @media screen and (max-width: 1035px){
 
 
@@ -3031,6 +3318,68 @@ max-width: 300px;
 }
 }
 
+@media screen and (max-width: 1032px) {
+
+  .container-imagens-anime img{
+    max-width: 152.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 152.5px;
+}
+}
+
+
+@media screen and (max-width: 1019px) {
+
+  .container-imagens-anime img{
+    max-width: 150.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 150.5px;
+}
+
+.svg-slide-anime{
+  top: 31%;
+}
+
+.svg-slide-anime2{
+  top: 31%;
+}
+}
+
+
+@media screen and (max-width: 1007px) {
+
+  .container-imagens-anime img{
+    max-width: 149px;
+  }
+.container-imagens-anime2 img{
+  max-width: 149px;
+}
+}
+
+
+@media screen and (max-width: 998px) {
+
+  .container-imagens-anime img{
+    max-width: 147px;
+  }
+.container-imagens-anime2 img{
+  max-width: 147px;
+}
+}
+
+@media screen and (max-width: 987px) {
+
+  .container-imagens-anime img{
+    max-width: 145px;
+  }
+.container-imagens-anime2 img{
+  max-width: 145px;
+}
+}
+
+
 
 
 @media screen and (max-width: 980px){
@@ -3054,6 +3403,104 @@ max-width: 300px;
         }
 }
 
+
+
+@media screen and (max-width: 974px) {
+
+  .container-imagens-anime img{
+    max-width: 143px;
+  }
+.container-imagens-anime2 img{
+  max-width: 143px;
+}
+
+.svg-slide-anime{
+  top: 28%;
+}
+
+.svg-slide-anime2{
+  top: 28%;
+}
+}
+
+
+
+@media screen and (max-width: 962px) {
+
+  .container-imagens-anime img{
+    max-width: 142px;
+  }
+.container-imagens-anime2 img{
+  max-width: 142px;
+}
+
+.container-imagens-anime img{
+  padding: 0px 8px;
+}
+
+.container-imagens-anime2 img{
+  padding: 0px 8px;
+}
+
+
+}
+
+
+@media screen and (max-width: 959px) {
+
+  .container-imagens-anime img{
+    max-width: 144px;
+  }
+.container-imagens-anime2 img{
+  max-width: 144px;
+}
+
+
+.carousel-container{
+  padding: 40px 15px;
+}
+
+.container-imagens-anime{
+  padding-left: 70px
+}
+
+.carousel-indicator{
+  padding-left: 85px;
+}
+
+.svg-slide-anime{
+  top: 28%;
+}
+
+.svg-slide-anime2{
+  top: 28%;
+}
+}
+
+
+
+@media screen and (max-width: 955px) {
+
+  .container-imagens-anime img{
+    max-width: 143.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 143.5px;
+}
+
+}
+
+@media screen and (max-width: 947px) {
+
+  .container-imagens-anime img{
+    max-width: 142px;
+  }
+.container-imagens-anime2 img{
+  max-width: 142px;
+}
+
+}
+
 @media screen and (max-width: 943px){
   .drop-translate.show{
     top: 4156px;
@@ -3072,6 +3519,67 @@ max-width: 300px;
 }
 
 
+@media screen and (max-width: 947px) {
+
+  .container-imagens-anime img{
+    max-width: 141.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 141.5px;
+}
+.svg-slide-anime{
+  top: 26%;
+}
+
+.svg-slide-anime2{
+  top: 26%;
+}
+}
+
+
+@media screen and (max-width: 937px) {
+
+  .container-imagens-anime img{
+    max-width: 140px;
+  }
+.container-imagens-anime2 img{
+  max-width: 140px;
+}
+
+.svg-slide-anime{
+  top: 25%;
+}
+
+.svg-slide-anime2{
+  top: 25%;
+}
+
+}
+
+@media screen and (max-width: 930px) {
+
+  .container-imagens-anime img{
+    max-width: 139px;
+  }
+.container-imagens-anime2 img{
+  max-width: 139px;
+}
+
+}
+
+
+@media screen and (max-width: 924px) {
+
+  .container-imagens-anime img{
+    max-width: 138px;
+  }
+.container-imagens-anime2 img{
+  max-width: 138px;
+}
+
+}
+
+
 @media screen and (max-width: 923px){
   .drop-translate.show{
     top: 4180px;
@@ -3082,12 +3590,206 @@ font-size: 14px;
 }
 }
 
+@media screen and (max-width: 915px) {
+
+  .container-imagens-anime img{
+    max-width: 137px;
+  }
+.container-imagens-anime2 img{
+  max-width: 137px;
+}
+
+}
+
+
+@media screen and (max-width: 910px) {
+
+  .container-imagens-anime img{
+    max-width: 136px;
+  }
+.container-imagens-anime2 img{
+  max-width: 136px;
+}
+
+}
+
+
+@media screen and (max-width: 903px) {
+
+  .container-imagens-anime img{
+    max-width: 134.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 134.5px;
+}
+
+}
+
+
+@media screen and (max-width: 903px) {
+
+  .container-imagens-anime img{
+    max-width: 133.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 133.5px;
+}
+
+}
+
 
 @media screen and (max-width: 890px){
   .slide{
     max-width: 60px;
   }
 }
+
+
+@media screen and (max-width: 890px) {
+
+  .container-imagens-anime img{
+    max-width: 132.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 132.5px;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 880px) {
+
+  .container-imagens-anime img{
+    max-width: 131.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 131.5px;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 874px) {
+
+  .container-imagens-anime img{
+    max-width: 130px;
+  }
+.container-imagens-anime2 img{
+  max-width: 130px;
+}
+
+}
+
+@media screen and (max-width: 865px) {
+
+  .container-imagens-anime img{
+    max-width: 128.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 128.5px;
+}
+
+}
+
+@media screen and (max-width: 855px) {
+
+  .container-imagens-anime img{
+    max-width: 126.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 126.5px;
+}
+
+}
+
+
+@media screen and (max-width: 841px) {
+
+  .container-imagens-anime img{
+    max-width: 125.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 125.5px;
+}
+
+}
+
+
+@media screen and (max-width: 836px) {
+
+  .container-imagens-anime img{
+    max-width: 124.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 124.5px;
+}
+
+}
+
+@media screen and (max-width: 830px) {
+
+  .container-imagens-anime img{
+    max-width: 123px;
+  }
+.container-imagens-anime2 img{
+  max-width: 123px;
+}
+
+}
+
+
+@media screen and (max-width: 826px) {
+
+  .container-imagens-anime img{
+    max-width: 122px;
+  }
+.container-imagens-anime2 img{
+  max-width: 122px;
+}
+
+}
+
+
+@media screen and (max-width: 818px) {
+
+  .container-imagens-anime img{
+    max-width: 121px;
+  }
+.container-imagens-anime2 img{
+  max-width: 121px;
+}
+
+}
+
+@media screen and (max-width: 812px) {
+
+  .container-imagens-anime img{
+    max-width: 120px;
+  }
+.container-imagens-anime2 img{
+  max-width: 120px;
+}
+
+}
+
+@media screen and (max-width: 805px) {
+
+  .container-imagens-anime img{
+    max-width: 118.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 118.5px;
+}
+
+}
+
+
+
+
 
 @media screen and (max-width: 800px){
 
@@ -3098,6 +3800,67 @@ font-size: 14px;
   padding-left: 30px;
 }
  
+
+.svg-slide-anime{
+  top: 23%;
+}
+
+.svg-slide-anime2{
+  top: 25%;
+}
+
+.container-main-desktop{display: none;}
+.container-main-mobile{
+  display: flex;
+}
+
+
+.assista-mob{
+  display: flex;
+
+  margin-left: 40px;
+}
+
+
+.button-watching-mob{
+  width: 300px;
+ 
+}
+
+.slide-mobile img{
+max-width: 300px;
+}
+
+.carousel-indicator-mob{
+  padding-top: 50px;
+}
+
+.buttons{
+  justify-content: center;
+}
+
+.container-imagens-anime img{
+  max-width: 125px;
+}
+.container-imagens-anime2 img{
+max-width: 125px;
+}
+
+.svg-slide-anime{
+  left: 0px;
+}
+
+
+.container-imagens-anime{
+
+  padding: 6px 30px;
+
+}
+
+.container-imagens-anime2{
+  padding: 6px 30px;
+}
+
 }
 
 @media screen and (max-width: 850px){
@@ -3115,6 +3878,31 @@ font-size: 14px;
   }
 }
 
+
+
+@media screen and (max-width: 787px) {
+
+  .container-imagens-anime img{
+    max-width: 121.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 121.5px;
+}
+
+}
+
+
+@media screen and (max-width: 780px) {
+
+  .container-imagens-anime img{
+    max-width: 121px;
+  }
+.container-imagens-anime2 img{
+  max-width: 121px;
+}
+
+}
+
 @media screen and (max-width: 773px){
 
 
@@ -3123,6 +3911,562 @@ font-size: 14px;
     right: 38px;
   }
 }
+
+
+@media screen and (max-width: 772px) {
+
+  .container-imagens-anime img{
+    max-width: 120px;
+  }
+.container-imagens-anime2 img{
+  max-width: 120px;
+}
+
+}
+
+
+@media screen and (max-width: 760px) {
+
+  .container-imagens-anime img{
+    max-width: 119px;
+  }
+.container-imagens-anime2 img{
+  max-width: 119px;
+}
+
+}
+
+
+@media screen and (max-width: 755px) {
+
+  .container-imagens-anime img{
+    max-width: 118px;
+  }
+.container-imagens-anime2 img{
+  max-width: 118px;
+}
+
+}
+
+
+
+@media screen and (max-width: 750px) {
+
+  .container-imagens-anime img{
+    max-width: 117px;
+  }
+.container-imagens-anime2 img{
+  max-width: 117px;
+}
+
+
+
+.svg-slide-anime{
+  top: 26%;
+}
+
+.svg-slide-anime2{
+  top: 26%;
+}
+}
+
+
+
+@media screen and (max-width: 745px) {
+
+  .container-imagens-anime img{
+    max-width: 116px;
+  }
+.container-imagens-anime2 img{
+  max-width: 116px;
+}
+
+}
+
+
+
+@media screen and (max-width: 740px) {
+
+  .container-imagens-anime img{
+    max-width: 115px;
+  }
+.container-imagens-anime2 img{
+  max-width: 115px;
+}
+
+}
+
+
+
+@media screen and (max-width: 735px) {
+
+  .container-imagens-anime img{
+    max-width: 114px;
+  }
+.container-imagens-anime2 img{
+  max-width: 114px;
+}
+
+}
+
+
+
+@media screen and (max-width: 730px) {
+
+  .container-imagens-anime img{
+    max-width: 113px;
+  }
+.container-imagens-anime2 img{
+  max-width: 113px;
+}
+
+}
+
+
+
+@media screen and (max-width: 725px) {
+
+  .container-imagens-anime img{
+    max-width: 112px;
+  }
+.container-imagens-anime2 img{
+  max-width: 112px;
+}
+
+}
+
+
+
+@media screen and (max-width: 720px) {
+
+  .container-imagens-anime img{
+    max-width: 111px;
+  }
+.container-imagens-anime2 img{
+  max-width: 111px;
+}
+
+}
+
+
+
+@media screen and (max-width: 715px) {
+
+  .container-imagens-anime img{
+    max-width: 110px;
+  }
+.container-imagens-anime2 img{
+  max-width: 110px;
+}
+
+}
+
+
+
+@media screen and (max-width: 710px) {
+
+  .container-imagens-anime img{
+    max-width: 109px;
+  }
+.container-imagens-anime2 img{
+  max-width: 109px;
+}
+
+.svg-slide-anime{
+  top: 23%;
+}
+
+.svg-slide-anime2{
+  top: 23%;
+}
+
+
+}
+
+
+
+@media screen and (max-width: 705px) {
+
+  .container-imagens-anime img{
+    max-width: 108px;
+  }
+.container-imagens-anime2 img{
+  max-width: 108px;
+}
+
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+
+  .container-imagens-anime img{
+    max-width: 107px;
+  }
+.container-imagens-anime2 img{
+  max-width: 107px;
+}
+
+
+
+}
+
+
+@media screen and (max-width: 695px) {
+
+  .container-imagens-anime img{
+    max-width: 106px;
+  }
+.container-imagens-anime2 img{
+  max-width: 106px;
+}
+
+
+
+}
+
+@media screen and (max-width: 690px) {
+
+  .container-imagens-anime img{
+    max-width: 105.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 105.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 685px) {
+
+  .container-imagens-anime img{
+    max-width: 105px;
+  }
+.container-imagens-anime2 img{
+  max-width: 105px;
+}
+
+
+
+}
+
+@media screen and (max-width: 680px) {
+
+  .container-imagens-anime img{
+    max-width: 104.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 104.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 675px) {
+
+  .container-imagens-anime img{
+    max-width: 104px;
+  }
+.container-imagens-anime2 img{
+  max-width: 104px;
+}
+
+
+
+}
+
+@media screen and (max-width: 670px) {
+
+  .container-imagens-anime img{
+    max-width: 103.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 103.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 665px) {
+
+  .container-imagens-anime img{
+    max-width: 103px;
+  }
+.container-imagens-anime2 img{
+  max-width: 103px;
+}
+
+.svg-slide-anime{
+  top: 21%;
+}
+
+.svg-slide-anime2{
+  top: 21%;
+}
+
+
+
+
+}
+
+@media screen and (max-width: 660px) {
+
+  .container-imagens-anime img{
+    max-width: 102.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 102.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 655px) {
+
+  .container-imagens-anime img{
+    max-width: 102px;
+  }
+.container-imagens-anime2 img{
+  max-width: 102px;
+}
+
+
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .container-imagens-anime img{
+    max-width: 99.5px;
+
+    padding: 0px 4px;
+  }
+.container-imagens-anime2 img{
+  max-width: 99.5px;
+
+  padding: 0px 4px;
+}
+
+.svg-slide-anime2{
+  right: 2px;
+}
+
+
+
+}
+
+@media screen and (max-width: 645px) {
+
+  .container-imagens-anime img{
+    max-width: 98.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 98.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .container-imagens-anime img{
+    max-width: 98px;
+  }
+.container-imagens-anime2 img{
+  max-width: 98px;
+}
+
+
+
+}
+
+@media screen and (max-width: 635px) {
+
+  .container-imagens-anime img{
+    max-width: 97px;
+  }
+.container-imagens-anime2 img{
+  max-width: 97px;
+}
+
+
+
+}
+
+@media screen and (max-width: 630px) {
+
+  .container-imagens-anime img{
+    max-width: 96.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 96.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 625px) {
+
+  .container-imagens-anime img{
+    max-width: 96px;
+  }
+.container-imagens-anime2 img{
+  max-width: 96px;
+}
+
+
+
+}
+
+@media screen and (max-width: 620px) {
+
+  .container-imagens-anime img{
+    max-width: 95.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 95.5px;
+}
+
+
+
+}
+
+@media screen and (max-width: 615px) {
+
+  .container-imagens-anime img{
+    max-width: 94.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 94.5px;
+}
+
+.svg-slide-anime{
+  top: 20%;
+}
+
+.svg-slide-anime2{
+  top: 20%;
+}
+
+
+
+
+}
+
+@media screen and (max-width: 610px) {
+
+  .container-imagens-anime img{
+    max-width: 94px;
+  }
+.container-imagens-anime2 img{
+  max-width: 94px;
+}
+
+
+
+}
+
+@media screen and (max-width: 605px) {
+
+  .container-imagens-anime img{
+    max-width: 93px;
+  }
+.container-imagens-anime2 img{
+  max-width: 93px;
+}
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .container-imagens-anime img{
+    max-width: 92px;
+  }
+.container-imagens-anime2 img{
+  max-width: 92px;
+}
+
+
+.svg-slide-anime{
+  top: 18%;
+}
+
+.svg-slide-anime2{
+  top: 18%;
+}
+
+
+
+}
+
+@media screen and (max-width: 595px) {
+
+  .container-imagens-anime img{
+    max-width: 91px;
+  }
+.container-imagens-anime2 img{
+  max-width: 91px;
+}
+
+
+
+}
+
+@media screen and (max-width: 590px) {
+
+  .container-imagens-anime img{
+    max-width: 90px;
+  }
+.container-imagens-anime2 img{
+  max-width: 90px;
+}
+
+
+
+}
+
+@media screen and (max-width: 585px) {
+
+  .container-imagens-anime img{
+    max-width: 89px;
+  }
+.container-imagens-anime2 img{
+  max-width:89px;
+}
+
+
+
+}
+
+@media screen and (max-width: 580px) {
+
+  .container-imagens-anime img{
+    max-width: 88.5px;
+  }
+.container-imagens-anime2 img{
+  max-width: 88.5px;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 733px){
   .drop-translate.show{
