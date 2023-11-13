@@ -1185,8 +1185,15 @@ padding: 0px 20px;
     
 
   background-image: url('https://static.crunchyroll.com/fms/landscape_large/94/png/0f64543f-c57d-4271-9750-8e84ddc3aa9d.jpg'); /* Defina a imagem de fundo inicial */
-  background-size: 100% 100%;
-  background-position: center;
+   /* Configurações para garantir que a imagem não se estique, mantenha proporções e esteja centralizada */
+
+   background-position: center;
+   background-repeat: no-repeat;
+background-size: 100% 100%;
+   /* Configuração para garantir que a imagem cubra toda a altura da tela */
+  
+
+
   transition: background-image 0.5s;
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.5), 10px 0 10px rgba(0, 0, 0, 0.5);
 
@@ -1219,7 +1226,7 @@ padding: 0px 20px;
   flex-direction: column;
 
 width: 100%;
-   min-height: 680px;
+   min-height: 700px;
 
 
 }
@@ -1484,9 +1491,17 @@ margin-left: 20px;
   
  
 }
+.titulo-anime-mob{
+  padding: 0px 15px;
+  color: white;
+  font-size: 14px;
 
+  padding-top: 9px;
+
+  font-weight: 500;
+}
 .container-imagens-anime-mob img{
-  max-width: 128px;
+  max-width: 132px;
   height: auto;
   padding: 0px 5px;
 
@@ -2768,6 +2783,10 @@ margin: 0;
   display: none;
 }
 
+
+.slide-mobile{
+  min-height: 500px;
+}
 .text-novos-lancamentos{
   font-size: 22px;
 
@@ -3818,7 +3837,7 @@ font-size: 14px;
 .assista-mob{
   display: flex;
 
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 
