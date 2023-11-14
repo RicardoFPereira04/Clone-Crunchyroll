@@ -2484,6 +2484,11 @@ cursor: pointer;
       .svg-slide-anime-mob3{
         top:22% !important
       }
+       .svg-slide-anime-mob
+      {top:22% !important}
+      .svg-slide-anime-mob4{
+        top:22% !important
+      }
   }
 
   @media screen and (max-width: 576px) {
