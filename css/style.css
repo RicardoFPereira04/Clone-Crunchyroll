@@ -1501,7 +1501,7 @@ margin-left: 20px;
   font-weight: 500;
 }
 .container-imagens-anime-mob img{
-  max-width: 132px;
+  max-width: 135px;
   height: auto;
   padding: 0px 5px;
 
@@ -1903,7 +1903,7 @@ border: none;
 /* SECTION MAIS POPULARES MOBILE*/
 
 .container-imagens-anime-mob2 img{
-  max-width: 128px;
+  max-width: 135px;
   height: auto;
   padding: 0px 5px;
 
@@ -2465,16 +2465,26 @@ cursor: pointer;
   display: none;
 }
 
+
   }
 
-  
-  @media screen and (max-width: 575px) {
+ 
+  @media screen and (max-width: 560px) {
+
+    .container-imagens-anime-mob img{
+      max-width: 110px;
+    }
+
+    .container-imagens-anime-mob2 img{
+      max-width: 110px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
 
 
 
-body{
-  max-width: 575px;
-}
+
 
 
 .button-watching-mob{
