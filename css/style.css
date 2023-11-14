@@ -2472,11 +2472,11 @@ cursor: pointer;
   @media screen and (max-width: 560px) {
 
     .container-imagens-anime-mob img{
-      max-width: 95px;
+      max-width: 90px;
     }
 
     .container-imagens-anime-mob2 img{
-      max-width: 95px;
+      max-width: 90px;
     }
   }
 
