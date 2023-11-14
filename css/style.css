@@ -2480,9 +2480,9 @@ cursor: pointer;
     }
 
       .svg-slide-anime-mob2
-      {top:16%}
+      {top:22% !important}
       .svg-slide-anime-mob3{
-        top:16%
+        top:22% !important
       }
   }
 
