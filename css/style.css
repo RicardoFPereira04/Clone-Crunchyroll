@@ -2491,6 +2491,13 @@ cursor: pointer;
         top:15% !important
       }
 
+      #container2{
+        display: none;
+      }
+      #container3{
+        display: none;
+      }
+
       .container-imagens-anime-mob{
 max-width: 558px;
 
