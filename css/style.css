@@ -2473,11 +2473,11 @@ cursor: pointer;
   @media screen and (max-width: 560px) {
 
     .container-imagens-anime-mob img{
-      max-width: 93px;
+      max-width: 95px;
     }
 
     .container-imagens-anime-mob2 img{
-      max-width: 93px;
+      max-width: 95px;
     }
 
       .svg-slide-anime-mob2
@@ -2489,6 +2489,16 @@ cursor: pointer;
       {top:15% !important}
       .svg-slide-anime-mob4{
         top:15% !important
+      }
+
+      .container-imagens-anime-mob{
+max-width: 558px;
+padding-right: 30px;
+      }
+
+      .container-imagens-anime-mobw{
+        max-width: 558px;
+        padding-right: 30px;
       }
   }
 
